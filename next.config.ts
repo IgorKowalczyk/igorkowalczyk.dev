@@ -1,3 +1,4 @@
+/* eslint-disable require-await */
 import type { NextConfig } from "next";
 import { withContentlayer } from "next-contentlayer2";
 
@@ -9,7 +10,7 @@ const nextConfig: NextConfig = {
  eslint: {
   ignoreDuringBuilds: true,
  },
- headers() {
+ async headers() {
   return [
    {
     source: "/(.*)",
@@ -89,7 +90,7 @@ const nextConfig: NextConfig = {
    },
   ];
  },
- redirects() {
+ async redirects() {
   return [
    {
     source: "/discord",
