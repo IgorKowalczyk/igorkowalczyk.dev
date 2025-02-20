@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
  eslint: {
   ignoreDuringBuilds: true,
  },
- async headers() {
+ headers() {
   return [
    {
     source: "/(.*)",
@@ -89,7 +89,7 @@ const nextConfig: NextConfig = {
    },
   ];
  },
- async redirects() {
+ redirects() {
   return [
    {
     source: "/discord",

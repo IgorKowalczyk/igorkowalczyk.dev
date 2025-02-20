@@ -22,21 +22,24 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement | HT
  icon?: boolean;
  type?: HTMLButtonElement["type"];
  disabled?: HTMLButtonElement["disabled"];
+ ref?: React.Ref<HTMLButtonElement | HTMLAnchorElement> | null;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({ href, children, icon = true, variant, ...props }, ref) => {
+export const Button = ({ ref, href, children, icon = true, variant, ...props }: ButtonProps) => {
  if (href) {
   return (
-   <Link href={href} {...props} ref={ref as React.Ref<HTMLAnchorElement>} className={cn(buttonVariants({ variant }), props.className || "")}>
+   <Link href={href} {...props} ref={ref as React.RefObject<HTMLAnchorElement>} className={cn(buttonVariants({ variant }), props.className || "")}>
     {children}
     {icon && <Icons.ArrowRight className="ml-2 size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />}
    </Link>
   );
  }
  return (
-  <button {...props} ref={ref as React.Ref<HTMLButtonElement>} className={cn(buttonVariants({ variant }), props.className || "")}>
+  <button {...props} ref={ref as React.RefObject<HTMLButtonElement>} className={cn(buttonVariants({ variant }), props.className || "")} type={props.type || "button"}>
    {children}
    {icon && <Icons.ArrowRight className="ml-2 size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />}
   </button>
  );
-});
+};
+
+Button.displayName = "Button";

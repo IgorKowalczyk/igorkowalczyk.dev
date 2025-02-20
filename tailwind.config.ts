@@ -1,8 +1,8 @@
-import type { Config } from "tailwindcss";
 import tailwindHeadlessui from "@headlessui/tailwindcss";
 import tailwindAspectRatio from "@tailwindcss/aspect-ratio";
 import tailwindTypography from "@tailwindcss/typography";
 import tailwindGradientMaskImage from "tailwind-gradient-mask-image";
+import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 import { spacing, fontFamily } from "tailwindcss/defaultTheme";
 import tailwindTextFill from "tailwindcss-text-fill";

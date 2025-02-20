@@ -18,7 +18,7 @@ export default function Settings() {
  const { resolvedTheme, setTheme } = useTheme();
 
  useEffect(() => {
-  /* eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect */
+   
   setDecorationsEnabled(() => localStorage.getItem("decorations") !== "false");
  }, []);
 
