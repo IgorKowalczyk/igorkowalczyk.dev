@@ -16,10 +16,14 @@ export const metadata = {
   default: meta.title,
   template: `%s | ${meta.title}`,
  },
- description: meta.shortDescription,
+ alternates: {
+  canonical: "./",
+ },
+ description: meta.description,
+ keywords: meta.keywords,
  openGraph: {
   title: meta.title,
-  description: meta.shortDescription,
+  description: meta.description,
   url: meta.url,
   siteName: meta.title,
   locale: "en_US",
@@ -38,7 +42,7 @@ export const metadata = {
  },
  twitter: {
   title: meta.title,
-  description: meta.shortDescription,
+  description: meta.description,
   creator: meta.accounts.twitter.username,
   card: "summary_large_image",
  },

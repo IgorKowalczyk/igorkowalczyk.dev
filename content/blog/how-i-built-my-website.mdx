@@ -8,7 +8,7 @@ summary: "A bit about how I built this site along with the blog and some new thi
 I have put a lot of time and effort into rebuilding this site, as well as this blog you are reading right now.
 My old portfolio was built on Jekyll with the addition of a few plugins. It didn't look very nice, and it wasn't very usable either. So, I decided to change that.
 
-# The Idea
+## The Idea
 
 I wanted to build a website that would be easy to maintain and update. I also wanted to make it look nice and be easy to use. I also wanted to learn some new technologies and tools, so I decided to build it using Next.js and Tailwind CSS.
 
@@ -17,11 +17,11 @@ In June 2022 I started learning Next.js, this framework seemed the easiest for m
 I didn't learn from some tutorials or blogs. I just opened a code editor and started writing. I was motivated by the desire to create a new place on the Internet in which I could show my work, write blog posts, etc.
 I was also motivated by the fact that I wasn't happy with my old portfolio. I hated it.
 
-# Technologies I used
+## Technologies I used
 
 As I mentioned earlier - I wanted to learn something new. I used frameworks that I didn't know before or knew about them but didn't use them
 
-## Next.js
+### Next.js
 
 [Next.js](https://nextjs.org/) is a [React.js](https://reactjs.org/) framework that I used to build my website. It is a framework that is ideal for production, it has many useful things like image optimization, API routes, Middleware
 Next.js has several options for rendering pages:
@@ -30,13 +30,11 @@ Next.js has several options for rendering pages:
 - **[SSG (Static-site generation)](https://nextjs.org/docs/basic-features/data-fetching/get-static-props)** - it will pre-render this page at build time.
 - **[ISR (Incremental Static Regeneration)](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration)** - it will pre-render this page at build time and then on-demand.
 
-## Tailwind.css
+### Tailwind.css
 
 [Tailwind](https://tailwindcss.com/) is a utility-first CSS framework. It provides multiple CSS classes like `flex`, `text-center` etc.
 
 With Tailwind, you don't have to leave the HTML file to add styles to elements. Tailwind will generate the corresponding CSS classes during production and optimize them - no duplicates and no worries about load time.
-
-### Example
 
 <a href="https://tailwindcss.com/" className="mb-6 inline-block cursor-pointer rounded bg-blue-500 py-2 px-4 font-bold !text-white duration-200 hover:bg-blue-600">
  <span>Tailwind</span>
@@ -48,8 +46,6 @@ With Tailwind, you don't have to leave the HTML file to add styles to elements. 
 </a>
 ```
 
-### Output
-
 ```css title="styles.css" showLineNumbers
 .bg-blue-500 {
   --tw-bg-opacity: 1;
@@ -59,7 +55,7 @@ With Tailwind, you don't have to leave the HTML file to add styles to elements. 
 // [...]
 ```
 
-## Contentlayer
+### Contentlayer
 
 [Contentlayer](https://www.contentlayer.dev/) is a content SDK that validates and transforms content into type-safe JSON data that you can use in your pages.
 

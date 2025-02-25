@@ -10,11 +10,6 @@ import { header, contact, meta, technologies } from "@/config";
 import { GetUserData, getTotalContributionsForYears } from "@/lib/graphql";
 import { ConvertNumber } from "@/lib/utils";
 
-export const metadata = {
- title: header.title,
- description: meta.shortDescription,
-};
-
 export default async function HomePage() {
  const userData = await GetUserData();
  const contributions = await getTotalContributionsForYears();

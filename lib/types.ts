@@ -30,7 +30,6 @@ export type Project = {
 
 export type Header = {
  title: string;
- subtitle: string;
  description: string;
 };
 
@@ -55,6 +54,7 @@ export type Meta = {
  title: string;
  description: string;
  shortDescription: string;
+ keywords: string[];
  url: string;
  accounts: {
   github: {

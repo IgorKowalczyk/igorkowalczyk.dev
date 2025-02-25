@@ -3,7 +3,7 @@ import { meta } from "@/config";
 
 export const runtime = "edge";
 export const contentType = "image/png";
-export const alt = `${meta.title} - ${meta.shortDescription}`;
+export const alt = `${meta.title} - ${meta.description}`;
 export const size = {
  width: 1200,
  height: 630,
