@@ -1,9 +1,9 @@
 import { ImageResponse } from "next/og";
-import { meta } from "@/config";
+import { header, meta } from "@/config/metadata";
 
 export const runtime = "edge";
 export const contentType = "image/png";
-export const alt = `${meta.title} - ${meta.shortDescription}`;
+export const alt = `${header.title} - ${meta.shortDescription}`;
 export const size = {
  width: 1200,
  height: 630,
@@ -51,7 +51,7 @@ export default async function Image() {
       fontSize: 64,
      }}
     >
-     {meta.title}
+     {header.title}
     </div>
     <div
      style={{

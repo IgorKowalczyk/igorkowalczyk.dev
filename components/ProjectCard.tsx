@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Icons } from "./Icons";
+import { Icons } from "@/components/Icons";
 import { Button } from "@/components/Button";
 import Link from "@/components/Link";
 import type { Project } from "@/lib/types";

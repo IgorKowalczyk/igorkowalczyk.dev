@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { Button } from "../components/Button";
-import { Icons } from "../components/Icons";
+import { Button } from "@/components/Button";
+import { Icons } from "@/components/Icons";
 import { ContactForm } from "@/components/client/ContactForm";
 import { Description, Header2 } from "@/components/Headers";
 import Link from "@/components/Link";
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/config";
-import { header, contact, meta, technologies } from "@/config";
+import { header, meta, technologies, contact, projects } from "@/config";
 import { GetUserData, getTotalContributionsForYears } from "@/lib/graphql";
 import { ConvertNumber } from "@/lib/utils";
 

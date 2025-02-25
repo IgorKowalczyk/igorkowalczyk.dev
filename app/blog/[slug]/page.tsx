@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Header1 } from "@/components/Headers";
 import Link from "@/components/Link";
 import { MDXComponent } from "@/components/MDXComponents";
-import { meta } from "@/config";
+import { meta } from "@/config/metadata";
 import { cn } from "@/lib/utils";
 import { parseISO } from "@/lib/utils";
 import Avatar from "@/public/assets/avatar.png";

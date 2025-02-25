@@ -6,7 +6,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { Nav } from "@/components/client/Nav";
 import { Providers } from "@/components/client/Providers";
 import { Footer } from "@/components/Footer";
-import { meta } from "@/config";
+import { meta } from "@/config/metadata";
 import "styles/globals.css";
 import { cn } from "@/lib/utils";
 

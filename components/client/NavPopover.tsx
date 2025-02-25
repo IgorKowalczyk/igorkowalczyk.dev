@@ -1,9 +1,9 @@
 "use client";
 
 import { CloseButton, Popover, PopoverButton, PopoverPanel, PopoverProps } from "@headlessui/react";
-import { Icons } from "../Icons";
+import { Icons } from "@/components/Icons";
 import Link from "@/components/Link";
-import { meta } from "@/config";
+import { meta } from "@/config/metadata";
 
 export default function NavPopover(props: PopoverProps) {
  return (

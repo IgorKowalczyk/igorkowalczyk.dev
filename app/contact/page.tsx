@@ -1,7 +1,7 @@
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/client/ContactForm";
 import { Description, Header2 } from "@/components/Headers";
-import { contact } from "@/config";
+import { contact } from "@/config/contact";
 
 export const metadata = {
  title: "Contact",

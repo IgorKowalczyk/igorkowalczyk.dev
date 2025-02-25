@@ -1,12 +1,12 @@
 import { allBlogs } from "contentlayer/generated";
 import { redirect } from "next/navigation";
 import { ImageResponse } from "next/og";
-import { meta } from "@/config";
+import { header, meta } from "@/config/metadata";
 import { parseISO } from "@/lib/utils";
 
 export const runtime = "edge";
 export const contentType = "image/png";
-export const alt = `${meta.title} - ${meta.shortDescription}`;
+export const alt = `${header.title} - ${meta.shortDescription}`;
 export const size = {
  width: 1200,
  height: 630,

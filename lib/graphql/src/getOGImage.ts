@@ -1,4 +1,4 @@
-import { meta } from "@/config";
+import { meta } from "@/config/metadata";
 import { requestGraphql } from "@/lib/graphql/src/requestGraphql";
 import { Language } from "@/lib/types";
 

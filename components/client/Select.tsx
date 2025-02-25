@@ -1,7 +1,7 @@
 "use client";
 
 import { Listbox, ListboxButton, ListboxOptions, ListboxOption, ListboxProps } from "@headlessui/react";
-import { Icons } from "../Icons";
+import { Icons } from "@/components/Icons";
 
 export interface SelectProps extends ListboxProps {
  value: string;

@@ -2,10 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import MobileNav from "@/components/client/MobileNav";
-import Popover from "@/components/client/NavPopover";
+import NavPopover from "@/components/client/NavPopover";
 import Settings from "@/components/client/Settings";
 import Link from "@/components/Link";
-import { nav } from "@/config";
+import { nav } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
 interface NavItemProps {
@@ -56,7 +56,7 @@ export function Nav() {
     {nav.main.map((item) => {
      return <NavItem path={item.href} text={item.title} key={`nav-left-${item.href}`} />;
     })}
-    <Popover className="relative" />
+    <NavPopover className="relative" />
    </div>
    <Settings />
   </nav>

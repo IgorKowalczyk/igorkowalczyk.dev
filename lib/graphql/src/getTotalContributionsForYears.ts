@@ -1,5 +1,5 @@
-import { getTotalContributionsForYear } from "./getTotalContributionsForYear";
-import { getTotalYears } from "./getTotalYears";
+import { getTotalContributionsForYear } from "@/lib/graphql/src/getTotalContributionsForYear";
+import { getTotalYears } from "@/lib/graphql/src/getTotalYears";
 
 interface ContributionResult {
  year: number;

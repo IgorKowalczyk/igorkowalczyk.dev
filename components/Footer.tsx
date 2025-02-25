@@ -1,5 +1,5 @@
 import Link from "@/components/Link";
-import { footer } from "@/config";
+import { footer } from "@/config/footer";
 
 export function Footer() {
  return (

@@ -1,8 +1,8 @@
 import "server-only";
 
-export * from "./src/getOGImage";
-export * from "./src/getTotalContributionsForYear";
-export * from "./src/getTotalContributionsForYears";
-export * from "./src/getTotalYears";
-export * from "./src/getUserData";
-export * from "./src/requestGraphql";
+export * from "@/lib/graphql/src/getOGImage";
+export * from "@/lib/graphql/src/getTotalContributionsForYear";
+export * from "@/lib/graphql/src/getTotalContributionsForYears";
+export * from "@/lib/graphql/src/getTotalYears";
+export * from "@/lib/graphql/src/getUserData";
+export * from "@/lib/graphql/src/requestGraphql";

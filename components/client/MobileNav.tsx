@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Drawer } from "vaul";
 import { Button, buttonVariants } from "@/components/Button";
 import { Icons } from "@/components/Icons";
-import { nav } from "@/config";
+import { nav } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
 export default function MobileNav() {
