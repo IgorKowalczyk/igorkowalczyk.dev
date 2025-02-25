@@ -18,7 +18,6 @@ export default function Settings() {
  const { resolvedTheme, setTheme } = useTheme();
 
  useEffect(() => {
-   
   setDecorationsEnabled(() => localStorage.getItem("decorations") !== "false");
  }, []);
 
