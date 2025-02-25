@@ -4,7 +4,7 @@ import { trace, Context } from "@opentelemetry/api";
 
 export function register() {
  registerOTel({
-  serviceName: "acme-next-app",
+  serviceName: "portfolio",
   traceExporter: "auto",
   spanProcessors: ["auto"],
   traceSampler: {
