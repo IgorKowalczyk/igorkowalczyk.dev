@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
 import { header, meta } from "@/config/metadata";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-export const runtime = "edge";
 export const contentType = "image/png";
 export const alt = `${header.title} - ${meta.shortDescription}`;
 export const size = {
@@ -10,8 +11,8 @@ export const size = {
 };
 
 export default async function Image() {
- const fontBold = fetch(new URL("public/fonts/geist-mono-900.otf", import.meta.url)).then((res) => res.arrayBuffer());
- const fontRegular = fetch(new URL("public/fonts/geist-mono-400.otf", import.meta.url)).then((res) => res.arrayBuffer());
+ const fontBold = await readFile(join(process.cwd(), "public/fonts/geist-mono-900.otf"));
+ const fontRegular = await readFile(join(process.cwd(), "public/fonts/geist-mono-400.otf"));
 
  return new ImageResponse(
   (

@@ -10,6 +10,9 @@ import { meta } from "@/config/metadata";
 import "styles/globals.css";
 import { cn } from "@/lib/utils";
 import { AxiomWebVitals } from "next-axiom";
+import { register } from "@/instrumentation";
+
+register();
 
 export const metadata = {
  metadataBase: new URL(meta.url),
