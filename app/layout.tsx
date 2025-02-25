@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { meta } from "@/config/metadata";
 import "styles/globals.css";
 import { cn } from "@/lib/utils";
+import { AxiomWebVitals } from "next-axiom";
 
 export const metadata = {
  metadataBase: new URL(meta.url),
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
        <div className="color-rays" />
        <Footer />
        <Analytics />
+       <AxiomWebVitals />
       </Providers>
      </ThemeProvider>
     </body>

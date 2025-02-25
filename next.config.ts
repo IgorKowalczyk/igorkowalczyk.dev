@@ -1,6 +1,7 @@
 /* eslint-disable require-await */
 import type { NextConfig } from "next";
 import { withContentlayer } from "next-contentlayer2";
+import { withAxiom } from "next-axiom";
 
 const nextConfig: NextConfig = {
  env: {
@@ -140,7 +141,7 @@ const nextConfig: NextConfig = {
  },
 };
 
-export default withContentlayer(nextConfig);
+export default withAxiom(withContentlayer(nextConfig));
 
 // export default () => {
 //  const plugins = [withContentlayer, withBundleAnalyzer];
