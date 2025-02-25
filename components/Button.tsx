@@ -22,7 +22,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement | HT
  icon?: boolean;
  type?: HTMLButtonElement["type"];
  disabled?: HTMLButtonElement["disabled"];
- ref?: React.Ref<HTMLButtonElement | HTMLAnchorElement> | null;
+ ref?: React.RefObject<HTMLButtonElement | HTMLAnchorElement> | null;
 }
 
 export const Button = ({ ref, href, children, icon = true, variant, ...props }: ButtonProps) => {

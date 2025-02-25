@@ -7,7 +7,7 @@
 }
 
 * {
- @apply box-border outline-2 outline-offset-4 outline-[#4d67ff] dark:outline-[#1491ff];
+ @apply box-border outline-offset-2;
  scrollbar-color: #161617 transparent;
  scrollbar-width: thin;
 }

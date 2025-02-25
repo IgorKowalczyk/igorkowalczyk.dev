@@ -1,7 +1,7 @@
 /* eslint-disable require-await */
 import type { NextConfig } from "next";
-import { withContentlayer } from "next-contentlayer2";
 import { withAxiom } from "next-axiom";
+import { withContentlayer } from "next-contentlayer2";
 
 const nextConfig: NextConfig = {
  env: {

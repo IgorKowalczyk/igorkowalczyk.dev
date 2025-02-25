@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/Button";
-import { Icons } from "@/components/Icons";
-import { ContactForm } from "@/components/client/ContactForm";
+import { ContactForm } from "@/components/ContactForm";
 import { Description, Header2 } from "@/components/Headers";
+import { Icons } from "@/components/Icons";
 import Link from "@/components/Link";
 import { ProjectCard } from "@/components/ProjectCard";
 import { header, meta, technologies, contact, projects } from "@/config";

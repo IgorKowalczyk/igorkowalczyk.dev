@@ -1,7 +1,7 @@
 import { allBlogs } from "contentlayer/generated";
 import { pick } from "contentlayer2/client";
-import { Icons } from "@/components/Icons";
 import { Description, Header1, Header2 } from "@/components/Headers";
+import { Icons } from "@/components/Icons";
 import Link from "@/components/Link";
 import { parseISO } from "@/lib/utils";
 

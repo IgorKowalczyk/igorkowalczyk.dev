@@ -1,5 +1,5 @@
 import { Button } from "@/components/Button";
-import { ContactForm } from "@/components/client/ContactForm";
+import { ContactForm } from "@/components/ContactForm";
 import { Description, Header2 } from "@/components/Headers";
 import { contact } from "@/config/contact";
 

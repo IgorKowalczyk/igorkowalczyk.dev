@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Icons } from "@/components/Icons";
 import { Button } from "@/components/Button";
+import { Icons } from "@/components/Icons";
 import Link from "@/components/Link";
 import type { Project } from "@/lib/types";
 import { parseISO } from "@/lib/utils";

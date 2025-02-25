@@ -5,6 +5,7 @@ import tailwindGradientMaskImage from "tailwind-gradient-mask-image";
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 import { spacing, fontFamily } from "tailwindcss/defaultTheme";
+import tailwindAnimate from "tailwindcss-animate";
 import tailwindTextFill from "tailwindcss-text-fill";
 
 /** @type {import('tailwindcss').Config} */
@@ -81,5 +82,5 @@ export default {
  variants: {
   typography: ["dark"],
  },
- plugins: [tailwindTextFill, tailwindGradientMaskImage, tailwindHeadlessui, tailwindTypography, tailwindAspectRatio],
+ plugins: [tailwindTextFill, tailwindGradientMaskImage, tailwindHeadlessui, tailwindTypography, tailwindAspectRatio, tailwindAnimate],
 } satisfies Config;

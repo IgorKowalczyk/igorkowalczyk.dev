@@ -1,10 +1,10 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { allBlogs } from "contentlayer/generated";
 import { redirect } from "next/navigation";
 import { ImageResponse } from "next/og";
 import { header, meta } from "@/config/metadata";
 import { parseISO } from "@/lib/utils";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 
 export const contentType = "image/png";
 export const alt = `${header.title} - ${meta.shortDescription}`;

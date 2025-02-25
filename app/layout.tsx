@@ -1,15 +1,15 @@
 import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
 import Script from "next/script";
+import { AxiomWebVitals } from "next-axiom";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
-import { Nav } from "@/components/client/Nav";
-import { Providers } from "@/components/client/Providers";
 import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
+import { Providers } from "@/components/Providers";
 import { meta } from "@/config/metadata";
 import "styles/globals.css";
 import { cn } from "@/lib/utils";
-import { AxiomWebVitals } from "next-axiom";
 
 export const metadata = {
  metadataBase: new URL(meta.url),

@@ -1,7 +1,7 @@
-import { ImageResponse } from "next/og";
-import { header, meta } from "@/config/metadata";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { ImageResponse } from "next/og";
+import { header, meta } from "@/config/metadata";
 
 export const contentType = "image/png";
 export const alt = `${header.title} - ${meta.shortDescription}`;

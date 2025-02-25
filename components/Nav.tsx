@@ -1,10 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import MobileNav from "@/components/client/MobileNav";
-import NavPopover from "@/components/client/NavPopover";
-import Settings from "@/components/client/Settings";
 import Link from "@/components/Link";
+import MobileNav from "@/components/MobileNav";
+import NavPopover from "@/components/NavPopover";
+import Settings from "@/components/Settings";
 import { nav } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
