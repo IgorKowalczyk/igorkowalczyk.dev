@@ -5,7 +5,7 @@ import { registerOTel } from "@vercel/otel";
 export function register() {
  registerOTel({
   serviceName: "portfolio",
-  traceExporter: "auto",
-  spanProcessors: ["auto"],
+  // traceExporter: "auto",
+  // spanProcessors: ["auto"],
  });
 }
