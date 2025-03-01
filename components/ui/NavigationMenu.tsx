@@ -1,9 +1,9 @@
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import * as React from "react";
+import { useRef, useState } from "react";
 import { Icons } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
-import { useRef, useState } from "react";
 
 const NavigationMenuViewport = ({ className, ...props }: React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Viewport>) => (
  <div className="">
@@ -17,7 +17,6 @@ const NavigationMenu = ({ className, children, ...props }: React.ComponentPropsW
  const [activeItem, setActiveItem] = useState({ left: 0, width: 0, bottom: 0 });
 
  const onRootValueChange = (value: string) => {
-  console.log(value);
   if (!rootRef.current || !value) return;
   const trigger = rootRef.current?.querySelector(`#${value}`);
   const wrapper = rootRef.current?.firstChild as Element | null;
@@ -61,7 +60,6 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 
 const NavigationMenuItem = ({ ...props }: React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Item>) => {
  const id = props.value?.replace(" ", "-");
- console.log(id);
  return <NavigationMenuPrimitive.Item id={id} value={id} {...props} />;
 };
 
