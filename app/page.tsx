@@ -49,7 +49,7 @@ export default async function HomePage() {
    <section className="mb-16 mt-6">
     <Header2 id="about">About me</Header2>
 
-    <div className="prose-quoteless prose prose-neutral dark:prose-dark">
+    <div className="prose-quoteless prose prose-neutral dark:prose-invert">
      <span>I have been coding for over {new Date().getFullYear() - 2018} years, beginning my journey in late 2018. Initially, I learned HTML, CSS, and basic JavaScript to build websites.</span>
      <p>My first project was a simple music player made with JavaScript (~January 2019).</p>
      <span>In March 2020, I began learning Node.js and Express.js, and created my first major project, Majo.exe. In April 2022, I started learning React.js, Next.js, and Tailwind CSS.</span>
