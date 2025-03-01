@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const NavigationMenuViewport = ({ className, ...props }: React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Viewport>) => (
  <div className="">
-  <NavigationMenuPrimitive.Viewport forceMount className={cn("text-text viewport absolute mt-2 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-xl border border-black/10 bg-white/90 shadow-lg backdrop-blur-xl transition-[width,_height] duration-300 data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn dark:border-neutral-800 dark:bg-[#161617]/70 md:w-[var(--radix-navigation-menu-viewport-width)]", className)} {...props} />
+  <NavigationMenuPrimitive.Viewport className={cn("text-text viewport absolute mt-2 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-xl border border-black/10 bg-white/90 shadow-lg backdrop-blur-xl transition-[width,_height] duration-300 data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn dark:border-neutral-800 dark:bg-[#161617]/70 md:w-[var(--radix-navigation-menu-viewport-width)]", className)} {...props} />
  </div>
 );
 NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName;
