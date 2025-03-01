@@ -52,33 +52,5 @@ export const nav = {
     },
    ],
   },
-  {
-   title: "Social",
-   components: [
-    {
-     title: "Twitter",
-     href: `https://twitter.com/${meta.accounts.twitter.username}`,
-     description: "Follow me on Twitter for updates and thoughts.",
-     icon: "Twitter",
-    },
-    {
-     title: "Instagram",
-     href: `https://www.instagram.com/${meta.accounts.instagram.username}/`,
-     description: "View my visual diary and photography on Instagram.",
-     icon: "Instagram",
-    },
-   ],
-  },
-  {
-   title: "Community",
-   components: [
-    {
-     title: "Discord",
-     href: meta.accounts.discord.invite,
-     description: "Join my Discord server to chat and hang out.",
-     icon: "Discord",
-    },
-   ],
-  },
  ],
 } satisfies Nav;
