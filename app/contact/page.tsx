@@ -1,6 +1,7 @@
-import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
-import { Description, Header2 } from "@/components/Headers";
+import { Button } from "@/components/ui/Button";
+import { Description, Header2 } from "@/components/ui/Headers";
+import { Icons } from "@/components/ui/Icons";
 import { contact } from "@/config/contact";
 
 export const metadata = {
@@ -20,12 +21,16 @@ export default function Page() {
     </div>
     <Description>Or contact me with...</Description>
     <div className="mt-4 flex flex-wrap gap-4">
-     {contact.links.map((element) => (
-      <Button variant="tertiary" href={element.href} key={`contact-link-${element.href}`} className="gap-2">
-       <element.icon className="size-5" />
-       {element.title}
-      </Button>
-     ))}
+     {contact.links.map((element) => {
+      const Icon = Icons[element.icon];
+
+      return (
+       <Button variant="tertiary" href={element.href} key={`contact-link-${element.href}`} className="gap-2">
+        <Icon className="mr-2 size-5" />
+        {element.title}
+       </Button>
+      );
+     })}
     </div>
    </section>
   </div>

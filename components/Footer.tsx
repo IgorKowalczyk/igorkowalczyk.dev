@@ -1,4 +1,4 @@
-import Link from "@/components/Link";
+import Link from "@/components/ui/Link";
 import { footer } from "@/config/footer";
 
 export function Footer() {

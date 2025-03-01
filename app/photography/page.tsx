@@ -1,5 +1,5 @@
 import { Grid } from "./components/Grid";
-import { Description, Header1 } from "@/components/Headers";
+import { Description, Header1 } from "@/components/ui/Headers";
 import { getPhotography } from "@/lib/getPhotography";
 
 export const metadata = {

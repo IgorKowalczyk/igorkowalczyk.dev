@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
  eslint: {
   ignoreDuringBuilds: true,
  },
+ devIndicators: {
+  position: "bottom-right",
+ },
  async headers() {
   return [
    {

@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "next start",
-    "dev": "pnpm run build:content && next dev",
+    "dev": "pnpm run build:content && next dev --turbo",
     "dev:turbo": "pnpm run build:content && next dev --turbo --show-all",
     "build": "pnpm run build:content && next build",
     "build:content": "contentlayer2 build",
@@ -21,8 +21,6 @@
     "clean": "tsx lib/clean.ts"
   },
   "dependencies": {
-    "@headlessui/react": "2.2.0",
-    "@headlessui/tailwindcss": "0.2.2",
     "@marsidev/react-turnstile": "^1.1.0",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-navigation-menu": "^1.2.5",
