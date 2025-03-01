@@ -5,7 +5,7 @@ import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 import { cn } from "@/lib/utils";
 
-export const drawerVariants = cva("fixed z-10 flex w-full flex-col border-black/10 bg-white/90 p-6 !outline-none backdrop-blur-xl duration-200 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617]/70", {
+export const drawerVariants = cva("fixed z-10 flex w-full flex-col border-black/10 bg-white p-6 !outline-none duration-200 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617]", {
  variants: {
   variant: {
    bottom: "inset-x-0 bottom-0 border-t pb-12",
