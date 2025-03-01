@@ -38,14 +38,14 @@ export function MobileNavigation() {
  );
 }
 
-export const NavigationPopoverItem = ({ ref, className, title, children, iconName, ...props }: React.ComponentPropsWithRef<typeof Link> & { iconName: keyof typeof Icons }) => {
+export const NavigationPopoverItem = ({ ref, className, title, children, iconName, iconStyles, ...props }: React.ComponentPropsWithRef<typeof Link> & { iconName: keyof typeof Icons; iconStyles?: string }) => {
  const Icon = Icons[iconName] as React.ElementType;
  return (
   <li>
    <NavigationMenuLink asChild>
     <Link ref={ref} className={cn("flex w-full select-none items-center rounded-md p-3 leading-none outline-none transition-colors hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5", className)} {...props}>
      <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-black/10 text-white dark:bg-white/10 dark:text-neutral-800 sm:size-12">
-      <Icon className="inline size-6 stroke-black duration-200 motion-reduce:transition-none dark:stroke-white/70" />
+      <Icon className={cn("inline size-6 stroke-black duration-200 motion-reduce:transition-none dark:stroke-white/70", iconStyles || "")} />
      </div>
      <div className="ml-3 space-y-1 text-sm">
       <div className="font-medium leading-none text-neutral-900 dark:text-white">{title}</div>
@@ -66,7 +66,7 @@ export default function NavigationPopover() {
    <NavigationMenuContent className="">
     <ul className="w-[384px] space-y-1 p-2">
      {popover.components.map((component) => (
-      <NavigationPopoverItem href={component.href} title={component.title} key={component.title} iconName={component.icon}>
+      <NavigationPopoverItem href={component.href} title={component.title} key={component.title} iconName={component.icon} iconStyles={component.iconStyles}>
        {component.description}
       </NavigationPopoverItem>
      ))}

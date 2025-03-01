@@ -14,7 +14,7 @@ export default {
   // Prettier
   "./app/**/*.{js,ts,jsx,tsx}",
   "./components/**/*.{js,ts,jsx,tsx}",
-  "./config.{js,ts,jsx,tsx}",
+  "./config/*.{js,ts,jsx,tsx}",
   "./content/**/*.mdx",
  ],
  theme: {
