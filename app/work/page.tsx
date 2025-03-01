@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import { Button } from "@/components/Button";
-import { Description, Header1 } from "@/components/Headers";
-import { Icons } from "@/components/Icons";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Button } from "@/components/ui/Button";
+import { Description, Header1 } from "@/components/ui/Headers";
+import { Icons } from "@/components/ui/Icons";
 import { projects } from "@/config";
 import { meta } from "@/config";
 

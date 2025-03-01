@@ -1,5 +1,4 @@
-import type { LucideProps } from "lucide-react";
-import { JSX } from "react";
+import type { Icons } from "@/components/ui/Icons";
 
 export interface Language {
  size: number;
@@ -36,7 +35,7 @@ export type Header = {
 export interface ContactLink {
  href: string;
  title: string;
- icon: ({ ...props }: LucideProps) => JSX.Element;
+ icon: keyof typeof Icons;
 }
 
 export type Contact = {
@@ -73,4 +72,28 @@ export type Meta = {
    username: string;
   };
  };
+};
+
+export type NavItem = {
+ href: string;
+ title: string;
+ target?: string;
+};
+
+export type NavPopoverItem = {
+ title: string;
+ href: string;
+ description: string;
+ icon: keyof typeof Icons;
+};
+
+export type NavPopover = {
+ title: string;
+ components: NavPopoverItem[];
+};
+
+export type Nav = {
+ main: NavItem[];
+ mobile: NavItem[];
+ popovers: NavPopover[];
 };

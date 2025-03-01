@@ -5,7 +5,7 @@ import { AxiomWebVitals } from "next-axiom";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
 import { Footer } from "@/components/Footer";
-import { Nav } from "@/components/Nav";
+import { Navigation } from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import { meta } from "@/config/metadata";
 import "styles/globals.css";
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <body className={cn("antialiase relative scroll-smooth px-6 font-mono", GeistMono.variable)}>
      <ThemeProvider attribute="class" disableTransitionOnChange>
       <Providers>
-       <Nav />
+       <Navigation />
        <main className="mx-auto min-h-screen w-full max-w-screen-md">{children}</main>
        <div className="noise pointer-events-none absolute inset-0" />
        <div className="color-rays" />

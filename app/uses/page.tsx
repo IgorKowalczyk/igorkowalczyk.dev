@@ -1,9 +1,9 @@
 import { allOtherPages } from "contentlayer/generated";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Header1 } from "@/components/Headers";
-import Link from "@/components/Link";
 import { MDXComponent } from "@/components/MDXComponents";
+import { Header1 } from "@/components/ui/Headers";
+import Link from "@/components/ui/Link";
 import setup from "@/public/assets/setup.jpg";
 
 export const metadata = {

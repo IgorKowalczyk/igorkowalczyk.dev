@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Masonry } from "react-plock";
-import Link from "@/components/Link";
+import Link from "@/components/ui/Link";
 import type { Photo } from "@/lib/getPhotography";
 
 export const Grid = ({ photos }: { photos: Photo[] }) => {

@@ -1,8 +1,8 @@
 import { allBlogs } from "contentlayer/generated";
 import { pick } from "contentlayer2/client";
-import { Description, Header1, Header2 } from "@/components/Headers";
-import { Icons } from "@/components/Icons";
-import Link from "@/components/Link";
+import { Description, Header1, Header2 } from "@/components/ui/Headers";
+import { Icons } from "@/components/ui/Icons";
+import Link from "@/components/ui/Link";
 import { parseISO } from "@/lib/utils";
 
 export const metadata = {

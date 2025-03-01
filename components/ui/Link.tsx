@@ -7,10 +7,10 @@ const Link = function Link({ ref, ...props }: LinkProps & { ref?: React.RefObjec
  const { href, ...rest } = props;
 
  if (typeof href === "string" && href.startsWith("#")) {
-  return <NextLink {...rest} href={href} ref={ref} />;
+  return <NextLink href={href} ref={ref} {...rest} />;
  }
 
- return <TransitionLink {...rest} href={href} ref={ref} />;
+ return <TransitionLink href={href} ref={ref} {...rest} />;
 };
 
 export default Link;

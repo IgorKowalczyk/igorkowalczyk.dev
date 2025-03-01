@@ -3,13 +3,13 @@
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Button } from "@/components/Button";
-import { Dialog, DialogContent, DialogHeader, DialogDescription, DialogTitle, DialogFooter } from "@/components/Dialog";
-import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/Drawer";
-import { Icons } from "@/components/Icons";
-import Link from "@/components/Link";
-import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/Select";
-import Switch from "@/components/Switch";
+import { Button } from "@/components/ui/Button";
+import { Dialog, DialogContent, DialogHeader, DialogDescription, DialogTitle, DialogFooter } from "@/components/ui/Dialog";
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/ui/Drawer";
+import { Icons } from "@/components/ui/Icons";
+import Link from "@/components/ui/Link";
+import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/Select";
+import Switch from "@/components/ui/Switch";
 import { meta } from "@/config/metadata";
 import { useIsMobile } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
@@ -100,7 +100,7 @@ export default function Settings() {
       "!bg-neutral-300 dark:!bg-white/15": isOpen,
       "!bg-transparent hover:!bg-neutral-300 dark:hover:!bg-white/15": !isOpen,
      },
-     "group ml-auto flex h-10 w-10 items-center justify-center px-2 !outline-none"
+     "group ml-auto flex h-10 w-10 items-center justify-center rounded-md px-2 !outline-none duration-200 focus:!bg-neutral-300 dark:focus:!bg-white/15"
     )}
    >
     <Icons.Settings

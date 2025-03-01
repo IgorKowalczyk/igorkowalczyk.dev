@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Button } from "@/components/Button";
-import { Icons } from "@/components/Icons";
-import Link from "@/components/Link";
+import { Button } from "@/components/ui/Button";
+import { Icons } from "@/components/ui/Icons";
+import Link from "@/components/ui/Link";
 import type { Project } from "@/lib/types";
 import { parseISO } from "@/lib/utils";
 import { cn } from "@/lib/utils";
