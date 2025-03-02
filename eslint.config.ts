@@ -8,7 +8,7 @@ export default [
  ...eslintConfig.react,
  ...eslintConfig.next,
  ...eslintConfig.node,
- ...eslintConfig.tailwindcss,
+ // ...eslintConfig.tailwindcss,
  ...eslintConfig.typescript,
  {
   name: "Override",
