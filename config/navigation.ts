@@ -37,7 +37,7 @@ export const nav = {
      href: `https://github.com/${meta.accounts.github.username}`,
      description: "Explore my projects and contributions on GitHub.",
      icon: "Github",
-     iconStyles: "fill-black dark:fill-white/70 !stroke-none",
+     iconStyles: "fill-black dark:fill-white/70 stroke-none!",
     },
     {
      title: "Photography Portfolio",

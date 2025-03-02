@@ -36,12 +36,12 @@ Next.js has several options for rendering pages:
 
 With Tailwind, you don't have to leave the HTML file to add styles to elements. Tailwind will generate the corresponding CSS classes during production and optimize them - no duplicates and no worries about load time.
 
-<a href="https://tailwindcss.com/" className="mb-6 inline-block cursor-pointer rounded bg-blue-500 py-2 px-4 font-bold !text-white duration-200 hover:bg-blue-600">
+<a href="https://tailwindcss.com/" className="mb-6 inline-block cursor-pointer rounded-sm bg-blue-500 py-2 px-4 font-bold text-white! duration-200 hover:bg-blue-600">
  <span>Tailwind</span>
 </a>
 
 ```js {1} title="page.tsx" showLineNumbers
-<a href="https://tailwindcss.com/" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded duration-200 inline-block cursor-pointer">
+<a href="https://tailwindcss.com/" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm duration-200 inline-block cursor-pointer">
 <span>Tailwind</span>
 </a>
 ```

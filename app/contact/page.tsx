@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function Page() {
  return (
-  <div className="mb-16 mt-20">
+  <div className="mt-20 mb-16">
    <section className="mb-12">
     <Header2 id="contact">Contact me</Header2>
     <Description>I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.</Description>

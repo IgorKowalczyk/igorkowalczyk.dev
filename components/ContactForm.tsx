@@ -99,7 +99,7 @@ export function ContactForm() {
       className={cn(
        {
         "border-red-400 text-red-400": invalid.name,
-        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700": !invalid.name,
+        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.name,
        },
        "my-2 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
       )}
@@ -120,7 +120,7 @@ export function ContactForm() {
       className={cn(
        {
         "border-red-400 text-red-400": invalid.email,
-        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700": !invalid.email,
+        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.email,
        },
        "my-2 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
       )}
@@ -143,7 +143,7 @@ export function ContactForm() {
       className={cn(
        {
         "border-red-400 text-red-400": invalid.message,
-        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700": !invalid.message,
+        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.message,
        },
        "mt-2 max-h-40 min-h-24 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
       )}
@@ -182,7 +182,7 @@ export function ContactForm() {
     </p>
    )}
 
-   <Button variant="secondary" className="ml-auto mt-4" icon={false} type="submit" disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}>
+   <Button variant="secondary" className="mt-4 ml-auto" icon={false} type="submit" disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}>
     {pending ? (
      <>
       <Icons.RefreshCw className="mr-2 size-4 animate-spin duration-200 motion-reduce:transition-none" />

@@ -24,7 +24,7 @@ export function SettingsContent() {
 
  return (
   <div className="mt-2 divide-y divide-black/10 dark:divide-white/10">
-   <div className="flex w-full cursor-auto select-none items-center py-3 text-base text-neutral-800 dark:text-white">
+   <div className="flex w-full cursor-auto items-center py-3 text-base text-neutral-800 select-none dark:text-white">
     <Icons.SunMoon className="mr-2 size-5" />
     Theme
     <div className="ml-auto w-32">
@@ -66,10 +66,10 @@ export function SettingsContent() {
     </div>
    </div>
 
-   <div className="flex w-full select-none items-center py-3 text-base text-neutral-800 dark:text-white">
+   <div className="flex w-full items-center py-3 text-base text-neutral-800 select-none dark:text-white">
     <Icons.Sparkles className="mr-2 size-5" />
     Display decorations
-    <div className="ml-auto flex w-32 items-center justify-end gap-2 text-sm italic text-neutral-800/50 dark:text-neutral-300/50">
+    <div className="ml-auto flex w-32 items-center justify-end gap-2 text-sm text-neutral-800/50 italic dark:text-neutral-300/50">
      <Switch
       checked={decorationsEnabled}
       onCheckedChange={() => {
@@ -97,10 +97,10 @@ export default function Settings() {
     onClick={() => setIsOpen(true)}
     className={cn(
      {
-      "!bg-neutral-300 dark:!bg-white/15": isOpen,
-      "!bg-transparent hover:!bg-neutral-300 dark:hover:!bg-white/15": !isOpen,
+      "bg-neutral-300! dark:bg-white/15!": isOpen,
+      "bg-transparent! hover:bg-neutral-300! dark:hover:bg-white/15!": !isOpen,
      },
-     "group ml-auto flex h-10 w-10 items-center justify-center rounded-md px-2 !outline-none duration-200 focus:!bg-neutral-300 dark:focus:!bg-white/15"
+     "group ml-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-md px-2 outline-hidden! duration-200 focus:bg-neutral-300! dark:focus:bg-white/15!"
     )}
    >
     <Icons.Settings
@@ -115,7 +115,7 @@ export default function Settings() {
    </Button>
 
    {isMobile ? (
-    <Drawer direction="bottom" open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
+    <Drawer shouldScaleBackground={true} direction="bottom" open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
      <DrawerContent variant="bottom">
       <DrawerHeader>
        <DrawerTitle>

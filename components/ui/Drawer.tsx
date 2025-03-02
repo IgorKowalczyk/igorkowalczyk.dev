@@ -5,7 +5,7 @@ import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 import { cn } from "@/lib/utils";
 
-export const drawerVariants = cva("fixed z-10 flex w-full flex-col border-black/10 bg-white p-6 !outline-none duration-200 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617]", {
+export const drawerVariants = cva("fixed z-20 flex w-full flex-col border-black/10 bg-white p-6 outline-hidden! duration-200 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617]", {
  variants: {
   variant: {
    bottom: "inset-x-0 bottom-0 border-t pb-12",
@@ -17,7 +17,7 @@ export const drawerVariants = cva("fixed z-10 flex w-full flex-col border-black/
  },
 });
 
-export const Drawer = ({ ...props }: React.ComponentProps<typeof DrawerPrimitive.Root>) => <DrawerPrimitive.Root shouldScaleBackground={true} {...props} />;
+export const Drawer = ({ ...props }: React.ComponentProps<typeof DrawerPrimitive.Root>) => <DrawerPrimitive.Root {...props} />;
 Drawer.displayName = "Drawer";
 
 export const DrawerTrigger = DrawerPrimitive.Trigger;
@@ -33,7 +33,7 @@ export const DrawerContent = ({ className, children, variant, ...props }: Drawer
  <DrawerPortal>
   <DrawerOverlay />
   <DrawerPrimitive.Content className={cn(drawerVariants({ variant }), className)} {...props}>
-   <div className={cn("mx-auto h-1 w-12 rounded-full bg-neutral-400", variant === "left" ? "absolute right-0 top-1/2 -translate-y-1/2 rotate-90" : "mb-3")} />
+   <div className={cn("mx-auto h-1 w-12 rounded-full bg-neutral-400", variant === "left" ? "absolute top-1/2 right-0 -translate-y-1/2 rotate-90" : "mb-3")} />
    {children}
   </DrawerPrimitive.Content>
  </DrawerPortal>

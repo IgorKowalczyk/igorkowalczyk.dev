@@ -15,8 +15,8 @@ export default async function HomePage() {
 
  return (
   <>
-   <section className="mb-16 mt-20">
-    <h1 className="dark:color-black relative m-0 text-4xl font-black tracking-[-0.03em] text-neutral-800 duration-300 dark:text-white md:text-left">Hey, I’m {header.title}</h1>
+   <section className="mt-20 mb-16">
+    <h1 className="dark:color-black relative m-0 text-4xl font-black tracking-[-0.03em] text-neutral-800 duration-300 md:text-left dark:text-white">Hey, I’m {header.title}</h1>
     <p className="mt-2 text-lg text-neutral-700 dark:text-neutral-400">{header.description}</p>
     <div className="mt-9 flex flex-row flex-wrap gap-4">
      <Button variant="primary" href="/#contact">
@@ -46,7 +46,7 @@ export default async function HomePage() {
     </Link>
    </section>
 
-   <section className="mb-16 mt-6">
+   <section className="mt-6 mb-16">
     <Header2 id="about">About me</Header2>
 
     <div className="prose-quoteless prose prose-neutral dark:prose-invert">
@@ -91,7 +91,7 @@ export default async function HomePage() {
      {technologies.map((tech) => {
       return (
        <Link href={tech.link || "#"} key={`tech-link-${tech.name}`} className="flex cursor-pointer items-center gap-2 rounded-md border border-black/10 px-2 py-1 font-mono font-medium text-neutral-500 duration-200 hover:bg-black/5 motion-reduce:transition-none dark:border-neutral-800 dark:text-white/50 dark:hover:border-neutral-700 dark:hover:bg-white/5">
-        <Image src={tech.icon} alt={`${tech.name} logo`} width={20} height={20} className="size-5 rounded" /> {tech.name}
+        <Image src={tech.icon} alt={`${tech.name} logo`} width={20} height={20} className="size-5 rounded-sm" /> {tech.name}
        </Link>
       );
      })}

@@ -6,7 +6,7 @@ type LinkProps = NextLinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 const Link = function Link({ ref, ...props }: LinkProps & { ref?: React.RefObject<HTMLAnchorElement> }) {
  const { href, ...rest } = props;
 
- if (typeof href === "string" && href.startsWith("#")) {
+ if (typeof href === "string" && href.includes("#")) {
   return <NextLink href={href} ref={ref} {...rest} />;
  }
 
