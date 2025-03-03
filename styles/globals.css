@@ -13,6 +13,8 @@
  --animate-exit-to-left: exitToLeft 250ms ease;
  --animate-exit-to-right: exitToRight 250ms ease;
 
+ --font-mono: "GeistMono", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+
  --color-transparent: transparent;
  --hidden: false;
 
