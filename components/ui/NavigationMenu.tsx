@@ -47,9 +47,8 @@ const NavigationMenu = ({ className, children, ...props }: React.ComponentPropsW
     } as React.CSSProperties
    }
   >
-   {children}
-
    <NavigationMenuViewport />
+   {children}
   </NavigationMenuPrimitive.Root>
  );
 };

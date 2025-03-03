@@ -92,8 +92,8 @@ export function NavigationItem({ path, text }: { path: string; text: string }) {
 
 export function Navigation() {
  return (
-  <NavigationMenu className="z-10 mx-auto flex w-full max-w-3xl items-center gap-4 pt-9 font-mono">
-   <Link href="/" className="text-lg font-black text-neutral-800 duration-300 motion-reduce:transition-none dark:text-white">
+  <NavigationMenu className="max-w-body z-10 mx-auto flex w-full items-center gap-4 pt-9 font-mono">
+   <Link href="/" className="-ml-4 text-lg font-black text-neutral-800 duration-300 motion-reduce:transition-none dark:text-white">
     IK
     <span className="text-fill-transparent bg-linear-to-r from-[#6310ff] to-[#14291ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">.</span>
    </Link>

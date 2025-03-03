@@ -3,7 +3,7 @@ import { footer } from "@/config/footer";
 
 export function Footer() {
  return (
-  <footer className="mx-auto w-full max-w-3xl pb-12">
+  <footer className="max-w-body mx-auto w-full pb-12">
    <hr className="mx-auto mb-5 w-full border border-neutral-200 dark:border-neutral-800" />
    <p className="mb-4 text-sm text-neutral-700 opacity-50 dark:text-neutral-300">Copyright &copy; 2019 - {new Date().getFullYear()} Igor Kowalczyk</p>
 

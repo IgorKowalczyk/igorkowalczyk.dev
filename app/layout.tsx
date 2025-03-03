@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
      <ThemeProvider attribute="class" disableTransitionOnChange>
       <Providers>
        <Navigation />
-       <main className="mx-auto min-h-screen w-full max-w-3xl" data-vaul-drawer-wrapper="">
+       <main className="max-w-body mx-auto min-h-screen w-full" data-vaul-drawer-wrapper="">
         {children}
        </main>
        <div className="noise pointer-events-none absolute inset-0" />

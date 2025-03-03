@@ -17,6 +17,7 @@
 
  --color-transparent: transparent;
  --hidden: false;
+ --width-body: 768px;
 
  @keyframes rotate-hue {
   0% {
@@ -179,6 +180,10 @@
 
 @utility text-fill-* {
  -webkit-text-fill-color: --value(--color- *);
+}
+
+@utility max-w-body {
+ max-width: var(--width-body);
 }
 
 @layer components {
