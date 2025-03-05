@@ -48,8 +48,8 @@ importers:
         specifier: 0.477.0
         version: 0.477.0(react@19.0.0)
       mdx-bundler:
-        specifier: 10.1.0
-        version: 10.1.0(acorn@8.14.0)(esbuild@0.25.0)
+        specifier: 10.1.1
+        version: 10.1.1(acorn@8.14.0)(esbuild@0.25.0)
       next:
         specifier: 15.2.1
         version: 15.2.1(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -2735,8 +2735,8 @@ packages:
   mdast-util-to-string@4.0.0:
     resolution: {integrity: sha512-0H44vDimn51F0YwvxSJSm0eCDOJTRlmN0R1yBh4HLj9wiV1Dn0QoXGbvFAWj2hSItVTlCmBF1hqKlIyUBVFLPg==}
 
-  mdx-bundler@10.1.0:
-    resolution: {integrity: sha512-HtyVyqzBz/rG3hjca2ZggI5Ghx8YdBeAfnDIgqiMVOZyum1WcmBsdPKYN0AhV4SNaxyohASIrwC8DiXtU55FUA==}
+  mdx-bundler@10.1.1:
+    resolution: {integrity: sha512-87FtxC7miUPznwqEaAlJARinHJ6Qin9kDuG2E2BCCNEOszr62kHpqivI/IF/CmwObVSpvApVFFxN1ftM/Gykvw==}
     engines: {node: '>=18', npm: '>=6'}
     peerDependencies:
       esbuild: 0.*
@@ -3927,7 +3927,7 @@ snapshots:
       camel-case: 4.1.2
       comment-json: 4.2.5
       gray-matter: 4.0.3
-      mdx-bundler: 10.1.0(acorn@8.14.0)(esbuild@0.25.0)
+      mdx-bundler: 10.1.1(acorn@8.14.0)(esbuild@0.25.0)
       rehype-stringify: 10.0.1
       remark-frontmatter: 5.0.0
       remark-parse: 11.0.0
@@ -6991,7 +6991,7 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.4
 
-  mdx-bundler@10.1.0(acorn@8.14.0)(esbuild@0.25.0):
+  mdx-bundler@10.1.1(acorn@8.14.0)(esbuild@0.25.0):
     dependencies:
       '@babel/runtime': 7.26.9
       '@esbuild-plugins/node-resolve': 0.2.2(esbuild@0.25.0)
