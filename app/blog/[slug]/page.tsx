@@ -81,7 +81,7 @@ export default async function Blog({ params }: Props) {
     </div>
     <div className="sticky top-24 col-start-3! mt-8 ml-12 hidden max-w-56 flex-col space-y-2 self-start text-base xl:flex">
      <p className="mb-2 text-sm uppercase">On this page</p>
-     {post.headings.map((props) => (
+     {post.headings.map((props: { size: number; content: string; slug: string }) => (
       <Link
        key={props.slug}
        href={`#${props.slug}`}

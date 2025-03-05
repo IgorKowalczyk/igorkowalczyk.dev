@@ -1,4 +1,3 @@
-// @ts-expect-error Missing type definitions
 import eslintConfig from "@igorkowalczyk/eslint-config";
 import type { Linter } from "eslint";
 
