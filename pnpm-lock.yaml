@@ -84,8 +84,8 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-plock:
-        specifier: 3.4.0
-        version: 3.4.0(react@19.0.0)
+        specifier: 3.5.1
+        version: 3.5.1(react@19.0.0)
       reading-time:
         specifier: 1.5.0
         version: 1.5.0
@@ -3793,10 +3793,10 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
-  react-plock@3.4.0:
-    resolution: {integrity: sha512-u2L2V6xLDQSzZzl38PEPL2Z1zAQJ1CVuYnT44H5CjX6jbFqw9oRH+YzHuBpK2V/AbLep4PPwhht93lpeGC9Yqw==}
+  react-plock@3.5.1:
+    resolution: {integrity: sha512-uJqiSaib+/EwhNyKB4cb9YdNAlS0tXhr5I35exEbcdTbPM0EaMiSPdzhlH4lmjBCkNwMPs7Xi23PZo7EQ04ndQ==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.2.0 || ^19.0.0
 
   react-remove-scroll-bar@2.3.8:
     resolution: {integrity: sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==}
@@ -8528,7 +8528,7 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
-  react-plock@3.4.0(react@19.0.0):
+  react-plock@3.5.1(react@19.0.0):
     dependencies:
       react: 19.0.0
 
