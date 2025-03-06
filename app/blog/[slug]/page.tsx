@@ -1,6 +1,5 @@
 import { allBlogs } from "contentlayer/generated";
-import "styles/blog.css";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXComponent } from "@/components/MDXComponents";
@@ -17,9 +16,13 @@ export function generateStaticParams() {
  }));
 }
 
-export async function generateMetadata(props): Promise<Metadata | undefined> {
- const params = await props.params;
- const post = allBlogs.find((post) => post?.slug === params?.slug);
+type Props = {
+ params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata | undefined> {
+ const metadataParams = await params;
+ const post = allBlogs.find((post) => post?.slug === metadataParams?.slug);
 
  if (!post) return {};
 
@@ -43,24 +46,24 @@ export async function generateMetadata(props): Promise<Metadata | undefined> {
  };
 }
 
-export default async function Blog(props0) {
- const params = await props0.params;
- const post = allBlogs.find((post) => post.slug === params.slug);
+export default async function Blog({ params }: Props) {
+ const blogParams = await params;
+ const post = allBlogs.find((post) => post.slug === blogParams.slug);
 
  if (!post) return notFound();
 
  return (
-  <article className="mb-16 mt-20 flex min-h-screen flex-col items-start justify-center">
+  <article className="mt-20 mb-16 flex min-h-screen flex-col items-start justify-center">
    <script
     type="application/ld+json"
     // biome-ignore lint/security/noDangerouslySetInnerHtml: We trust the content of the JSON object
     dangerouslySetInnerHTML={{
-     __html: JSON.stringify(post?.structuredData),
+     __html: JSON.stringify(post.structuredData),
     }}
    />
-   <div className="grid flex-1 grid-cols-1 md:grid-cols-[1fr,minmax(auto,640px),1fr] md:[&>*]:col-start-2">
+   <div className="grid flex-1 grid-cols-1 md:grid-cols-[1fr_minmax(auto,640px)_1fr] md:*:col-start-2">
     <div>
-     <header className="w-full">
+     <header className="mb-4 w-full">
       <Header1>{post.title}</Header1>
       <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
        <div className="flex items-center">
@@ -69,16 +72,16 @@ export default async function Blog(props0) {
          {post.author} / {parseISO(post.publishedAt)}
         </time>
        </div>
-       <p className="mt-2 min-w-32 text-sm text-neutral-700 dark:text-neutral-300 md:mt-0">
+       <p className="mt-2 min-w-32 text-sm text-neutral-700 md:mt-0 dark:text-neutral-300">
         {post.wordCount} words • {post.readingTime?.text}
        </p>
       </div>
      </header>
      <MDXComponent code={post.body.code} />
     </div>
-    <div className="sticky top-24 !col-start-3 ml-12 mt-8 hidden max-w-56 flex-col space-y-2 self-start text-base xl:flex">
-     <p className="mb-0 text-sm uppercase">On this page</p>
-     {post.headings.map((props) => (
+    <div className="sticky top-24 col-start-3! mt-8 ml-12 hidden max-w-56 flex-col space-y-2 self-start text-base xl:flex">
+     <p className="mb-2 text-sm uppercase">On this page</p>
+     {post.headings.map((props: { size: number; content: string; slug: string }) => (
       <Link
        key={props.slug}
        href={`#${props.slug}`}
@@ -88,7 +91,7 @@ export default async function Blog(props0) {
          "ml-2": props.size === 2,
          "ml-4": props.size === 3,
         },
-        "!font-normal no-underline opacity-50 duration-200 hover:underline hover:opacity-100 motion-reduce:transition-none"
+        "font-normal! no-underline opacity-50 duration-200 hover:underline hover:opacity-100 motion-reduce:transition-none"
        )}
       >
        {props.content}

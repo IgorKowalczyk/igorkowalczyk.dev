@@ -79,11 +79,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Script>
      )}
     </head>
-    <body className={cn("antialiase relative scroll-smooth px-6 font-mono", GeistMono.variable)}>
+    <body className={cn("relative scroll-smooth bg-inherit! px-6 font-mono antialiased selection:bg-neutral-800 selection:text-white!", GeistMono.variable)}>
      <ThemeProvider attribute="class" disableTransitionOnChange>
       <Providers>
        <Navigation />
-       <main className="mx-auto min-h-screen w-full max-w-screen-md">{children}</main>
+       <main className="max-w-body mx-auto min-h-screen w-full" data-vaul-drawer-wrapper="">
+        {children}
+       </main>
        <div className="noise pointer-events-none absolute inset-0" />
        <div className="color-rays" />
        <Footer />

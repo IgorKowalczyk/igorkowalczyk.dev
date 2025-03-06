@@ -15,11 +15,11 @@ export function ProjectCard({ project, className, ...props }: ProjectCardProps) 
   <div key={project.name} {...props} className={cn("mb-16 overflow-hidden duration-200 motion-reduce:transition-none", className)}>
    <h3 className="mb-2 text-2xl font-bold tracking-[-0.03em]">{project.name}</h3>
    {project.started && (
-    <time className="my-2 block text-sm font-normal leading-none text-neutral-500 dark:text-neutral-500" dateTime={new Date(project.started).toUTCString()}>
+    <time className="my-2 block text-sm leading-none font-normal text-neutral-500 dark:text-neutral-500" dateTime={new Date(project.started).toUTCString()}>
      {parseISO(project.started)} - {project.ended ? parseISO(project.ended) : "Now"}
     </time>
    )}
-   <p className="mb-4 mt-2 text-neutral-700 dark:text-neutral-400 md:w-3/4">{project.description}</p>
+   <p className="mt-2 mb-4 text-neutral-700 md:w-3/4 dark:text-neutral-400">{project.description}</p>
    {project.images &&
     project.images.length > 0 &&
     project.images.map((image) => (

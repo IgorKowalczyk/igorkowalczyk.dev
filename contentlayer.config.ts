@@ -89,7 +89,7 @@ const contentLayerConfig = makeSource({
     {
      theme: "one-dark-pro",
      keepBackground: false,
-     onVisitLine(node) {
+     onVisitLine(node: { children: string | unknown[] }) {
       // Prevent lines from collapsing in `display: grid` mode, and allow empty
       // lines to be copy/pasted
       if (node.children.length === 0) {

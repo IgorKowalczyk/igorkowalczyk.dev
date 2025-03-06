@@ -17,7 +17,7 @@ test.describe("emulate different viewport sizes", () => {
    for (const endpoint of endpoints) {
     const page = await browser.newPage({
      extraHTTPHeaders: {
-      "x-vercel-protection-bypass": process.env.VERCEL_BYPASS,
+      "x-vercel-protection-bypass": process.env.VERCEL_BYPASS || "",
      },
      viewport: {
       height,

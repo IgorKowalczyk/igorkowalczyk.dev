@@ -13,7 +13,11 @@ export const size = {
  height: 630,
 };
 
-export default async function Image({ params }) {
+interface Params {
+ slug: string;
+}
+
+export default async function Image({ params }: { params: Params }) {
  const { slug } = params;
  const post = allBlogs.find((post) => post.slug === slug);
 

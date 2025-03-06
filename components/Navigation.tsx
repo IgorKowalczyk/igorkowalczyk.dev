@@ -11,13 +11,14 @@ import Link from "@/components/ui/Link";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem, navigationMenuTriggerStyle, NavigationMenuContent, NavigationMenuTrigger } from "@/components/ui/NavigationMenu";
 import { nav } from "@/config/navigation";
 import { cn } from "@/lib/utils";
+
 export function MobileNavigation() {
  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
  const menuItems = [...nav.main, ...nav.mobile];
 
  return (
-  <Drawer direction="left" open={isMenuOpen} onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
-   <DrawerTrigger className={cn(buttonVariants({ variant: "secondary" }), "size-10 justify-center border-0 !bg-transparent !outline-none hover:!bg-neutral-300 dark:hover:!bg-white/15 lg:hidden")}>
+  <Drawer shouldScaleBackground={false} direction="left" open={isMenuOpen} onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
+   <DrawerTrigger className={cn(buttonVariants({ variant: "secondary" }), "size-10 justify-center border-0 bg-transparent! outline-hidden! hover:bg-neutral-300! lg:hidden dark:hover:bg-white/15!")}>
     <Icons.AlignLeft className="size-5 shrink-0 text-neutral-900 dark:text-neutral-100" />
    </DrawerTrigger>
 
@@ -43,12 +44,12 @@ export const NavigationPopoverItem = ({ ref, className, title, children, iconNam
  return (
   <li>
    <NavigationMenuLink asChild>
-    <Link ref={ref} className={cn("flex w-full select-none items-center rounded-md p-3 leading-none outline-none transition-colors hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5", className)} {...props}>
-     <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-black/10 text-white dark:bg-white/10 dark:text-neutral-800 sm:size-12">
+    <Link ref={ref} className={cn("flex w-full items-center rounded-md p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5", className)} {...props}>
+     <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-black/10 text-white sm:size-12 dark:bg-white/10 dark:text-neutral-800">
       <Icon className={cn("inline size-6 stroke-black duration-200 motion-reduce:transition-none dark:stroke-white/70", iconStyles || "")} />
      </div>
      <div className="ml-3 space-y-1 text-sm">
-      <div className="font-medium leading-none text-neutral-900 dark:text-white">{title}</div>
+      <div className="leading-none font-medium text-neutral-900 dark:text-white">{title}</div>
       <p className="text-neutral-500 dark:text-neutral-400">{children}</p>
      </div>
     </Link>
@@ -91,10 +92,10 @@ export function NavigationItem({ path, text }: { path: string; text: string }) {
 
 export function Navigation() {
  return (
-  <NavigationMenu className="z-50 mx-auto flex w-full max-w-screen-md items-center gap-4 pt-9 font-mono">
-   <Link href="/" className="text-lg font-black text-neutral-800 duration-300 motion-reduce:transition-none dark:text-white">
+  <NavigationMenu className="max-w-body z-10 mx-auto flex w-full items-center gap-4 pt-9 font-mono">
+   <Link href="/" className="-ml-4 text-lg font-black text-neutral-800 duration-300 motion-reduce:transition-none dark:text-white">
     IK
-    <span className="bg-gradient-to-r from-[#6310ff] to-[#14291ff] box-decoration-clone bg-clip-text text-fill-transparent dark:from-[#a2facf] dark:to-[#64acff]">.</span>
+    <span className="text-fill-transparent bg-linear-to-r from-[#6310ff] to-[#14291ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">.</span>
    </Link>
    <MobileNavigation />
    <NavigationMenuList className="hidden lg:inline-flex">
