@@ -37,6 +37,7 @@ const NavigationMenu = ({ className, children, ...props }: React.ComponentPropsW
   <NavigationMenuPrimitive.Root
    ref={rootRef}
    className={cn("relative z-50 flex items-center justify-center", className)}
+   delayDuration={50}
    onValueChange={onRootValueChange}
    {...props}
    style={
