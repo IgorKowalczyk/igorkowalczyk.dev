@@ -195,7 +195,7 @@
  }
 
  .noise {
-  @apply bg-repeat;
+  @apply pointer-events-none absolute inset-0 bg-repeat;
   opacity: 0.02;
   background-image: url(/assets/noise.png);
   background-size: 182px;

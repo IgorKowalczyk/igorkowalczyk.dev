@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
        <main className="max-w-body mx-auto min-h-screen w-full" data-vaul-drawer-wrapper="">
         {children}
        </main>
-       <div className="noise pointer-events-none absolute inset-0" />
+       {/* <div className="noise" /> */}
        <div className="color-rays" />
        <Footer />
        <Analytics />
