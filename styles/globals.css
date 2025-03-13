@@ -194,14 +194,6 @@
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
- .noise {
-  @apply pointer-events-none absolute inset-0 bg-repeat;
-  opacity: 0.02;
-  background-image: url(/assets/noise.png);
-  background-size: 182px;
-  display: var(--hidden);
- }
-
  .color-rays {
   @apply animate-rays pointer-events-none absolute inset-0 bg-no-repeat opacity-30;
   background-size: 1589px 383px;
