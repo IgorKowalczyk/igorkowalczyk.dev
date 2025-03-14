@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Script>
      )}
     </head>
-    <body className={cn("relative scroll-smooth bg-inherit! px-6 font-mono antialiased selection:bg-neutral-800 selection:text-white!", GeistMono.variable)}>
+    <body className={cn("relative scroll-smooth bg-white px-6 font-mono antialiased selection:bg-neutral-800 selection:text-white! dark:bg-[#121212]", GeistMono.variable)}>
      <ThemeProvider attribute="class" disableTransitionOnChange scriptProps={{ "data-cfasync": "false" }}>
       <Providers>
        <Navigation />
