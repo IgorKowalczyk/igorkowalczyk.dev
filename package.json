@@ -49,7 +49,7 @@
     "react-plock": "3.5.1",
     "reading-time": "1.5.0",
     "rehype-autolink-headings": "7.1.0",
-    "rehype-pretty-code": "0.14.0",
+    "rehype-pretty-code": "0.14.1",
     "rehype-slug": "6.0.0",
     "remark-gfm": "4.0.1",
     "server-only": "0.0.1",
