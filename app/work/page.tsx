@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function Page() {
  return (
-  <div className="mt-20 mb-16 flex flex-col items-start justify-center">
+  <div className="mt-6 mb-16 flex flex-col items-start justify-center md:mt-12 lg:mt-20">
    <Header1>My Work</Header1>
    <Description className="mb-16">I have been programming for {new Date().getFullYear() - 2018} years and have worked on numerous projects. Below are some of my latest projects; you can find more on my GitHub profile.</Description>
 

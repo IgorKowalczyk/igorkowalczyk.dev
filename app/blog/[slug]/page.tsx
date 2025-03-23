@@ -53,7 +53,7 @@ export default async function Blog({ params }: Props) {
  if (!post) return notFound();
 
  return (
-  <article className="mt-20 mb-16 flex min-h-screen flex-col items-start justify-center">
+  <article className="mt-6 mb-16 flex min-h-screen flex-col items-start justify-center md:mt-12 lg:mt-20">
    <script
     type="application/ld+json"
     // biome-ignore lint/security/noDangerouslySetInnerHtml: We trust the content of the JSON object

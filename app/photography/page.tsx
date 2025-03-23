@@ -11,7 +11,7 @@ export default async function Page() {
  const photos = await getPhotography();
 
  return (
-  <div className="mt-20 mb-16 flex flex-col items-start justify-center">
+  <div className="mt-6 mb-16 flex flex-col items-start justify-center md:mt-12 lg:mt-20">
    <Header1>My photography</Header1>
    <Description> I have a passion for photography, travel, and capturing life's most beautiful moments. Here, you can explore some of my finest photos.</Description>
 

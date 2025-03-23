@@ -16,7 +16,7 @@ export default async function HomePage() {
 
  return (
   <>
-   <section className="mt-20 mb-16">
+   <section className="mt-6 mb-16 md:mt-12 lg:mt-20">
     <h1 className="dark:color-black relative m-0 text-4xl font-black tracking-[-0.03em] text-neutral-800 duration-300 md:text-left dark:text-white">Hey, I’m {header.title}</h1>
     <p className="mt-2 text-lg text-neutral-700 dark:text-neutral-400">{header.description}</p>
     <div className="mt-9 flex flex-row flex-wrap gap-4">

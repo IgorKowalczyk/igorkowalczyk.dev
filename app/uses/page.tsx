@@ -17,7 +17,7 @@ export default function Page() {
  if (!uses) return notFound();
 
  return (
-  <article className="mt-20 mb-16 flex flex-col items-start justify-center">
+  <article className="mt-6 mb-16 flex flex-col items-start justify-center md:mt-12 lg:mt-20">
    <header>
     <Header1>{uses.title}</Header1>
     <p className="pb-2 text-neutral-700 dark:text-neutral-300">{uses.description}</p>
