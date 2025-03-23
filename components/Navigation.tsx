@@ -29,8 +29,8 @@ export function MobileNavigation() {
     </DrawerHeader>
     <div className="mt-3 flex flex-col gap-2">
      {menuItems.map((item) => (
-      <Button variant="secondary" key={item.href} href={item.href} className="w-full" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-       {item.title}
+      <Button variant="secondary" key={item.href} asChild className="w-full" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+       <Link href={item.href}>{item.title}</Link>
       </Button>
      ))}
     </div>

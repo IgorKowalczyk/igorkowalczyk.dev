@@ -27,10 +27,10 @@ const DialogContent = ({ ref, className, children, ...props }: React.ComponentPr
 );
 DialogContent.displayName = DialogPrimitive.Content.displayName;
 
-const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div className={cn("space-y-1 text-base", className)} {...props} />;
+const DialogHeader = ({ className, ...props }: React.ComponentPropsWithRef<"div">) => <div className={cn("space-y-1 text-base", className)} {...props} />;
 DialogHeader.displayName = "DialogHeader";
 
-const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div className={cn("mt-4 flex items-center", className)} {...props} />;
+const DialogFooter = ({ className, ...props }: React.ComponentPropsWithRef<"div">) => <div className={cn("mt-4 flex items-center", className)} {...props} />;
 DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = ({ ref, className, ...props }: React.ComponentPropsWithRef<typeof DialogPrimitive.Title>) => <DialogPrimitive.Title ref={ref} className={cn("flex gap-2 text-xl font-medium text-neutral-900 duration-200 motion-reduce:transition-none dark:text-white", className)} {...props} />;

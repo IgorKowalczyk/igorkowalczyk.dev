@@ -1,14 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export interface DescroptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
- children: React.ReactNode;
-}
-
-export interface HeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
- children: React.ReactNode;
-}
-
-export function Description({ children, ...props }: DescroptionProps) {
+export function Description({ children, ...props }: React.ComponentProps<"p">) {
  return (
   <p {...props} className={cn("text-neutral-700 dark:text-neutral-300", props.className)}>
    {children}
@@ -16,7 +8,7 @@ export function Description({ children, ...props }: DescroptionProps) {
  );
 }
 
-export function Header1({ children, ...props }: HeaderProps) {
+export function Header1({ children, ...props }: React.ComponentProps<"h1">) {
  return (
   <h1 {...props} className={cn("dark:color-black mb-2 scroll-mt-20 box-decoration-clone bg-clip-text text-3xl font-black tracking-[-0.03em] text-neutral-800 motion-reduce:transition-none dark:text-white", props.className)}>
    {children}
@@ -25,7 +17,7 @@ export function Header1({ children, ...props }: HeaderProps) {
  );
 }
 
-export function Header2({ children, ...props }: HeaderProps) {
+export function Header2({ children, ...props }: React.ComponentProps<"h2">) {
  return (
   <h2 {...props} className={cn("mb-2 scroll-mt-20 box-decoration-clone bg-clip-text text-[1.7rem] font-[750] motion-reduce:transition-none", props.className)}>
    {children}

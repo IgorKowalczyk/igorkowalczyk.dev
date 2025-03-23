@@ -170,27 +170,27 @@ export function ContactForm() {
    )}
 
    {state.message && (
-    <p className="mt-2 flex items-center self-start text-green-500">
-     <Icons.MailCheckIcon className="mr-2 size-5" />
+    <p className="mt-2 flex items-center gap-2 self-start text-green-500">
+     <Icons.MailCheckIcon className="size-5" />
      {state.message}
     </p>
    )}
    {state.error && (
-    <p className="mt-2 flex items-center self-start text-red-400">
-     <Icons.CircleAlert className="mr-2 size-5" />
+    <p className="mt-2 flex items-center gap-2 self-start text-red-400">
+     <Icons.CircleAlert className="size-5" />
      {state.error}
     </p>
    )}
 
-   <Button variant="secondary" className="mt-4 ml-auto" icon={false} type="submit" disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}>
+   <Button variant="secondary" className="mt-4 ml-auto" type="submit" disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}>
     {pending ? (
      <>
-      <Icons.RefreshCw className="mr-2 size-4 animate-spin duration-200 motion-reduce:transition-none" />
+      <Icons.RefreshCw className="size-5 animate-spin duration-200 motion-reduce:transition-none" />
       Sending
      </>
     ) : (
      <>
-      <Icons.Send className="mr-2 size-4" />
+      <Icons.Send className="size-5" />
       Send
      </>
     )}

@@ -93,7 +93,6 @@ export default function Settings() {
    <Button
     variant="secondary"
     aria-label="Open settings"
-    icon={false}
     onClick={() => setIsOpen(true)}
     className={cn(
      {

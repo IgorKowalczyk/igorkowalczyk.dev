@@ -3,6 +3,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/Button";
 import { Description, Header1 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
+import Link from "@/components/ui/Link";
 import { projects } from "@/config";
 import { meta } from "@/config";
 
@@ -26,9 +27,11 @@ export default function Page() {
 
    <Description>Want to see more? Check out my GitHub profile for more projects and contributions.</Description>
 
-   <Button variant="primary" href={`https://github.com/${meta.accounts.github.username}`} rel="noopener noreferrer" className="mt-4">
-    <Icons.Github className="mr-2 size-5 fill-white stroke-2" />
-    View my Github
+   <Button variant="primary" asChild className="mt-4">
+    <Link href={`https://github.com/${meta.accounts.github.username}`} rel="noopener noreferrer" target="_blank">
+     <Icons.Github className="size-5 fill-white stroke-2" />
+     View my Github
+    </Link>
    </Button>
   </div>
  );

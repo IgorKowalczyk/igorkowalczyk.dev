@@ -1,10 +1,10 @@
-import { cva, VariantProps } from "class-variance-authority";
-import React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import { cn } from "@/lib/utils";
 
-export const buttonVariants = cva("group flex w-fit items-center rounded-md px-4 py-2 font-medium duration-200 disabled:cursor-not-allowed cursor-pointer disabled:opacity-50 motion-reduce:transition-none", {
+export const buttonVariants = cva("group gap-2 flex w-fit items-center rounded-md px-4 py-2 font-medium duration-200 disabled:cursor-not-allowed cursor-pointer disabled:opacity-50 motion-reduce:transition-none", {
  variants: {
   variant: {
    primary: "bg-blue-500 text-white hover:bg-blue-600",
@@ -17,29 +17,18 @@ export const buttonVariants = cva("group flex w-fit items-center rounded-md px-4
  },
 });
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>, VariantProps<typeof buttonVariants> {
- href?: string;
- icon?: boolean;
- type?: HTMLButtonElement["type"];
- disabled?: HTMLButtonElement["disabled"];
- ref?: React.RefObject<HTMLButtonElement | HTMLAnchorElement> | null;
-}
+export const Button = ({
+ className,
+ variant,
+ asChild = false,
+ ...props
+}: React.ComponentPropsWithRef<"button"> &
+ VariantProps<typeof buttonVariants> & {
+  asChild?: boolean;
+ }) => {
+ const Comp = asChild ? Slot : "button";
 
-export const Button = ({ ref, href, children, icon = true, variant, ...props }: ButtonProps) => {
- if (href) {
-  return (
-   <Link href={href} {...props} ref={ref as React.RefObject<HTMLAnchorElement>} className={cn(buttonVariants({ variant }), props.className || "")}>
-    {children}
-    {icon && <Icons.ArrowRight className="ml-2 size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />}
-   </Link>
-  );
- }
- return (
-  <button {...props} ref={ref as React.RefObject<HTMLButtonElement>} className={cn(buttonVariants({ variant }), props.className || "")} type={props.type || "button"}>
-   {children}
-   {icon && <Icons.ArrowRight className="ml-2 size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />}
-  </button>
- );
+ return <Comp data-slot="button" className={cn(buttonVariants({ variant }), className || "")} {...props} />;
 };
 
-Button.displayName = "Button";
+export const ButtonArrow = ({ className, ...props }: React.ComponentProps<typeof Icons.ArrowRight>) => <Icons.ArrowRight className={cn("size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0", className)} {...props} />;

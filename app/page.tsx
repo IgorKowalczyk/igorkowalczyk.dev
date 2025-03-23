@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { Button, ButtonArrow } from "@/components/ui/Button";
 import { Description, Header2 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
 import Link from "@/components/ui/Link";
@@ -19,11 +20,17 @@ export default async function HomePage() {
     <h1 className="dark:color-black relative m-0 text-4xl font-black tracking-[-0.03em] text-neutral-800 duration-300 md:text-left dark:text-white">Hey, I’m {header.title}</h1>
     <p className="mt-2 text-lg text-neutral-700 dark:text-neutral-400">{header.description}</p>
     <div className="mt-9 flex flex-row flex-wrap gap-4">
-     <Button variant="primary" href="/#contact">
-      Contact me
+     <Button variant="primary" asChild>
+      <Link href="/#contact">
+       Contact me
+       <ButtonArrow />
+      </Link>
      </Button>
-     <Button variant="secondary" href="/#about">
-      More about me
+     <Button variant="secondary" asChild>
+      <Link href="/#about">
+       More about me
+       <ButtonArrow />
+      </Link>
      </Button>
     </div>
    </section>
@@ -56,12 +63,16 @@ export default async function HomePage() {
     </div>
 
     <div className="mt-6 flex flex-row flex-wrap gap-4">
-     <Button variant="primary" href={`https://github.com/${meta.accounts.github.username}`} rel="noopener noreferrer">
-      <Icons.Github className="mr-2 size-5 fill-white stroke-2" />
-      View my Github
+     <Button variant="primary" asChild>
+      <Link href={`https://github.com/${meta.accounts.github.username}`} rel="noopener noreferrer">
+       <Icons.Github className="size-5 fill-white stroke-2" />
+       View my Github
+      </Link>
      </Button>
-     <Button variant="secondary" href="/#contact">
-      Contact me
+     <Button variant="secondary" asChild>
+      <Link href="/#contact">
+       Contact me <ButtonArrow />
+      </Link>
      </Button>
     </div>
    </section>
@@ -78,8 +89,11 @@ export default async function HomePage() {
 
     <div className="-mt-10 mb-10 flex flex-col items-center">
      <p className="mb-2 text-neutral-700 dark:text-neutral-400">Want to see more?</p>
-     <Button variant="secondary" href="/work">
-      View all projects
+     <Button variant="secondary" asChild>
+      <Link href="/work">
+       View all projects
+       <ButtonArrow />
+      </Link>
      </Button>
     </div>
    </section>
@@ -90,9 +104,9 @@ export default async function HomePage() {
     <div className="mt-4 flex flex-wrap gap-4">
      {technologies.map((tech) => {
       return (
-       <Link href={tech.link || "#"} key={`tech-link-${tech.name}`} className="flex cursor-pointer items-center gap-2 rounded-md border border-black/10 px-2 py-1 font-mono font-medium text-neutral-500 duration-200 hover:bg-black/5 motion-reduce:transition-none dark:border-neutral-800 dark:text-white/50 dark:hover:border-neutral-700 dark:hover:bg-white/5">
+       <Badge key={`tech-link-${tech.name}`}>
         <Image src={tech.icon} alt={`${tech.name} logo`} width={20} height={20} className="size-5 rounded-sm" /> {tech.name}
-       </Link>
+       </Badge>
       );
      })}
     </div>
@@ -112,9 +126,11 @@ export default async function HomePage() {
       const Icon = Icons[element.icon];
 
       return (
-       <Button variant="tertiary" href={element.href} key={`contact-link-${element.href}`} className="gap-2">
-        <Icon className="size-5" />
-        {element.title}
+       <Button variant="tertiary" key={`contact-link-${element.href}`} className="gap-2" asChild>
+        <Link href={element.href} target="_blank" rel="noopener noreferrer">
+         <Icon className="size-5" />
+         {element.title}
+        </Link>
        </Button>
       );
      })}

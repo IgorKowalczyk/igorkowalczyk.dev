@@ -40,10 +40,10 @@ export const DrawerContent = ({ className, children, variant, ...props }: Drawer
 );
 DrawerContent.displayName = "DrawerContent";
 
-export const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div className={cn("my-4", className)} {...props} />;
+export const DrawerHeader = ({ className, ...props }: React.ComponentPropsWithRef<"div">) => <div className={cn("my-4", className)} {...props} />;
 DrawerHeader.displayName = "DrawerHeader";
 
-export const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div className={cn("mt-auto flex flex-col gap-2 p-4", className)} {...props} />;
+export const DrawerFooter = ({ className, ...props }: React.ComponentPropsWithRef<"div">) => <div className={cn("mt-auto flex flex-col gap-2 p-4", className)} {...props} />;
 DrawerFooter.displayName = "DrawerFooter";
 
 export const DrawerTitle = ({ ref, className, ...props }: React.ComponentPropsWithRef<typeof DrawerPrimitive.Title>) => <DrawerPrimitive.Title ref={ref} className={cn("flex gap-2 text-xl font-medium text-neutral-900 duration-200 motion-reduce:transition-none dark:text-white", className)} {...props} />;

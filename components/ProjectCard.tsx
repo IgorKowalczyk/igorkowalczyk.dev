@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Icons } from "@/components/ui/Icons";
 import Link from "@/components/ui/Link";
@@ -6,7 +7,7 @@ import type { Project } from "@/lib/types";
 import { parseISO } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
-export interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ProjectCardProps extends React.ComponentPropsWithRef<"div"> {
  project: Project;
 }
 
@@ -29,23 +30,27 @@ export function ProjectCard({ project, className, ...props }: ProjectCardProps) 
     ))}
    <div className="mt-4 flex flex-wrap gap-2">
     {project.technologies.map((tech) => (
-     <div key={`project-tech-${tech.name}`} className="flex cursor-default items-center gap-2 rounded-md border border-black/10 px-2 py-1 font-mono text-sm font-medium text-neutral-500 duration-200 hover:bg-black/5 motion-reduce:transition-none dark:border-neutral-800 dark:text-white/50 dark:hover:border-neutral-700 dark:hover:bg-white/5">
+     <Badge key={`project-tech-${tech.name}`} size="small">
       <Image src={tech.icon} alt={tech.name} width={20} height={20} className="size-5" /> {tech.name}
-     </div>
+     </Badge>
     ))}
    </div>
    {project.website || project.github ? (
     <div className="mt-6 flex flex-wrap gap-4">
      {project.website && (
-      <Button variant="primary" href={project.website} rel="noopener noreferrer">
-       <Icons.Link className="mr-2 size-5 stroke-2" />
-       Visit website
+      <Button variant="primary" asChild>
+       <Link href={project.website} rel="noopener noreferrer">
+        <Icons.Link className="size-5 stroke-2" />
+        Visit website
+       </Link>
       </Button>
      )}
      {project.github && (
-      <Button variant="secondary" href={project.github} rel="noopener noreferrer">
-       <Icons.Github className="mr-2 size-5 fill-neutral-700 dark:fill-white" />
-       View on Github
+      <Button variant="secondary" asChild>
+       <Link href={project.github} rel="noopener noreferrer">
+        <Icons.Github className="size-5 fill-neutral-700 dark:fill-white" />
+        View on Github
+       </Link>
       </Button>
      )}
     </div>

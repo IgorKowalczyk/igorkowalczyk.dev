@@ -2,6 +2,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Description, Header2 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
+import Link from "@/components/ui/Link";
 import { contact } from "@/config/contact";
 
 export const metadata = {
@@ -25,9 +26,11 @@ export default function Page() {
       const Icon = Icons[element.icon];
 
       return (
-       <Button variant="tertiary" href={element.href} key={`contact-link-${element.href}`} className="gap-2">
-        <Icon className="mr-2 size-5" />
-        {element.title}
+       <Button variant="tertiary" key={`contact-link-${element.href}`} className="gap-2" asChild>
+        <Link href={element.href} target="_blank" rel="noopener noreferrer">
+         <Icon className="size-5 shrink-0" />
+         {element.title}
+        </Link>
        </Button>
       );
      })}
