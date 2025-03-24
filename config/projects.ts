@@ -31,7 +31,7 @@ export const projects = [
     icon: "/assets/tech/prisma.svg",
    },
   ],
-  website: "https://majoexe.xyz",
+  website: "https://majoexe.com",
   github: "https://github.com/igorkowalczyk/majo.exe",
  },
  {
