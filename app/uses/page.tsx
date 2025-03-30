@@ -23,7 +23,7 @@ export default function Page() {
     <p className="pb-2 text-neutral-700 dark:text-neutral-300">{uses.description}</p>
    </header>
    <Link href="/assets/setup.jpg" target="_blank" rel="noopener noreferrer">
-    <Image src={setup} alt="My setup" className="blur-0 my-4 scale-100 transform cursor-pointer rounded-2xl bg-neutral-200 duration-200 will-change-auto hover:opacity-70 hover:brightness-90 motion-reduce:duration-0 dark:bg-neutral-200/15" placeholder="blur" />
+    <Image src={setup} loading="eager" alt="My setup" className="blur-0 my-4 scale-100 transform cursor-pointer rounded-2xl bg-neutral-200 duration-200 will-change-auto hover:opacity-70 hover:brightness-90 motion-reduce:duration-0 dark:bg-neutral-200/15" placeholder="blur" />
    </Link>
    <section className="w-full max-w-none">
     <MDXComponent code={uses.body.code} />
