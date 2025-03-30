@@ -45,6 +45,8 @@
 5. In `.env` file set this values:
    - `GITHUB_ACCESS_TOKEN` - Your GitHub access token with public repositories permission
    - `DISCORD_WEBHOOK_URL` - Discord Webhook URL for contact form
+   - `CAPTCHA_SECRET` - Your Cloudflare Turnstile secret key (optional)
+   - `NEXT_PUBLIC_CAPTCHA_SITEKEY` - Your Cloudflare Turnstile site key (optional)
 6. Edit pre-defined values in `config.tsx` file (like `name`, `description`, `socials` etc.)
 7. Run `pnpm build` to build the project or `pnpm dev` to run the project in development mode.
 
@@ -53,11 +55,13 @@
 
 ## 📝 `.env` configuration
 
-| Variable              | Description                                                      | Required |
-| --------------------- | ---------------------------------------------------------------- | -------- |
-| `GITHUB_ACCESS_TOKEN` | Your GitHub access token with public repositories permission     | `☑️ Yes` |
-| `DISCORD_WEBHOOK_URL` | Discord Webhook URL for contact form                             | `☑️ Yes` |
-| `HOTJAR_ID`           | Your [Hotjar](https://www.hotjar.com) website ID (for analytics) | `❌ No`  |
+| Variable                      | Description                                                      | Required |
+| ----------------------------- | ---------------------------------------------------------------- | -------- |
+| `GITHUB_ACCESS_TOKEN`         | Your GitHub access token with public repositories permission     | `☑️ Yes` |
+| `DISCORD_WEBHOOK_URL`         | Discord Webhook URL for contact form                             | `☑️ Yes` |
+| `HOTJAR_ID`                   | Your [Hotjar](https://www.hotjar.com) website ID (for analytics) | `❌ No`  |
+| `CAPTCHA_SECRET`              | Your Cloudflare Turnstile secret key                             | `❌ No`  |
+| `NEXT_PUBLIC_CAPTCHA_SITEKEY` | Your Cloudflare Turnstile site key                               | `❌ No`  |
 
 > [!NOTE]
 > You can set these **optional** values:
