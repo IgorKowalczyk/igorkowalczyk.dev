@@ -24,8 +24,8 @@ export function ProjectCard({ project, className, ...props }: ProjectCardProps) 
    {project.images &&
     project.images.length > 0 &&
     project.images.map((image) => (
-     <Link key={`project-image-${image.alt}-${image.height}`} href={project.website || project.github || image.src} target="_blank" rel="noopener noreferrer">
-      <Image src={image.src} alt={image.alt} width={image.width} height={image.height} className="aspect-video cursor-zoom-in rounded-xl border border-black/10 duration-200 hover:opacity-70 dark:border-neutral-800" />
+     <Link key={`project-image-${image.alt}-${image.height}`} href={project.website || project.github || image.src} target="_blank" rel="noopener noreferrer" className="relative block aspect-video w-full">
+      <Image src={image.src} alt={image.alt} fill objectFit="contain" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="cursor-zoom-in rounded-xl border border-black/10 duration-200 hover:opacity-70 dark:border-neutral-800" />
      </Link>
     ))}
    <div className="mt-4 flex flex-wrap gap-2">
