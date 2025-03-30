@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
- --animate-rays: rotate-hue 20s ease-out infinite;
+ /* --animate-rays: rotate-hue 20s ease-out infinite; */
  --animate-scale-in: scaleIn 200ms ease;
  --animate-scale-out: scaleOut 200ms ease;
  --animate-enter-from-left: enterFromLeft 250ms ease;
@@ -19,14 +19,14 @@
  --hidden: false;
  --width-body: 768px;
 
- @keyframes rotate-hue {
+ /* @keyframes rotate-hue {
   0% {
    filter: hue-rotate(540deg) saturate(5);
   }
   100% {
    filter: hue-rotate(180deg) saturate(5);
   }
- }
+ } */
 
  @keyframes enterFromRight {
   0% {
@@ -195,7 +195,7 @@
  }
 
  .color-rays {
-  @apply animate-rays pointer-events-none absolute inset-0 bg-no-repeat opacity-30;
+  @apply pointer-events-none absolute inset-0 bg-no-repeat opacity-30;
   background-size: 1589px 383px;
   display: var(--hidden);
   background-position: calc(50% - 35px) top;
