@@ -4,9 +4,6 @@ import { withAxiom } from "next-axiom";
 import { withContentlayer } from "next-contentlayer2";
 
 const nextConfig: NextConfig = {
- env: {
-  VERSION: process.env.npm_package_version,
- },
  eslint: {
   ignoreDuringBuilds: true,
  },
