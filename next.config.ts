@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
  devIndicators: {
   position: "bottom-right",
  },
+ productionBrowserSourceMaps: true,
  async headers() {
   return [
    {

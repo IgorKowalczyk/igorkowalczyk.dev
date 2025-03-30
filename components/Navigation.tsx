@@ -18,7 +18,7 @@ export function MobileNavigation() {
 
  return (
   <Drawer shouldScaleBackground={false} direction="left" open={isMenuOpen} onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
-   <DrawerTrigger className={cn(buttonVariants({ variant: "secondary" }), "size-10 justify-center border-0 bg-transparent! outline-hidden! hover:bg-neutral-300! lg:hidden dark:hover:bg-white/15!")}>
+   <DrawerTrigger aria-label="Open navigation" className={cn(buttonVariants({ variant: "secondary" }), "size-10 justify-center border-0 bg-transparent! outline-hidden! hover:bg-neutral-300! lg:hidden dark:hover:bg-white/15!")}>
     <Icons.AlignLeft className="size-5 shrink-0 text-neutral-900 dark:text-neutral-100" />
    </DrawerTrigger>
 
