@@ -13,7 +13,7 @@ export interface ProjectCardProps extends React.ComponentPropsWithRef<"div"> {
 
 export function ProjectCard({ project, className, ...props }: ProjectCardProps) {
  return (
-  <div key={project.name} {...props} className={cn("mb-16 overflow-hidden duration-200 motion-reduce:transition-none", className)}>
+  <div key={project.name} {...props} className={cn("mb-16 overflow-hidden duration-200 motion-reduce:transition-none w-full", className)}>
    <h3 className="mb-2 text-2xl font-bold tracking-[-0.03em]">{project.name}</h3>
    {project.started && (
     <time className="my-2 block text-sm leading-none font-normal text-neutral-500 dark:text-neutral-500" dateTime={new Date(project.started).toUTCString()}>
