@@ -95,7 +95,7 @@
   "bugs": {
     "url": "https://github.com/igorkowalczyk/igorkowalczyk.github.io/issues"
   },
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.7.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "contentlayer2",
