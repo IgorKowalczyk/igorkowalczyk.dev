@@ -66,7 +66,7 @@
     "@next/bundle-analyzer": "15.2.3",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/typography": "0.5.16",
-    "@types/node": "22.13.14",
+    "@types/node": "22.13.15",
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "autoprefixer": "10.4.21",
