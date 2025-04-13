@@ -16,7 +16,7 @@ export default function Page() {
  return (
   <section className="mt-6 mb-16 md:mt-12 lg:mt-20">
    <Header1>Tech Blog</Header1>
-   <Description className="mb-6">A blog about technology, programming, and various intriguing topics. Here I share my experiences, projects and opinions.</Description>
+   <Description className="mb-16">A blog about technology, programming, and various intriguing topics. Here I share my experiences, projects and opinions.</Description>
 
    <Header2>All Posts</Header2>
    {!posts.length && <p className="mb-4 text-red-400">No posts found!</p>}

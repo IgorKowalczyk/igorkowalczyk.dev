@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
-import { Description, Header2 } from "@/components/ui/Headers";
+import { Description, Header1 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
 import Link from "@/components/ui/Link";
 import { contact } from "@/config/contact";
@@ -13,8 +13,8 @@ export const metadata = {
 export default function Page() {
  return (
   <section className="mt-6 mb-16 md:mt-12 lg:mt-20">
-   <Header2 id="contact">Contact me</Header2>
-   <Description>I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.</Description>
+   <Header1 id="contact">Contact me</Header1>
+   <Description className="mb-16">I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.</Description>
 
    <div className="my-6 flex w-full rounded-md border border-black/15 bg-white p-5 dark:border-neutral-800 dark:bg-[#161617]">
     <ContactForm />
