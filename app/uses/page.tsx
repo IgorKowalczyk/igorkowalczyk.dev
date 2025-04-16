@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import { MDXComponent } from "@/components/MDXComponents";
 import { Header1 } from "@/components/ui/Headers";
 import Link from "@/components/ui/Link";
-import setup from "@/public/assets/uses.png";
 import { meta } from "@/config";
+import setup from "@/public/assets/uses.png";
 
 export const metadata = {
  title: "What I use",
