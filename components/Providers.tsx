@@ -1,13 +1,9 @@
 "use client";
 
-import { AppProgressBar } from "next-nprogress-bar";
-import { Suspense, useEffect, ReactNode } from "react";
+import { ProgressProvider } from "@bprogress/next/app";
+import { useEffect } from "react";
 
-interface ProvidersProps {
- children: ReactNode;
-}
-
-export function Providers({ children }: ProvidersProps) {
+export const Providers = ({ children }: { children: React.ReactNode }) => {
  useEffect(() => {
   const updateDecorations = () => {
    document.documentElement.style.setProperty("--hidden", localStorage.getItem("decorations") === "false" ? "none" : "block");
@@ -23,10 +19,9 @@ export function Providers({ children }: ProvidersProps) {
 
  return (
   <>
-   <Suspense fallback={<></>}>
-    <AppProgressBar color="#3b82f6" height="2px" options={{ showSpinner: false }} shallowRouting />
-   </Suspense>
-   {children}
+   <ProgressProvider color="#3b82f6" height="2px" options={{ showSpinner: false }} shallowRouting>
+    {children}
+   </ProgressProvider>
   </>
  );
-}
+};

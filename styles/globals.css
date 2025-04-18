@@ -96,6 +96,10 @@
 }
 
 @layer base {
+ :root {
+  --shiki-dark-bg: #161617;
+ }
+
  * {
   @apply box-border outline-offset-2;
   scrollbar-color: #161617 transparent;
@@ -119,7 +123,7 @@
  }
 
  .prose .anchor {
-  @apply invisible absolute -ml-6 w-4/5 max-w-2xl cursor-pointer pr-2 text-neutral-300 no-underline! opacity-0 duration-200 motion-reduce:transition-none dark:text-neutral-800;
+  @apply invisible absolute -ml-6 w-4/5 max-w-2xl cursor-pointer pr-2 text-neutral-300 !no-underline opacity-0 duration-200 motion-reduce:transition-none dark:text-neutral-800;
 
   &:hover,
   *:hover > & {
@@ -133,7 +137,7 @@
 
  .prose pre,
  .prose code:not(pre code) {
-  @apply border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-[#161617];
+  @apply border border-neutral-200 !bg-neutral-50 dark:border-neutral-800 dark:!bg-[#161617];
  }
 
  .prose code:not(pre code) {
@@ -148,33 +152,16 @@
  }
 
  blockquote {
-  @apply !border-l-neutral-300 !text-neutral-500 not-italic! dark:border-l-neutral-800! dark:text-neutral-400!;
+  @apply !border-l-neutral-300 !text-neutral-500 !not-italic dark:border-l-neutral-800! dark:!text-neutral-400;
  }
 
- [data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full rounded-none border-0 bg-transparent p-0 text-sm break-words text-black;
-  counter-reset: line;
-  box-decoration-break: clone;
- }
-
- [data-rehype-pretty-code-fragment] .line {
-  @apply py-1;
- }
-
- [data-highlighted-line] {
-  @apply right-0 rounded-md bg-neutral-500/10 py-1;
- }
-
- [data-highlighted-chars] {
-  @apply rounded-md bg-neutral-500/10 p-1;
- }
-
- [data-rehype-pretty-code-title] {
-  @apply rounded-t-lg border border-neutral-200 bg-neutral-100 px-4 py-1 font-mono font-bold text-neutral-900 dark:border-neutral-800 dark:bg-[#1c1c1c] dark:text-neutral-200;
- }
-
- [data-rehype-pretty-code-title] + pre {
-  @apply mt-0 rounded-t-none border-t-0;
+ html.dark .shiki,
+ html.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: #161617 !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
  }
 }
 

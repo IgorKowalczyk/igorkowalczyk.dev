@@ -1,9 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { allBlogs } from "contentlayer/generated";
 import { redirect } from "next/navigation";
 import { ImageResponse } from "next/og";
 import { header, meta } from "@/config/metadata";
+import { getBlogPosts } from "@/lib/blogUtils";
 import { parseISO } from "@/lib/utils";
 
 export const contentType = "image/png";
@@ -19,7 +19,7 @@ interface Params {
 
 export default async function Image({ params }: { params: Params }) {
  const { slug } = params;
- const post = allBlogs.find((post) => post.slug === slug);
+ const post = getBlogPosts().find((post) => post.slug === slug);
 
  if (!post) return redirect("/opengraph-image");
 
@@ -54,7 +54,7 @@ export default async function Image({ params }: { params: Params }) {
       bottom: 0,
       filter: "hue-rotate(540deg) saturate(5)",
       position: "absolute",
-      zIndex: 1,
+      zIndex: "1",
      }}
     />
     <div
@@ -65,7 +65,7 @@ export default async function Image({ params }: { params: Params }) {
       marginBottom: "15px",
      }}
     >
-     {parseISO(post.publishedAt)}
+     {parseISO(post.metadata.publishedAt)}
     </div>
     <div
      style={{
@@ -74,7 +74,7 @@ export default async function Image({ params }: { params: Params }) {
       fontSize: 64,
      }}
     >
-     {post.title}
+     {post.metadata.title}
     </div>
     <div
      style={{
