@@ -3,7 +3,7 @@
   "target": "ESNext",
   "lib": ["dom", "dom.iterable", "ESNext"],
   "module": "esnext",
-  "moduleResolution": "node",
+  "moduleResolution": "Bundler",
   "allowJs": true,
   "skipLibCheck": true,
   "strict": false,
