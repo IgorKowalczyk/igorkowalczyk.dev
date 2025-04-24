@@ -18,9 +18,17 @@ interface Params {
  slug: string;
 }
 
+export function generateStaticParams() {
+ const posts = getBlogPosts();
+
+ return posts.map((post) => ({
+  slug: post.slug,
+ }));
+}
+
 export default async function Image({ params }: { params: Params }) {
  const { slug } = params;
- const post = await getBlogPosts().find((post) => post.slug === slug);
+ const post = getBlogPosts().find((post) => post.slug === slug);
 
  if (!post) return redirect("/opengraph-image");
 
