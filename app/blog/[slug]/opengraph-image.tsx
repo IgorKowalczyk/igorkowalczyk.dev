@@ -19,7 +19,7 @@ interface Params {
 
 export default async function Image({ params }: { params: Params }) {
  const { slug } = params;
- const post = getBlogPosts().find((post) => post.slug === slug);
+ const post = await getBlogPosts().find((post) => post.slug === slug);
 
  if (!post) return redirect("/opengraph-image");
 
