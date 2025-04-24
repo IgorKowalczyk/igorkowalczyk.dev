@@ -7,6 +7,7 @@ import { getBlogPosts } from "@/lib/blogUtils";
 import { parseISO } from "@/lib/utils";
 
 export const contentType = "image/png";
+export const runtime = "nodejs";
 export const alt = `${header.title} - ${meta.shortDescription}`;
 export const size = {
  width: 1200,
