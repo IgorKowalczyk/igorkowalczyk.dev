@@ -81,9 +81,9 @@ export default async function Blog({ params }: Props) {
 
    <div className="grid flex-1 grid-cols-1 md:grid-cols-[1fr_minmax(auto,640px)_1fr] md:*:col-start-2">
     <div className="w-max">
-     <header className="mb-4 w-full">
+     <header className="mb-6 w-full">
       <Header1>{post.metadata.title}</Header1>
-      <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
+      <div className="mt-4 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
        <div className="flex items-center">
         <Image alt={meta.title} height={24} width={24} src={Avatar} className="rounded-full" />
         <time className="ml-2 text-sm text-neutral-700 dark:text-neutral-300" dateTime={new Date(post.metadata.publishedAt).toUTCString()}>
