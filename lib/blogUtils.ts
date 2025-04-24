@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import { createHighlighter } from "shiki";
 import { slugify } from "@/lib/utils";
 
 export type BlogPostMetadata = {
@@ -19,6 +18,7 @@ export type OtherPageMetadata = {
 };
 
 const headersRegex = /^(#{1,6})\s+(.*)$/gm;
+const fencedCodeBlockRegex = /```[\s\S]*?```/g;
 
 function parseFrontmatter<T>(fileContent: string): { metadata: T; content: string } {
  const { data: metadata, content } = matter(fileContent);
@@ -49,7 +49,10 @@ function getMDXData<T>(dir: string): Array<{
   const slug = path.basename(file, path.extname(file));
   const wordCount = content.split(/\s+/gu).length;
   const readingTimeData = readingTime(content);
-  const headings = Array.from(content.matchAll(headersRegex))
+
+  const contentWithoutCodeBlocks = content.replace(fencedCodeBlockRegex, "");
+
+  const headings = Array.from(contentWithoutCodeBlocks.matchAll(headersRegex))
    .map((value: RegExpMatchArray) => ({
     size: value[1].length,
     content: value[2],
@@ -75,8 +78,3 @@ export function getBlogPosts() {
 export function getOtherPages() {
  return getMDXData<OtherPageMetadata>(path.join(process.cwd(), "content"));
 }
-
-export const higlighter = createHighlighter({
- themes: ["github-dark", "github-light"],
- langs: ["javascript", "typescript", "python", "java", "csharp", "cpp", "html", "css", "json", "bash", "markdown", "yaml", "xml", "graphql"],
-});

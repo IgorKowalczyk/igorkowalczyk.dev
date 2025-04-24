@@ -1,0 +1,220 @@
+---
+title: "Contentlayer is dead - what now?"
+publishedAt: "2025-04-19"
+author: "Igor Kowalczyk"
+summary: "Contentlayer is dead. What now? I will show you how to migrate from Contentlayer to MDX and what are the benefits of using MDX."
+---
+
+[Contentlayer](https://github.com/contentlayerdev/contentlayer) is dead, don't get me wrong, I loved it, it was a great tool for building blogs and documentations. It was easy to use, fast and had a great developer experience. But it is now dead, and we need to move on.
+
+And before you shout about [contentlayer2](https://github.com/timlrx/contentlayer2) - yes, I know about it, it's just a maintained fork of contentlayer, fixing some bugs but not adding any new features, if you want to use it, go ahead, there is nothing wrong with it and the author is doing a great job maintaining it.
+
+But I think we can do better. I will show you how to migrate from Contentlayer to MDX.
+
+## Install required packages
+
+First of all, if you want to use [MDX](https://mdxjs.com/), you need to install it, We will be using the [next-mdx-remote](https://www.npmjs.com/package/next-mdx-remote) since we will be using local files for MDX content.
+
+```bash
+pnpm add next-mdx-remote @types/mdx
+```
+
+## Create MDX Provider
+
+Next, we need to create a provider for MDX. The `next-mdx-remote` package provides a `MDXRemote` component that we can use to render MDX content, we can also add our own components like `h1`, `h2`, `a`, etc. to it. 
+
+Start by creating a new file in your app directory, for example `src/app/components/mdx-components.tsx`.
+
+```tsx
+import { MDXRemote } from "next-mdx-remote/rsc";
+import type { MDXComponents } from "mdx/types";
+
+const components: MDXComponents = {
+  h1: (props) => <h1 className="text-3xl font-bold" {...props} />,
+  h2: (props) => <h2 className="text-2xl font-bold" {...props} />,
+  a: (props) => <a className="text-blue-500" {...props} />,
+  // Add more components if needed
+};
+
+export function MDXComponent(props: React.ComponentPropsWithoutRef<typeof MDXRemote>) {
+ return (
+   <MDXRemote
+    {...props}
+    components={{ ...components, ...(props.components || {}) }}
+   />
+ );
+}
+
+```
+## File and metadata parsing
+
+Now we need to parse the MDX files and extract the metadata from them. In this example, we will use [`gray-matter`](https://www.npmjs.com/package/gray-matter) to parse the frontmatter from the MDX files.
+
+```bash
+pnpm add gray-matter
+```
+
+Then, create a new file in your app directory, for example `src/app/lib/mdx.ts`. This file will contain a function that will read the MDX files from a directory and parse them.
+
+```ts
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
+
+export function getMDXData(dir: string) {
+  const files = fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
+
+  return files.map((file) => {
+    const filePath = path.join(dir, file);
+    const rawContent = fs.readFileSync(filePath, "utf-8");
+    const { data: metadata, content } = matter(rawContent);
+    const slug = file.replace(/\.mdx$/, "");
+    const wordCount = content.split(/\s+/gu).length;
+
+
+    return {
+      metadata: { ...metadata, slug },
+      content,
+      wordCount,
+      // You can add more fields here if needed
+    };
+  });
+}
+```
+
+This function will read all MDX files in a directory, parse them and return an array of objects containing the metadata and content of each file.
+
+## Create a page to render MDX content
+
+First, we need to create a directory for our MDX files, for example `content/blog`. 
+
+Then, create a new file in your new directory with the `.mdx` extension, for example `content/blog/hello-world.mdx`. 
+
+```mdx
+---
+title: "Hello World"
+---
+
+# Hello World
+This is my first MDX page...
+```
+
+You can add more files to the `content/blog` directory and they will be automatically picked up by the `getMDXData` function.
+
+Now we need to create a page that will render the MDX content. To do this, create a new file in your app directory, for example `src/app/blog/[slug]/page.tsx`.
+
+```tsx
+import { getMDXData } from "@/lib/mdx";
+import { MDXComponent } from "@/components/mdx-components";
+import { notFound } from "next/navigation";
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const posts = getMDXData("content/blog"); // Adjust the path to your MDX files
+  const post = posts.find((post) => post.metadata.slug === params.slug);
+
+  if (!post) notFound();
+
+  return (
+    <div>
+      <h1>{post.metadata.title}</h1>
+      <MDXComponent source={post.content} />
+    </div>
+  );
+}
+```
+
+This page will render the MDX content of the file with the slug passed in the URL. If the file is not found, it will return a 404 page.
+
+You can also add a [`generateMetadata`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata) function to generate metadata for the page, which will be used for SEO purposes.
+
+```tsx
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const posts = getMDXData("content/blog"); // Adjust the path to your MDX files
+  const post = posts.find((post) => post.metadata.slug === params.slug);
+
+  if (!post) return {};
+
+  return {
+    title: post.metadata.title,
+    description: post.metadata.summary,
+    openGraph: {
+      title: post.metadata.title,
+      description: post.metadata.summary,
+      url: `https://yourdomain.com/blog/${post.metadata.slug}`,
+    },
+  };
+}
+```
+
+You can add more fields inside the frontmatter of the MDX file, like `description`, `image`, etc. and use them in the metadata or page using the `post.metadata` object.
+
+## Create a list of posts
+ 
+To list all posts, create a new file in your app directory, for example `src/app/blog/page.tsx`. This file will be used to display a list of all posts in the `content/blog` directory.
+
+```tsx
+
+import { getMDXData } from "@/lib/mdx";
+import { MDXComponent } from "@/components/mdx-components";
+
+export default function BlogPage() {
+  const posts = getMDXData("content/blog"); // Adjust the path to your MDX files
+
+  if (!posts || posts.length === 0) {
+    return <div>No posts found</div>;
+  }
+
+  return (
+    <div>
+      <h1>Blog</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.metadata.slug}>
+            <a href={`/blog/${post.metadata.slug}`}>{post.metadata.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+This page will display a list of all MDX files in the `content/blog` directory. Each file will be linked to its own page.
+
+We can also add a [`generateStaticParams`](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) function to generate static paths for all posts. This will allow Next.js to pre-render the pages at build time.
+
+```tsx
+export async function generateStaticParams() {
+  const posts = getMDXData("content/blog"); // Adjust the path to your MDX files
+
+  return posts.map((post) => ({
+    slug: post.metadata.slug,
+  }));
+}
+```
+
+That's it! You have successfully migrated from Contentlayer to MDX. You can now use MDX to write your blog posts and documentation.
+
+Now your app structure should look like this:
+
+```
+src
+├── app
+│   ├── blog
+│   │   ├── [slug]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   └── components
+│       └── mdx-components.tsx
+├── content
+│   └── blog
+│       ├── hello-world.mdx
+│       └── another-post.mdx
+└── lib
+    └── mdx.ts
+```
+
+In the next part, I will show you how to add syntax highlighting to your MDX files using [Shiki](https://shiki.style/).
+
+If you want to see the full code, you can check out my [GitHub repository](https://github.com/igorkowalczyk/igorkowalczyk.dev).
+

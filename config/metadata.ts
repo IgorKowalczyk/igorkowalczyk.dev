@@ -10,7 +10,7 @@ export const meta = {
  accounts: {
   github: {
    username: "igorkowalczyk",
-   repo: "igorkowalczyk.github.io",
+   repo: "igorkowalczyk.dev",
   },
   twitter: {
    username: "@majonezexe",

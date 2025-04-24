@@ -1,5 +1,4 @@
 /* eslint-disable require-await */
-import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 import { withAxiom } from "next-axiom";
 
@@ -142,9 +141,7 @@ const nextConfig: NextConfig = {
  },
 };
 
-const withMDX = createMDX({});
-
-export default withAxiom(withMDX(nextConfig));
+export default withAxiom(nextConfig);
 
 // export default () => {
 //  const plugins = [withContentlayer, withBundleAnalyzer];

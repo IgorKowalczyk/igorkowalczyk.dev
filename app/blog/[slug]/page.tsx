@@ -80,7 +80,7 @@ export default async function Blog({ params }: Props) {
    />
 
    <div className="grid flex-1 grid-cols-1 md:grid-cols-[1fr_minmax(auto,640px)_1fr] md:*:col-start-2">
-    <div>
+    <div className="w-max">
      <header className="mb-4 w-full">
       <Header1>{post.metadata.title}</Header1>
       <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
@@ -97,7 +97,7 @@ export default async function Blog({ params }: Props) {
      </header>
      <MDXComponent source={post.content} />
     </div>
-    <div className="sticky top-24 col-start-3! mt-8 ml-12 hidden max-w-56 flex-col space-y-2 self-start text-base xl:flex">
+    <div className="sticky top-24 col-start-3! mt-8 ml-12 hidden w-max max-w-56 flex-col space-y-2 self-start text-base xl:flex">
      <p className="mb-2 text-sm uppercase">On this page</p>
      {post.headings &&
       post.headings.map((props: { size: number; content: string; slug: string }) => (

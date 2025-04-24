@@ -1,11 +1,11 @@
-![Portfolio header](https://github.com/IgorKowalczyk/igorkowalczyk.github.io/assets/49127376/59642eac-4ac5-4d03-931c-2513d46655d3)
+![Portfolio header](https://github.com/IgorKowalczyk/igorkowalczyk.dev/assets/49127376/59642eac-4ac5-4d03-931c-2513d46655d3)
 
 <div align="center">
-  <a aria-label="GitHub License" href="https://github.com/igorkowalczyk/igorkowalczyk.github.io/blob/master/license.md">
-    <img src="https://img.shields.io/github/license/igorkowalczyk/igorkowalczyk.github.io?color=%2334D058&logo=github&style=flat-square&label=License">
+  <a aria-label="GitHub License" href="https://github.com/igorkowalczyk/igorkowalczyk.dev/blob/master/license.md">
+    <img src="https://img.shields.io/github/license/igorkowalczyk/igorkowalczyk.dev?color=%2334D058&logo=github&style=flat-square&label=License">
   </a>
-  <a aria-label="Version" href="https://github.com/igorkowalczyk/igorkowalczyk.github.io/releases">
-    <img src="https://img.shields.io/github/v/release/igorkowalczyk/igorkowalczyk.github.io?color=%2334D058&logo=github&style=flat-square&label=Version">
+  <a aria-label="Version" href="https://github.com/igorkowalczyk/igorkowalczyk.dev/releases">
+    <img src="https://img.shields.io/github/v/release/igorkowalczyk/igorkowalczyk.dev?color=%2334D058&logo=github&style=flat-square&label=Version">
   </a>
   <a aria-label="Discord" href="https://igorkowalczyk.dev/discord">
     <img src="https://img.shields.io/discord/695282860399001640?color=%2334D058&logo=discord&style=flat-square&logoColor=fff&label=Discord">
@@ -38,7 +38,7 @@
 
 ### 🔩 Self Hosting
 
-1. Clone [this repository](https://github.com/igorkowalczyk/igorkowalczyk.github.io) `git clone https://github.com/IgorKowalczyk/igorkowalczyk.github.io.git`
+1. Clone [this repository](https://github.com/igorkowalczyk/igorkowalczyk.dev) `git clone https://github.com/IgorKowalczyk/igorkowalczyk.dev.git`
 2. Run `pnpm i` to install all dependencies,
 3. Run `pnpm clean` to remove all unnecessary files so you can start with a clean project
 4. Copy `.env.example` file and rename it to `.env`
@@ -70,16 +70,16 @@
 
 ## ⁉️ Issues
 
-If you come across any errors or have suggestions for improvements, please create a [new issue here](https://github.com/igorkowalczyk/igorkowalczyk.github.io/issues) and describe it clearly.
+If you come across any errors or have suggestions for improvements, please create a [new issue here](https://github.com/igorkowalczyk/igorkowalczyk.dev/issues) and describe it clearly.
 
 ## 📥 Pull Requests
 
 When submitting a pull request, please follow these steps:
 
-- Clone [this repository](https://github.com/igorkowalczyk/igorkowalczyk.github.io) `https://github.com/IgorKowalczyk/igorkowalczyk.github.io.git`
+- Clone [this repository](https://github.com/igorkowalczyk/igorkowalczyk.dev) `https://github.com/IgorKowalczyk/igorkowalczyk.dev.git`
 - Create a branch from `main` and give it a meaningful name (e.g. `my-awesome-new-feature`).
-- Open a [pull request](https://github.com/igorkowalczyk/igorkowalczyk.github.io/pulls) on [GitHub](https://github.com/) and clearly describe the feature or fix you are proposing.
+- Open a [pull request](https://github.com/igorkowalczyk/igorkowalczyk.dev/pulls) on [GitHub](https://github.com/) and clearly describe the feature or fix you are proposing.
 
 ## 📋 License
 
-This project is licensed under the MIT. See the [LICENSE](https://github.com/igorkowalczyk/igorkowalczyk.github.io/blob/master/license.md) file for details
+This project is licensed under the MIT. See the [LICENSE](https://github.com/igorkowalczyk/igorkowalczyk.dev/blob/master/license.md) file for details
