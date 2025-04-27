@@ -54,8 +54,8 @@
     "zod": "3.24.3"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "3.0.7",
-    "@igorkowalczyk/prettier-config": "3.0.7",
+    "@igorkowalczyk/eslint-config": "3.0.8",
+    "@igorkowalczyk/prettier-config": "3.0.8",
     "@next/bundle-analyzer": "15.3.1",
     "@tailwindcss/typography": "0.5.16",
     "@types/mdx": "2.0.13",
@@ -63,7 +63,7 @@
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "autoprefixer": "10.4.21",
-    "eslint": "9.25.0",
+    "eslint": "9.25.1",
     "globby": "14.1.0",
     "jiti": "2.4.2",
     "postcss": "8.5.3",
