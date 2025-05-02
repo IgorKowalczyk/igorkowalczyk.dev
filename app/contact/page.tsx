@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Description, Header1 } from "@/components/ui/Headers";
@@ -5,7 +6,7 @@ import { Icons } from "@/components/ui/Icons";
 import Link from "@/components/ui/Link";
 import { contact } from "@/config/contact";
 
-export const metadata = {
+export const metadata: Metadata = {
  title: "Contact",
  description: "If you have a project in mind, or just want to say hi, feel free to send me a message.",
 };

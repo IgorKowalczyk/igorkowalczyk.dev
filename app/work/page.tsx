@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Fragment } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/Button";
@@ -7,7 +8,7 @@ import Link from "@/components/ui/Link";
 import { projects } from "@/config";
 import { meta } from "@/config";
 
-export const metadata = {
+export const metadata: Metadata = {
  title: "My Work",
  description: "Explore some of my latest projects and contributions, including open-source projects and personal projects.",
 };

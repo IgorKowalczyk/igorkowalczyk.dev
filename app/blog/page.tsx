@@ -1,10 +1,11 @@
+import type { Metadata } from "next";
 import { Description, Header1, Header2 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
 import Link from "@/components/ui/Link";
 import { getBlogPosts } from "@/lib/blogUtils";
 import { parseISO } from "@/lib/utils";
 
-export const metadata = {
+export const metadata: Metadata = {
  title: "Tech Blog",
  description: "A blog about technology, programming, and various intriguing topics. Here I share my experiences, projects and opinions.",
 };

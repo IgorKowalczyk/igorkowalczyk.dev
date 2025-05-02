@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXComponent } from "@/components/MDXComponents";
@@ -7,7 +8,7 @@ import { meta } from "@/config";
 import { getOtherPages } from "@/lib/blogUtils";
 import setup from "@/public/assets/uses.png";
 
-export const metadata = {
+export const metadata: Metadata = {
  title: "What I use",
  description: "A list of tools, software, and hardware that I use on a daily basis for work and personal projects.",
 };

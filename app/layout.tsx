@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { AxiomWebVitals } from "next-axiom";
 import { ThemeProvider } from "next-themes";
@@ -8,10 +9,10 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import { meta } from "@/config/metadata";
-import "styles/globals.css";
+import "@/app/globals.css";
 import { cn } from "@/lib/utils";
 
-export const metadata = {
+export const metadata: Metadata = {
  metadataBase: new URL(meta.url),
  title: {
   default: meta.title,
@@ -52,7 +53,7 @@ export const metadata = {
  },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
  themeColor: [
   { media: "(prefers-color-scheme: light)", color: "white" },
   { media: "(prefers-color-scheme: dark)", color: "black" },
