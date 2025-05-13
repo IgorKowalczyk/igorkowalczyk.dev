@@ -48,11 +48,11 @@ export function SettingsContent() {
         )}
        </SelectTrigger>
        <SelectContent>
-        <SelectItem value="system">
+        <SelectItem value="system" className="mb-0.5">
          <Icons.Laptop className="size-4" />
          <span>System</span>
         </SelectItem>
-        <SelectItem value="dark">
+        <SelectItem value="dark" className="mb-0.5">
          <Icons.Moon className="size-4" />
          <span>Dark</span>
         </SelectItem>
@@ -99,7 +99,7 @@ export default function Settings() {
       "bg-neutral-300! dark:bg-white/15!": isOpen,
       "bg-transparent! hover:bg-neutral-300! dark:hover:bg-white/15!": !isOpen,
      },
-     "group ml-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-md px-2 outline-hidden! duration-200 focus:bg-neutral-300! dark:focus:bg-white/15!"
+     "group ml-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg px-2 outline-hidden! duration-200 focus:bg-neutral-300! dark:focus:bg-white/15!"
     )}
    >
     <Icons.Settings
@@ -137,7 +137,7 @@ export default function Settings() {
       </DialogHeader>
       <SettingsContent />
       <DialogFooter>
-       <Link target="_blank" rel="noreferrer" href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}`} className="flex items-start text-sm text-neutral-800 opacity-50 duration-200 hover:opacity-100 motion-reduce:transition-none dark:text-white">
+       <Link target="_blank" rel="noreferrer" href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}`} className="flex items-center text-sm text-neutral-800 opacity-50 duration-200 hover:opacity-100 motion-reduce:transition-none dark:text-white">
         Source code <Icons.ExternalLink className="ml-2 size-3" />
        </Link>
 

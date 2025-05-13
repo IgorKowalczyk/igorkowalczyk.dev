@@ -44,8 +44,8 @@ export const NavigationPopoverItem = ({ ref, className, title, children, iconNam
  return (
   <li>
    <NavigationMenuLink asChild>
-    <Link ref={ref} className={cn("flex w-full items-center rounded-md p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5", className)} {...props}>
-     <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-black/10 text-white sm:size-12 dark:bg-white/10 dark:text-neutral-800">
+    <Link ref={ref} className={cn("flex w-full items-center rounded-lg p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5", className)} {...props}>
+     <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-black/10 text-white sm:size-12 dark:bg-white/10 dark:text-neutral-800">
       <Icon className={cn("inline size-6 stroke-black duration-200 motion-reduce:transition-none dark:stroke-white/70", iconStyles || "")} />
      </div>
      <div className="ml-3 space-y-1 text-sm">

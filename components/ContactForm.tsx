@@ -13,7 +13,7 @@ const initialState = {
  message: "",
 };
 
-export function ContactForm() {
+export const ContactForm = () => {
  const [formData, setFormData] = useState<ContactFormSchema>({
   email: "",
   name: "",
@@ -85,7 +85,7 @@ export function ContactForm() {
 
  return (
   <form action={formAction} className="relative flex w-full flex-col items-center justify-center">
-   <div className="block w-full items-center justify-center gap-4 text-left md:flex">
+   <div className="flex w-full flex-col items-center justify-center gap-4 text-left md:flex-row">
     <label htmlFor="name" className="w-full text-left text-sm font-bold tracking-wide text-neutral-700 dark:text-neutral-300">
      Name
      <span aria-hidden={true} className="cursor-help text-red-500" title="Required">
@@ -101,7 +101,7 @@ export function ContactForm() {
         "border-red-400 text-red-400": invalid.name,
         "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.name,
        },
-       "my-2 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
+       "mt-1 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
       )}
       type="text"
       placeholder="John Doe"
@@ -122,46 +122,44 @@ export function ContactForm() {
         "border-red-400 text-red-400": invalid.email,
         "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.email,
        },
-       "my-2 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
+       "mt-1 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
       )}
       type="email"
       placeholder="john@doe.com"
      />
     </label>
    </div>
-   <div className="mt-2 flex w-full flex-col items-center justify-center gap-1.5">
-    <label htmlFor="message" className="w-full text-left text-sm font-bold tracking-wide text-neutral-700 dark:text-neutral-300">
-     Message
-     <span aria-hidden={true} className="cursor-help text-red-500" title="Required">
-      *
-     </span>
-     <textarea
-      value={formData.message}
-      name="message"
-      onChange={handleChange}
-      id="message"
-      className={cn(
-       {
-        "border-red-400 text-red-400": invalid.message,
-        "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.message,
-       },
-       "mt-2 max-h-40 min-h-24 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
-      )}
-      placeholder="Hello there, I would like to ask you about..."
-     />
-    </label>
-    <span
+   <label htmlFor="message" className="mt-4 w-full text-left text-sm font-bold tracking-wide text-neutral-700 dark:text-neutral-300">
+    Message
+    <span aria-hidden={true} className="cursor-help text-red-500" title="Required">
+     *
+    </span>
+    <textarea
+     value={formData.message}
+     name="message"
+     onChange={handleChange}
+     id="message"
      className={cn(
       {
-       "text-red-400": invalid.message,
-       "text-neutral-700 dark:text-neutral-300": !invalid.message,
+       "border-red-400 text-red-400": invalid.message,
+       "border-neutral-300 text-neutral-800 focus:border-blue-600 dark:border-neutral-800 dark:text-white dark:focus:border-neutral-700": !invalid.message,
       },
-      "ml-auto text-xs opacity-50"
+      "mt-1 max-h-40 min-h-24 w-full rounded-lg border p-2 font-normal outline-0 duration-200 dark:bg-transparent"
      )}
-    >
-     {formData.message.trim().length}/500 characters
-    </span>
-   </div>
+     placeholder="Hello there, I would like to ask you about..."
+    />
+   </label>
+   <span
+    className={cn(
+     {
+      "text-red-400": invalid.message,
+      "text-neutral-700 dark:text-neutral-300": !invalid.message,
+     },
+     "ml-auto text-xs opacity-50"
+    )}
+   >
+    {formData.message.trim().length}/500 characters
+   </span>
 
    {process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY && (
     <div className="mt-2 flex w-full">
@@ -197,4 +195,4 @@ export function ContactForm() {
    </Button>
   </form>
  );
-}
+};

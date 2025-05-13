@@ -4,7 +4,7 @@ import * as React from "react";
 import { Icons } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
 
-export const buttonVariants = cva("group gap-2 flex w-fit items-center rounded-md px-4 py-2 font-medium duration-200 disabled:cursor-not-allowed cursor-pointer disabled:opacity-50 motion-reduce:transition-none", {
+export const buttonVariants = cva("group gap-2 flex w-fit items-center rounded-lg px-4 py-2 font-medium duration-200 disabled:cursor-not-allowed cursor-pointer disabled:opacity-50 motion-reduce:transition-none", {
  variants: {
   variant: {
    primary: "bg-blue-500 text-white hover:bg-blue-400",

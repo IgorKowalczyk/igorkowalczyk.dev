@@ -137,11 +137,11 @@
 
  .prose pre,
  .prose code:not(pre code) {
-  @apply border border-neutral-200 !bg-neutral-50 dark:border-neutral-800 dark:!bg-[#161617];
+  @apply !rounded-lg border border-neutral-200 !bg-neutral-50 dark:border-neutral-800 dark:!bg-[#161617];
  }
 
  .prose code:not(pre code) {
-  @apply rounded-md px-2 py-1 text-inherit;
+  @apply rounded-lg px-2 py-1 text-inherit;
  }
 
  blockquote p::after,
