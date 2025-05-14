@@ -1,11 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button, ButtonArrow } from "@/components/ui/Button";
 import { Description, Header2 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import { header, meta, technologies, contact, projects } from "@/config";
 import { GetUserData, getTotalContributionsForYears } from "@/lib/graphql";
 import { ConvertNumber } from "@/lib/utils";

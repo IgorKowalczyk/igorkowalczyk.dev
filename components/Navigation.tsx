@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import React from "react";
@@ -7,7 +8,6 @@ import Settings from "@/components/Settings";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/Drawer";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem, navigationMenuTriggerStyle, NavigationMenuContent, NavigationMenuTrigger } from "@/components/ui/NavigationMenu";
 import { nav } from "@/config/navigation";
 import { cn } from "@/lib/utils";

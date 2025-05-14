@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Fragment } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/Button";
 import { Description, Header1 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import { projects } from "@/config";
 import { meta } from "@/config";
 

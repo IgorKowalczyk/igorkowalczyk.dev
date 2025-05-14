@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXComponent } from "@/components/MDXComponents";
 import { Header1 } from "@/components/ui/Headers";
-import Link from "@/components/ui/Link";
 import { meta } from "@/config/metadata";
 import { getBlogPosts } from "@/lib/blogUtils";
 import { cn } from "@/lib/utils";
@@ -118,11 +118,9 @@ export default async function Blog({ params }: Props) {
       ))}
     </div>
    </div>
-   <div className="flex w-full justify-end py-4 text-neutral-700 dark:text-neutral-300">
-    <Link href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}/blob/master/data/blog/${post.slug}.mdx`} target="_blank" rel="noopener noreferrer">
-     Suggest a change
-    </Link>
-   </div>
+   <Link href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}/blob/master/data/blog/${post.slug}.mdx`} target="_blank" rel="noopener noreferrer" className="my-4 ml-auto duration-100 hover:text-neutral-700 hover:underline hover:decoration-wavy motion-reduce:transition-none dark:hover:text-white">
+    Suggest a change
+   </Link>
   </article>
  );
 }

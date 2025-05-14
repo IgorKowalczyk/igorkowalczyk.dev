@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -7,7 +8,6 @@ import { Button } from "@/components/ui/Button";
 import { Dialog, DialogContent, DialogHeader, DialogDescription, DialogTitle, DialogFooter } from "@/components/ui/Dialog";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/ui/Drawer";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/Select";
 import Switch from "@/components/ui/Switch";
 import { meta } from "@/config/metadata";

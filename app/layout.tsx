@@ -4,7 +4,6 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { AxiomWebVitals } from "next-axiom";
 import { ThemeProvider } from "next-themes";
-import { ViewTransitions } from "next-view-transitions";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
@@ -62,12 +61,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
  return (
-  <ViewTransitions>
-   <html lang="en" suppressHydrationWarning>
-    <head>
-     {process.env.HOTJAR_ID && (
-      <Script strategy="afterInteractive" id="hotjar">
-       {`
+  <html lang="en" suppressHydrationWarning>
+   <head>
+    {process.env.HOTJAR_ID && (
+     <Script strategy="afterInteractive" id="hotjar">
+      {`
     (function(h,o,t,j,a,r){
      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
      h._hjSettings={hjid:${process.env.HOTJAR_ID},hjsv:6};
@@ -77,24 +75,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
      a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
    `}
-      </Script>
-     )}
-    </head>
-    <body className={cn("relative scroll-smooth bg-white px-6 font-mono antialiased selection:bg-neutral-800 selection:text-white! dark:bg-[#121212]", GeistMono.variable)}>
-     <ThemeProvider attribute="class" disableTransitionOnChange scriptProps={{ "data-cfasync": "false" }}>
-      <Providers>
-       <Navigation />
-       <main className="max-w-body mx-auto min-h-screen w-full" data-vaul-drawer-wrapper="">
-        {children}
-       </main>
-       <div className="color-rays" />
-       <Footer />
-       <Analytics />
-       <AxiomWebVitals />
-      </Providers>
-     </ThemeProvider>
-    </body>
-   </html>
-  </ViewTransitions>
+     </Script>
+    )}
+   </head>
+   <body className={cn("relative scroll-smooth bg-white px-6 font-mono antialiased selection:bg-neutral-800 selection:text-white! dark:bg-[#121212]", GeistMono.variable)}>
+    <ThemeProvider attribute="class" disableTransitionOnChange scriptProps={{ "data-cfasync": "false" }}>
+     <Providers>
+      <Navigation />
+      <main className="max-w-body mx-auto min-h-screen w-full" data-vaul-drawer-wrapper="">
+       {children}
+      </main>
+      <div className="color-rays" />
+      <Footer />
+      <Analytics />
+      <AxiomWebVitals />
+     </Providers>
+    </ThemeProvider>
+   </body>
+  </html>
  );
 }

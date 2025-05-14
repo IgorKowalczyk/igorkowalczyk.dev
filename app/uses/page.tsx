@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXComponent } from "@/components/MDXComponents";
 import { Header1 } from "@/components/ui/Headers";
-import Link from "@/components/ui/Link";
 import { meta } from "@/config";
 import { getOtherPages } from "@/lib/blogUtils";
 import setup from "@/public/assets/uses.png";

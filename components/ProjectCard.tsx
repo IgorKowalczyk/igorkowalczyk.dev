@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import type { Project } from "@/lib/types";
 import { parseISO } from "@/lib/utils";
 import { cn } from "@/lib/utils";

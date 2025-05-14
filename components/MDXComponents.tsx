@@ -2,9 +2,9 @@ import rehypeShiki from "@shikijs/rehype";
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
+import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
-import Link from "@/components/ui/Link";
 import { slugify } from "@/lib/utils";
 
 function createHeading(level: number) {

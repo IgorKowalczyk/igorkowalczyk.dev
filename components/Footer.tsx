@@ -1,4 +1,4 @@
-import Link from "@/components/ui/Link";
+import Link from "next/link";
 import { footer } from "@/config/footer";
 
 export function Footer() {

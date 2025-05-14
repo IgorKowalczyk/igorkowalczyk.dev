@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Description, Header1 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
-import Link from "@/components/ui/Link";
 import { contact } from "@/config/contact";
 
 export const metadata: Metadata = {
