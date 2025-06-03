@@ -84,7 +84,7 @@ export type NavPopoverItem = {
  title: string;
  href: string;
  description: string;
- icon: LucideIcons;
+ icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
  iconStyles?: string;
 };
 

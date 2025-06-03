@@ -8,9 +8,9 @@ import React from "react";
 import Settings from "@/components/Settings";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/Drawer";
-import { type LucideIcons, Icons } from "@/components/ui/Icons";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem, navigationMenuTriggerStyle, NavigationMenuContent, NavigationMenuTrigger } from "@/components/ui/NavigationMenu";
 import { nav } from "@/config/navigation";
+import type { NavPopoverItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 export function MobileNavigation() {
@@ -40,8 +40,8 @@ export function MobileNavigation() {
  );
 }
 
-export const NavigationPopoverItem = ({ ref, className, title, children, iconName, iconStyles, ...props }: React.ComponentPropsWithRef<typeof Link> & { iconName: LucideIcons; iconStyles?: string }) => {
- const Icon = Icons[iconName] as React.ElementType;
+export const NavigationPopoverItem = ({ ref, className, title, children, icon, iconStyles, ...props }: React.ComponentPropsWithRef<typeof Link> & Omit<NavPopoverItem, "description">) => {
+ const Icon = icon;
  return (
   <li>
    <NavigationMenuLink asChild>
@@ -68,7 +68,7 @@ export default function NavigationPopover() {
    <NavigationMenuContent className="">
     <ul className="w-[384px] space-y-1 p-2">
      {popover.components.map((component) => (
-      <NavigationPopoverItem href={component.href} title={component.title} key={component.title} iconName={component.icon} iconStyles={component.iconStyles}>
+      <NavigationPopoverItem href={component.href} title={component.title} key={component.title} icon={component.icon} iconStyles={component.iconStyles}>
        {component.description}
       </NavigationPopoverItem>
      ))}
