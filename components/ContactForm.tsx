@@ -1,10 +1,10 @@
 "use client";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { CircleAlertIcon, MailCheckIcon, RefreshCwIcon, SendIcon } from "lucide-react";
 import { useState, ChangeEvent, useEffect, useRef } from "react";
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import { Button } from "@/components/ui/Button";
-import { Icons } from "@/components/ui/Icons";
 import { useDebounce } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { contactFormSchema, ContactFormSchema } from "@/lib/validator";
@@ -169,13 +169,13 @@ export const ContactForm = () => {
 
    {state.message && (
     <p className="mt-2 flex items-center gap-2 self-start text-green-500">
-     <Icons.MailCheckIcon className="size-5" />
+     <MailCheckIcon className="size-5" />
      {state.message}
     </p>
    )}
    {state.error && (
     <p className="mt-2 flex items-center gap-2 self-start text-red-400">
-     <Icons.CircleAlert className="size-5" />
+     <CircleAlertIcon className="size-5" />
      {state.error}
     </p>
    )}
@@ -183,12 +183,12 @@ export const ContactForm = () => {
    <Button variant="secondary" className="mt-4 ml-auto" type="submit" disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}>
     {pending ? (
      <>
-      <Icons.RefreshCw className="size-5 animate-spin duration-200 motion-reduce:transition-none" />
+      <RefreshCwIcon className="size-5 animate-spin duration-200 motion-reduce:transition-none" />
       Sending
      </>
     ) : (
      <>
-      <Icons.Send className="size-5" />
+      <SendIcon className="size-5" />
       Send
      </>
     )}

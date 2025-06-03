@@ -1,8 +1,8 @@
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
+import { ChevronRightIcon } from "lucide-react";
 import * as React from "react";
 import { useRef, useState } from "react";
-import { Icons } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
 
 const NavigationMenuViewport = ({ className, ...props }: React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Viewport>) => (
@@ -67,7 +67,7 @@ const navigationMenuTriggerStyle = cva("group cursor-pointer inline-flex h-10 w-
 
 const NavigationMenuTrigger = ({ className, children, ...props }: React.ComponentPropsWithRef<typeof NavigationMenuPrimitive.Trigger>) => (
  <NavigationMenuPrimitive.Trigger className={cn(navigationMenuTriggerStyle(), "group leading-none", className)} {...props}>
-  {children} <Icons.ChevronRight className="ml-1 size-4 transition-transform duration-100 ease-in group-data-[state=open]:rotate-90" aria-hidden="true" />
+  {children} <ChevronRightIcon className="ml-1 size-4 transition-transform duration-100 ease-in group-data-[state=open]:rotate-90" aria-hidden="true" />
  </NavigationMenuPrimitive.Trigger>
 );
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;

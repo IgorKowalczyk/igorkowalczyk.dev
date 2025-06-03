@@ -1,8 +1,8 @@
 "use client";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
+import { CheckIcon, ChevronsUpDownIcon } from "lucide-react";
 import * as React from "react";
-import { Icons } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
 
 const Select = SelectPrimitive.Root;
@@ -15,7 +15,7 @@ const SelectTrigger = ({ ref, className, children, ...props }: React.ComponentPr
    <span className="flex flex-row items-center gap-2 truncate leading-none">{children}</span>
   </SelectValue>
   <SelectPrimitive.Icon asChild className="pointer-events-none opacity-70">
-   <Icons.ChevronsUpDown className="size-4 shrink-0" />
+   <ChevronsUpDownIcon className="size-4 shrink-0" />
   </SelectPrimitive.Icon>
  </SelectPrimitive.Trigger>
 );
@@ -37,7 +37,7 @@ const SelectItem = ({ ref, className, children, ...props }: React.ComponentProps
   </SelectPrimitive.ItemText>
   <span className="absolute right-2 flex size-4 items-center justify-center">
    <SelectPrimitive.ItemIndicator>
-    <Icons.Check className="size-4 shrink-0" />
+    <CheckIcon className="size-4 shrink-0" />
    </SelectPrimitive.ItemIndicator>
   </span>
  </SelectPrimitive.Item>

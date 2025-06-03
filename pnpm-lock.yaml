@@ -14,9 +14,6 @@ importers:
       '@marsidev/react-turnstile':
         specifier: 1.1.0
         version: 1.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@playwright/test':
-        specifier: 1.52.0
-        version: 1.52.0
       '@radix-ui/react-dialog':
         specifier: 1.1.14
         version: 1.1.14(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -74,9 +71,6 @@ importers:
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
-      react-plock:
-        specifier: 3.5.1
-        version: 3.5.1(react@19.1.0)
       reading-time:
         specifier: 1.5.0
         version: 1.5.0
@@ -2872,11 +2866,6 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-plock@3.5.1:
-    resolution: {integrity: sha512-uJqiSaib+/EwhNyKB4cb9YdNAlS0tXhr5I35exEbcdTbPM0EaMiSPdzhlH4lmjBCkNwMPs7Xi23PZo7EQ04ndQ==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0
-
   react-remove-scroll-bar@2.3.8:
     resolution: {integrity: sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==}
     engines: {node: '>=10'}
@@ -3917,6 +3906,7 @@ snapshots:
   '@playwright/test@1.52.0':
     dependencies:
       playwright: 1.52.0
+    optional: true
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -6373,13 +6363,15 @@ snapshots:
 
   picomatch@4.0.2: {}
 
-  playwright-core@1.52.0: {}
+  playwright-core@1.52.0:
+    optional: true
 
   playwright@1.52.0:
     dependencies:
       playwright-core: 1.52.0
     optionalDependencies:
       fsevents: 2.3.2
+    optional: true
 
   possible-typed-array-names@1.1.0: {}
 
@@ -6429,10 +6421,6 @@ snapshots:
     dependencies:
       react: 19.1.0
       scheduler: 0.26.0
-
-  react-plock@3.5.1(react@19.1.0):
-    dependencies:
-      react: 19.1.0
 
   react-remove-scroll-bar@2.3.8(@types/react@19.1.6)(react@19.1.0):
     dependencies:

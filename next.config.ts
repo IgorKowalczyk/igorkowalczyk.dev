@@ -1,6 +1,11 @@
 /* eslint-disable require-await */
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
 import { withAxiom } from "next-axiom";
+
+const bundleAnalyzer = withBundleAnalyzer({
+ enabled: true,
+});
 
 const nextConfig: NextConfig = {
  eslint: {
@@ -141,7 +146,7 @@ const nextConfig: NextConfig = {
  },
 };
 
-export default withAxiom(nextConfig);
+export default bundleAnalyzer(withAxiom(nextConfig));
 
 // export default () => {
 //  const plugins = [withContentlayer, withBundleAnalyzer];

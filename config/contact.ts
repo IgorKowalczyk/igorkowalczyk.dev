@@ -1,3 +1,5 @@
+import { AtSignIcon } from "lucide-react";
+import { Icons } from "@/components/ui/Icons";
 import { meta } from "@/config/metadata";
 import type { Contact } from "@/lib/types";
 
@@ -6,22 +8,22 @@ export const contact = {
   {
    href: "mailto:majonezexe@protonmail.com",
    title: "Email",
-   icon: "AtSign",
+   icon: AtSignIcon,
   },
   {
    href: meta.accounts.discord.invite,
    title: "Discord",
-   icon: "Discord",
+   icon: Icons.Discord,
   },
   {
    href: `https://x.com/${meta.accounts.twitter.username}`,
    title: "Twitter / X",
-   icon: "Twitter",
+   icon: Icons.Twitter,
   },
   {
    href: `https://www.instagram.com/${meta.accounts.instagram.username}/`,
    title: "Instagram",
-   icon: "Instagram",
+   icon: Icons.Instagram,
   },
  ],
 } satisfies Contact;

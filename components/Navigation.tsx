@@ -1,5 +1,6 @@
 "use client";
 
+import { AlignLeftIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -7,7 +8,7 @@ import React from "react";
 import Settings from "@/components/Settings";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/Drawer";
-import { Icons } from "@/components/ui/Icons";
+import { type LucideIcons, Icons } from "@/components/ui/Icons";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem, navigationMenuTriggerStyle, NavigationMenuContent, NavigationMenuTrigger } from "@/components/ui/NavigationMenu";
 import { nav } from "@/config/navigation";
 import { cn } from "@/lib/utils";
@@ -19,7 +20,7 @@ export function MobileNavigation() {
  return (
   <Drawer shouldScaleBackground={false} direction="left" open={isMenuOpen} onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
    <DrawerTrigger aria-label="Open navigation" className={cn(buttonVariants({ variant: "secondary" }), "size-10 justify-center border-0 bg-transparent! outline-hidden! hover:bg-neutral-300! lg:hidden dark:hover:bg-white/15!")}>
-    <Icons.AlignLeft className="size-5 shrink-0 text-neutral-900 dark:text-neutral-100" />
+    <AlignLeftIcon className="size-5 shrink-0 text-neutral-900 dark:text-neutral-100" />
    </DrawerTrigger>
 
    <DrawerContent variant="left">
@@ -39,7 +40,7 @@ export function MobileNavigation() {
  );
 }
 
-export const NavigationPopoverItem = ({ ref, className, title, children, iconName, iconStyles, ...props }: React.ComponentPropsWithRef<typeof Link> & { iconName: keyof typeof Icons; iconStyles?: string }) => {
+export const NavigationPopoverItem = ({ ref, className, title, children, iconName, iconStyles, ...props }: React.ComponentPropsWithRef<typeof Link> & { iconName: LucideIcons; iconStyles?: string }) => {
  const Icon = Icons[iconName] as React.ElementType;
  return (
   <li>

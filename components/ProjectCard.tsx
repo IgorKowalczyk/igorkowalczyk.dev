@@ -1,3 +1,4 @@
+import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
@@ -40,7 +41,7 @@ export function ProjectCard({ project, className, ...props }: ProjectCardProps) 
      {project.website && (
       <Button variant="primary" asChild>
        <Link href={project.website} rel="noopener noreferrer">
-        <Icons.Link className="size-5 stroke-2" />
+        <LinkIcon className="size-5 stroke-2" />
         Visit website
        </Link>
       </Button>
