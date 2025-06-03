@@ -19,10 +19,6 @@ export const nav = {
  // Only for mobile navigation, will be merged with the main navigation
  mobile: [
   {
-   href: "/photography/",
-   title: "Photography",
-  },
-  {
    href: meta.accounts.discord.invite,
    title: "Discord",
    target: "_blank",
@@ -38,12 +34,6 @@ export const nav = {
      description: "Explore my projects and contributions on GitHub.",
      icon: "Github",
      iconStyles: "fill-black dark:fill-white/70 stroke-none!",
-    },
-    {
-     title: "Photography Portfolio",
-     href: "/photography",
-     description: "View my collection of photographs and visual art.",
-     icon: "Images",
     },
     {
      title: "Contact Me",

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Description, Header1 } from "@/components/ui/Headers";
-import { Icons } from "@/components/ui/Icons";
 import { contact } from "@/config/contact";
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function Page() {
    <Description>Or contact me with...</Description>
    <div className="mt-4 flex flex-wrap gap-4">
     {contact.links.map((element) => {
-     const Icon = Icons[element.icon];
+     const Icon = element.icon;
 
      return (
       <Button variant="tertiary" key={`contact-link-${element.href}`} className="gap-2" asChild>

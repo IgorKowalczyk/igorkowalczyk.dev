@@ -1,4 +1,4 @@
-import type { Icons } from "@/components/ui/Icons";
+import type { LucideIcons } from "@/components/ui/Icons";
 
 export interface Language {
  size: number;
@@ -35,7 +35,7 @@ export type Header = {
 export interface ContactLink {
  href: string;
  title: string;
- icon: keyof typeof Icons;
+ icon: LucideIcons | React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 export type Contact = {
@@ -84,7 +84,7 @@ export type NavPopoverItem = {
  title: string;
  href: string;
  description: string;
- icon: keyof typeof Icons;
+ icon: LucideIcons;
  iconStyles?: string;
 };
 

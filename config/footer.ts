@@ -44,16 +44,12 @@ export const footer = {
    title: "Other",
    links: [
     {
-     title: "What i use",
+     title: "What I use",
      href: "/uses",
     },
     {
      title: "Contact",
      href: "/contact",
-    },
-    {
-     title: "Photography",
-     href: "/photography",
     },
    ],
   },

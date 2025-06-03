@@ -1,3 +1,4 @@
+import { GitForkIcon, GitGraphIcon, StarIcon, UsersIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
@@ -37,19 +38,19 @@ export default async function HomePage() {
 
    <section className="mb-16 flex flex-wrap justify-between gap-4 text-center text-xs font-bold text-neutral-800/70 dark:text-white/70">
     <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}`} className="flex items-center gap-2 text-center duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
-     <Icons.Star className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userStars)} stars</span>
+     <StarIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userStars)} stars</span>
     </Link>
 
     <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}`} className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
-     <Icons.GitGraph className="size-4 stroke-2" /> <span>{userData && ConvertNumber(contributions.total)} commits</span>
+     <GitGraphIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(contributions.total)} commits</span>
     </Link>
 
     <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}`} className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
-     <Icons.GitFork className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userForks)} repositories forks</span>
+     <GitForkIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userForks)} repositories forks</span>
     </Link>
 
     <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}?tab=followers`} className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
-     <Icons.Users className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userFollowers)} Github followers</span>
+     <UsersIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userFollowers)} Github followers</span>
     </Link>
    </section>
 
@@ -123,7 +124,7 @@ export default async function HomePage() {
     <Description>Or contact me with...</Description>
     <div className="mt-4 flex flex-wrap gap-4">
      {contact.links.map((element) => {
-      const Icon = Icons[element.icon];
+      const Icon = element.icon;
 
       return (
        <Button variant="tertiary" key={`contact-link-${element.href}`} className="gap-2" asChild>

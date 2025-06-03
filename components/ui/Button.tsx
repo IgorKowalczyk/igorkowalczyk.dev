@@ -1,7 +1,7 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { ArrowRightIcon } from "lucide-react";
 import * as React from "react";
-import { Icons } from "@/components/ui/Icons";
 import { cn } from "@/lib/utils";
 
 export const buttonVariants = cva("group gap-2 flex w-fit items-center rounded-lg px-4 py-2 font-medium duration-200 disabled:cursor-not-allowed cursor-pointer disabled:opacity-50 motion-reduce:transition-none", {
@@ -31,4 +31,4 @@ export const Button = ({
  return <Comp data-slot="button" className={cn(buttonVariants({ variant }), className || "")} {...props} />;
 };
 
-export const ButtonArrow = ({ className, ...props }: React.ComponentProps<typeof Icons.ArrowRight>) => <Icons.ArrowRight className={cn("size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0", className)} {...props} />;
+export const ButtonArrow = ({ className, ...props }: React.ComponentProps<typeof ArrowRightIcon>) => <ArrowRightIcon className={cn("size-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0", className)} {...props} />;

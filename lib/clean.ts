@@ -14,7 +14,6 @@ const deleteIfExists = (path: string) => {
 };
 
 deleteIfExists("public/.well-known");
-deleteIfExists("public/assets/photography");
 deleteIfExists("public/assets/projects");
 deleteIfExists("public/setup.jpg");
 deleteIfExists("public/avatar.png");
