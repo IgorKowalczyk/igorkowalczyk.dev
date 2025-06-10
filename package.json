@@ -46,7 +46,7 @@
     "sharp": "0.34.2",
     "shiki": "3.4.2",
     "tailwind-merge": "3.3.0",
-    "tw-animate-css": "1.3.2",
+    "tw-animate-css": "1.3.4",
     "vaul": "1.1.2",
     "zod": "3.25.57"
   },
