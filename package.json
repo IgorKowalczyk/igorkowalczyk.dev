@@ -28,7 +28,7 @@
     "@radix-ui/react-slot": "1.2.3",
     "@radix-ui/react-switch": "1.2.5",
     "@shikijs/rehype": "3.7.0",
-    "@tailwindcss/postcss": "4.1.10",
+    "@tailwindcss/postcss": "4.1.11",
     "@vercel/analytics": "1.5.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -66,7 +66,7 @@
     "postcss": "8.5.6",
     "prettier": "3.6.1",
     "prettier-plugin-tailwindcss": "0.6.13",
-    "tailwindcss": "4.1.10",
+    "tailwindcss": "4.1.11",
     "tsx": "4.20.3",
     "typescript": "5.8.3"
   },
