@@ -51,7 +51,7 @@
     "zod": "3.25.67"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "3.0.8",
+    "@igorkowalczyk/eslint-config": "3.1.0",
     "@igorkowalczyk/prettier-config": "3.0.8",
     "@next/bundle-analyzer": "15.3.4",
     "@tailwindcss/typography": "0.5.16",
