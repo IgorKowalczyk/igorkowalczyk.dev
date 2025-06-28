@@ -118,7 +118,12 @@ export default async function Blog({ params }: Props) {
       ))}
     </div>
    </div>
-   <Link href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}/blob/master/data/blog/${post.slug}.mdx`} target="_blank" rel="noopener noreferrer" className="my-4 ml-auto duration-100 hover:text-neutral-700 hover:underline hover:decoration-wavy motion-reduce:transition-none dark:hover:text-white">
+   <Link
+    href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}/blob/master/data/blog/${post.slug}.mdx`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="my-4 ml-auto duration-100 hover:text-neutral-700 hover:underline hover:decoration-wavy motion-reduce:transition-none dark:hover:text-white"
+   >
     Suggest a change
    </Link>
   </article>

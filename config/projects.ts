@@ -36,7 +36,8 @@ export const projects = [
  },
  {
   name: "Los Santos County",
-  description: "A fully customizable dashboard for FiveM communities with applications, administrator panel, payments, 2FA, permissions, Discord, Steam, CFX Forum integrations and more!",
+  description:
+   "A fully customizable dashboard for FiveM communities with applications, administrator panel, payments, 2FA, permissions, Discord, Steam, CFX Forum integrations and more!",
   images: [
    {
     src: "/assets/projects/ls-county/image-01.png",
@@ -68,7 +69,8 @@ export const projects = [
  },
  {
   name: "RabbitRP",
-  description: "Website for a FiveM roleplay server with player applications, server statistics, player profiles, Discord integration and more. Fully customizable and easy to use.",
+  description:
+   "Website for a FiveM roleplay server with player applications, server statistics, player profiles, Discord integration and more. Fully customizable and easy to use.",
   images: [
    {
     src: "/assets/projects/rabbitrp/image-01.png",

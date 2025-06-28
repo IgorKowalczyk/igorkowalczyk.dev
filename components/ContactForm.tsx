@@ -180,7 +180,12 @@ export const ContactForm = () => {
     </p>
    )}
 
-   <Button variant="secondary" className="mt-4 ml-auto" type="submit" disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}>
+   <Button
+    variant="secondary"
+    className="mt-4 ml-auto"
+    type="submit"
+    disabled={pending || invalid.email || invalid.name || invalid.message || !formData.email || !formData.name || !formData.message}
+   >
     {pending ? (
      <>
       <RefreshCwIcon className="size-5 animate-spin duration-200 motion-reduce:transition-none" />

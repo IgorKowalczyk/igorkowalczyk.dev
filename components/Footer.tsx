@@ -12,7 +12,12 @@ export function Footer() {
      <div key={`footer-category-${category.title}`} className="text-neutral-700 dark:text-neutral-400">
       <p className="mt-1 mb-2 font-bold text-neutral-800 dark:text-white">{category.title}</p>
       {category.links.map((link) => (
-       <Link key={`footer-link-${link.href}`} href={link.href} target={"target" in link ? link.target : "_self"} className="mt-1 block duration-100 hover:text-neutral-700 hover:underline hover:decoration-wavy motion-reduce:transition-none dark:hover:text-white">
+       <Link
+        key={`footer-link-${link.href}`}
+        href={link.href}
+        target={"target" in link ? link.target : "_self"}
+        className="mt-1 block duration-100 hover:text-neutral-700 hover:underline hover:decoration-wavy motion-reduce:transition-none dark:hover:text-white"
+       >
         {link.title}
        </Link>
       ))}

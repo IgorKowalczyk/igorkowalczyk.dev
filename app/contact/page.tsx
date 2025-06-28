@@ -14,7 +14,9 @@ export default function Page() {
  return (
   <section className="mt-6 mb-16 md:mt-12 lg:mt-20">
    <Header1 id="contact">Contact me</Header1>
-   <Description className="mb-16">I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.</Description>
+   <Description className="mb-16">
+    I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+   </Description>
 
    <div className="my-6 flex w-full rounded-xl border border-black/15 bg-white p-5 dark:border-neutral-800 dark:bg-[#161617]">
     <ContactForm />

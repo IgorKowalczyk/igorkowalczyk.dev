@@ -37,19 +37,35 @@ export default async function HomePage() {
    </section>
 
    <section className="mb-16 flex flex-wrap justify-between gap-4 text-center text-xs font-bold text-neutral-800/70 dark:text-white/70">
-    <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}`} className="flex items-center gap-2 text-center duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
+    <Link
+     target="_blank"
+     href={`https://github.com/${meta.accounts.github.username}`}
+     className="flex items-center gap-2 text-center duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
+    >
      <StarIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userStars)} stars</span>
     </Link>
 
-    <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}`} className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
+    <Link
+     target="_blank"
+     href={`https://github.com/${meta.accounts.github.username}`}
+     className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
+    >
      <GitGraphIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(contributions.total)} commits</span>
     </Link>
 
-    <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}`} className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
+    <Link
+     target="_blank"
+     href={`https://github.com/${meta.accounts.github.username}`}
+     className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
+    >
      <GitForkIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userForks)} repositories forks</span>
     </Link>
 
-    <Link target="_blank" href={`https://github.com/${meta.accounts.github.username}?tab=followers`} className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white">
+    <Link
+     target="_blank"
+     href={`https://github.com/${meta.accounts.github.username}?tab=followers`}
+     className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
+    >
      <UsersIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userFollowers)} Github followers</span>
     </Link>
    </section>
@@ -58,9 +74,14 @@ export default async function HomePage() {
     <Header2 id="about">About me</Header2>
 
     <div className="prose-quoteless prose prose-neutral dark:prose-invert">
-     <span>I have been coding for over {new Date().getFullYear() - 2018} years, beginning my journey in late 2018. Initially, I learned HTML, CSS, and basic JavaScript to build websites.</span>
+     <span>
+      I have been coding for over {new Date().getFullYear() - 2018} years, beginning my journey in late 2018. Initially, I learned HTML, CSS, and basic JavaScript to build
+      websites.
+     </span>
      <p>My first project was a simple music player made with JavaScript (~January 2019).</p>
-     <span>In March 2020, I began learning Node.js and Express.js, and created my first major project, Majo.exe. In April 2022, I started learning React.js, Next.js, and Tailwind CSS.</span>
+     <span>
+      In March 2020, I began learning Node.js and Express.js, and created my first major project, Majo.exe. In April 2022, I started learning React.js, Next.js, and Tailwind CSS.
+     </span>
     </div>
 
     <div className="mt-6 flex flex-row flex-wrap gap-4">
@@ -116,7 +137,9 @@ export default async function HomePage() {
 
    <section className="mb-12">
     <Header2 id="contact">Contact me</Header2>
-    <Description>I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.</Description>
+    <Description>
+     I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+    </Description>
 
     <div className="my-6 flex w-full rounded-xl border border-black/15 bg-white p-5 dark:border-neutral-800 dark:bg-[#161617]">
      <ContactForm />

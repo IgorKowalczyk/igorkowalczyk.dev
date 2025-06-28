@@ -8,7 +8,15 @@ import React from "react";
 import Settings from "@/components/Settings";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/Drawer";
-import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem, navigationMenuTriggerStyle, NavigationMenuContent, NavigationMenuTrigger } from "@/components/ui/NavigationMenu";
+import {
+ NavigationMenu,
+ NavigationMenuLink,
+ NavigationMenuList,
+ NavigationMenuItem,
+ navigationMenuTriggerStyle,
+ NavigationMenuContent,
+ NavigationMenuTrigger,
+} from "@/components/ui/NavigationMenu";
 import { nav } from "@/config/navigation";
 import type { NavPopoverItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -19,7 +27,13 @@ export function MobileNavigation() {
 
  return (
   <Drawer shouldScaleBackground={false} direction="left" open={isMenuOpen} onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
-   <DrawerTrigger aria-label="Open navigation" className={cn(buttonVariants({ variant: "secondary" }), "size-10 justify-center border-0 bg-transparent! outline-hidden! hover:bg-neutral-300! lg:hidden dark:hover:bg-white/15!")}>
+   <DrawerTrigger
+    aria-label="Open navigation"
+    className={cn(
+     buttonVariants({ variant: "secondary" }),
+     "size-10 justify-center border-0 bg-transparent! outline-hidden! hover:bg-neutral-300! lg:hidden dark:hover:bg-white/15!"
+    )}
+   >
     <AlignLeftIcon className="size-5 shrink-0 text-neutral-900 dark:text-neutral-100" />
    </DrawerTrigger>
 
@@ -40,12 +54,27 @@ export function MobileNavigation() {
  );
 }
 
-export const NavigationPopoverItem = ({ ref, className, title, children, icon, iconStyles, ...props }: React.ComponentPropsWithRef<typeof Link> & Omit<NavPopoverItem, "description">) => {
+export const NavigationPopoverItem = ({
+ ref,
+ className,
+ title,
+ children,
+ icon,
+ iconStyles,
+ ...props
+}: React.ComponentPropsWithRef<typeof Link> & Omit<NavPopoverItem, "description">) => {
  const Icon = icon;
  return (
   <li>
    <NavigationMenuLink asChild>
-    <Link ref={ref} className={cn("flex w-full items-center rounded-lg p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5", className)} {...props}>
+    <Link
+     ref={ref}
+     className={cn(
+      "flex w-full items-center rounded-lg p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5",
+      className
+     )}
+     {...props}
+    >
      <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-black/10 text-white sm:size-12 dark:bg-white/10 dark:text-neutral-800">
       <Icon className={cn("inline size-6 stroke-black duration-200 motion-reduce:transition-none dark:stroke-white/70", iconStyles || "")} />
      </div>

@@ -137,7 +137,12 @@ export default function Settings() {
       </DialogHeader>
       <SettingsContent />
       <DialogFooter>
-       <Link target="_blank" rel="noreferrer" href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}`} className="flex items-center text-sm text-neutral-800 opacity-50 duration-200 hover:opacity-100 motion-reduce:transition-none dark:text-white">
+       <Link
+        target="_blank"
+        rel="noreferrer"
+        href={`https://github.com/${meta.accounts.github.username}/${meta.accounts.github.repo}`}
+        className="flex items-center text-sm text-neutral-800 opacity-50 duration-200 hover:opacity-100 motion-reduce:transition-none dark:text-white"
+       >
         Source code <ExternalLinkIcon className="ml-2 size-3" />
        </Link>
 
