@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font/mono";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
@@ -87,7 +86,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </main>
       <div className="color-rays" />
       <Footer />
-      <Analytics />
       <AxiomWebVitals />
      </Providers>
     </ThemeProvider>
