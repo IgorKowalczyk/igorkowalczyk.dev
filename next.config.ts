@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 import { withAxiom } from "next-axiom";
 
 const bundleAnalyzer = withBundleAnalyzer({
- enabled: true,
+ enabled: process.env.ANALYZE ? true : false,
 });
 
 const nextConfig: NextConfig = {

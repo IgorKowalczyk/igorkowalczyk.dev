@@ -70,7 +70,7 @@ export const NavigationPopoverItem = ({
     <Link
      ref={ref}
      className={cn(
-      "flex w-full items-center rounded-lg p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5",
+      "-ml-px flex w-full items-center rounded-lg p-3 leading-none outline-hidden transition-colors select-none hover:bg-black/10 focus:bg-black/10 dark:hover:bg-white/5 dark:focus:bg-white/5",
       className
      )}
      {...props}
@@ -94,7 +94,7 @@ export default function NavigationPopover() {
   <NavigationMenuItem key={popover.title} value={popover.title}>
    <NavigationMenuTrigger>{popover.title}</NavigationMenuTrigger>
 
-   <NavigationMenuContent className="">
+   <NavigationMenuContent>
     <ul className="w-[384px] space-y-1 p-2">
      {popover.components.map((component) => (
       <NavigationPopoverItem href={component.href} title={component.title} key={component.title} icon={component.icon} iconStyles={component.iconStyles}>

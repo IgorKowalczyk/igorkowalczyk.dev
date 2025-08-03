@@ -6,7 +6,7 @@ import type { Contact } from "@/lib/types";
 export const contact = {
  links: [
   {
-   href: "mailto:majonezexe@protonmail.com",
+   href: "mailto:contact@igorkowalczyk.dev",
    title: "Email",
    icon: AtSignIcon,
   },

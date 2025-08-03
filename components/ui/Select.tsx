@@ -40,7 +40,7 @@ const SelectContent = ({ ref, className, children, position, ...props }: React.C
    position={position}
    {...props}
   >
-   <SelectPrimitive.Viewport className={cn("p-2", position === "popper" && "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]")}>
+   <SelectPrimitive.Viewport className={cn("p-1.5", position === "popper" && "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]")}>
     {children}
    </SelectPrimitive.Viewport>
   </SelectPrimitive.Content>
