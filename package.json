@@ -81,7 +81,7 @@
   "bugs": {
     "url": "https://github.com/igorkowalczyk/igorkowalczyk.dev/issues"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.15.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
