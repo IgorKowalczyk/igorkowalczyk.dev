@@ -9,7 +9,7 @@ import { Description, Header2 } from "@/components/ui/Headers";
 import { Icons } from "@/components/ui/Icons";
 import { header, meta, technologies, contact, projects } from "@/config";
 import { GetUserData, getTotalContributionsForYears } from "@/lib/graphql";
-import { ConvertNumber } from "@/lib/utils";
+import { convertNumber } from "@/lib/utils";
 
 export default async function HomePage() {
  const userData = await GetUserData();
@@ -42,7 +42,7 @@ export default async function HomePage() {
      href={`https://github.com/${meta.accounts.github.username}`}
      className="flex items-center gap-2 text-center duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
     >
-     <StarIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userStars)} stars</span>
+     <StarIcon className="size-4 stroke-2" /> <span>{userData && convertNumber(userData.userStars)} stars</span>
     </Link>
 
     <Link
@@ -50,7 +50,7 @@ export default async function HomePage() {
      href={`https://github.com/${meta.accounts.github.username}`}
      className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
     >
-     <GitGraphIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(contributions.total)} commits</span>
+     <GitGraphIcon className="size-4 stroke-2" /> <span>{userData && convertNumber(contributions.total)} commits</span>
     </Link>
 
     <Link
@@ -58,7 +58,7 @@ export default async function HomePage() {
      href={`https://github.com/${meta.accounts.github.username}`}
      className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
     >
-     <GitForkIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userForks)} repositories forks</span>
+     <GitForkIcon className="size-4 stroke-2" /> <span>{userData && convertNumber(userData.userForks)} repositories forks</span>
     </Link>
 
     <Link
@@ -66,7 +66,7 @@ export default async function HomePage() {
      href={`https://github.com/${meta.accounts.github.username}?tab=followers`}
      className="flex items-center gap-2 duration-200 hover:text-neutral-800 motion-reduce:transition-none dark:hover:text-white"
     >
-     <UsersIcon className="size-4 stroke-2" /> <span>{userData && ConvertNumber(userData.userFollowers)} Github followers</span>
+     <UsersIcon className="size-4 stroke-2" /> <span>{userData && convertNumber(userData.userFollowers)} Github followers</span>
     </Link>
    </section>
 

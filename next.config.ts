@@ -8,11 +8,11 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
- eslint: {
-  ignoreDuringBuilds: true,
- },
  devIndicators: {
   position: "bottom-right",
+ },
+ images: {
+  qualities: [50, 75, 100],
  },
  productionBrowserSourceMaps: true,
  async headers() {
@@ -147,11 +147,3 @@ const nextConfig: NextConfig = {
 };
 
 export default bundleAnalyzer(withAxiom(nextConfig));
-
-// export default () => {
-//  const plugins = [withContentlayer, withBundleAnalyzer];
-//  const config = plugins.reduce((acc, next) => next(acc), {
-//   ...nextConfig,
-//  });
-//  return config;
-// };

@@ -1,14 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export const ConvertBytes = (bytes: number): string => {
- const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
- if (!bytes) return "n/a";
- const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1000)).toString(), 10);
- return `${(bytes / Math.pow(1000, i)).toFixed(1)} ${sizes[i]}`;
-};
-
-export const ConvertNumber = (number: number): string => {
+export const convertNumber = (number: number): string => {
  return Intl.NumberFormat("en-US", {
   notation: "compact",
   style: "decimal",
