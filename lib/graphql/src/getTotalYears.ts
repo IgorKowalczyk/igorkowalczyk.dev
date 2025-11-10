@@ -2,18 +2,18 @@ import { meta } from "@/config/metadata";
 import { requestGraphql } from "@/lib/graphql/src/requestGraphql";
 
 interface GraphqlResponse {
- data: {
-  user: {
-   contributionsCollection: {
-    contributionYears: number[];
-   };
-  } | null;
- };
+  data: {
+    user: {
+      contributionsCollection: {
+        contributionYears: number[];
+      };
+    } | null;
+  };
 }
 
 export async function getTotalYears(): Promise<number[]> {
- const { data }: GraphqlResponse = await requestGraphql(
-  `
+  const { data }: GraphqlResponse = await requestGraphql(
+    `
     query($username: String!) {
       user(login: $username) {
         contributionsCollection {
@@ -22,10 +22,10 @@ export async function getTotalYears(): Promise<number[]> {
       }
     }
   `,
-  {
-   username: meta.accounts.github.username,
-  }
- );
+    {
+      username: meta.accounts.github.username,
+    }
+  );
 
- return data.user?.contributionsCollection.contributionYears ?? [];
+  return data.user?.contributionsCollection.contributionYears ?? [];
 }

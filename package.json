@@ -25,16 +25,16 @@
     "@radix-ui/react-dialog": "1.1.15",
     "@radix-ui/react-navigation-menu": "1.2.14",
     "@radix-ui/react-select": "2.2.6",
-    "@radix-ui/react-slot": "1.2.3",
+    "@radix-ui/react-slot": "1.2.4",
     "@radix-ui/react-switch": "1.2.6",
-    "@shikijs/rehype": "3.13.0",
-    "@tailwindcss/postcss": "4.1.15",
+    "@shikijs/rehype": "3.15.0",
+    "@tailwindcss/postcss": "4.1.17",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "geist": "1.5.1",
     "gray-matter": "4.0.3",
-    "lucide-react": "0.546.0",
-    "next": "16.0.0",
+    "lucide-react": "0.553.0",
+    "next": "16.0.1",
     "next-axiom": "1.9.3",
     "next-mdx-remote": "5.0.0",
     "next-themes": "0.4.6",
@@ -42,29 +42,29 @@
     "react-dom": "19.2.0",
     "reading-time": "1.5.0",
     "server-only": "0.0.1",
-    "sharp": "0.34.4",
-    "shiki": "3.13.0",
-    "tailwind-merge": "3.3.1",
+    "sharp": "0.34.5",
+    "shiki": "3.15.0",
+    "tailwind-merge": "3.4.0",
     "tw-animate-css": "1.4.0",
     "vaul": "1.1.2",
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "3.1.0",
-    "@igorkowalczyk/prettier-config": "3.1.0",
-    "@next/bundle-analyzer": "16.0.0",
+    "@igorkowalczyk/eslint-config": "3.2.0",
+    "@igorkowalczyk/prettier-config": "3.2.0",
+    "@next/bundle-analyzer": "16.0.1",
     "@tailwindcss/typography": "0.5.19",
     "@types/mdx": "2.0.13",
-    "@types/node": "24.9.0",
+    "@types/node": "24.10.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "autoprefixer": "10.4.21",
-    "eslint": "9.38.0",
+    "eslint": "9.39.1",
     "jiti": "2.6.1",
     "postcss": "8.5.6",
     "prettier": "3.6.2",
     "prettier-plugin-tailwindcss": "0.7.1",
-    "tailwindcss": "4.1.15",
+    "tailwindcss": "4.1.17",
     "tsx": "4.20.6",
     "typescript": "5.9.3"
   },
@@ -91,10 +91,6 @@
     ],
     "ignoredBuiltDependencies": [
       "unrs-resolver"
-    ],
-    "overrides": {
-      "@types/react": "19.2.2",
-      "@types/react-dom": "19.2.2"
-    }
+    ]
   }
 }

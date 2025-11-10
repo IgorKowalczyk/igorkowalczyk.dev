@@ -5,13 +5,13 @@ import { getBlogPosts } from "@/lib/blogUtils";
 export const dynamic = "force-static";
 
 export function GET() {
- const posts = getBlogPosts();
+  const posts = getBlogPosts();
 
- const updatedDate = posts.length ? new Date(Math.max(...posts.map((post) => new Date(post.metadata.publishedAt).getTime()))).toISOString() : new Date().toISOString();
+  const updatedDate = posts.length ? new Date(Math.max(...posts.map((post) => new Date(post.metadata.publishedAt).getTime()))).toISOString() : new Date().toISOString();
 
- const entries = posts
-  .map(
-   (post) => `
+  const entries = posts
+    .map(
+      (post) => `
         <entry>
           <id>${meta.url}/blog/${post.slug}</id>
           <title>${post.metadata.title}</title>
@@ -19,11 +19,11 @@ export function GET() {
           <link href="${meta.url}/blog/${post.slug}"/>
           <updated>${new Date(post.metadata.publishedAt).toISOString()}</updated>
         </entry>`
-  )
-  .join("");
+    )
+    .join("");
 
- return new NextResponse(
-  `<?xml version="1.0" encoding="utf-8"?>
+  return new NextResponse(
+    `<?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
       <title>${meta.title}</title>
       <subtitle>Blog</subtitle>
@@ -36,10 +36,10 @@ export function GET() {
       <id>${meta.url}/</id>
       ${entries}
     </feed>`,
-  {
-   headers: {
-    "content-type": "application/atom+xml; charset=utf-8",
-   },
-  }
- );
+    {
+      headers: {
+        "content-type": "application/atom+xml; charset=utf-8",
+      },
+    }
+  );
 }

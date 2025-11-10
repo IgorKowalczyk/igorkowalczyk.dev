@@ -1,7 +1,7 @@
 "use client";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { CircleAlertIcon, MailCheckIcon, RefreshCwIcon, SendIcon } from "lucide-react";
-import { useState, ChangeEvent, useEffect, useRef } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import { Button } from "@/components/ui/Button";
@@ -20,12 +20,6 @@ export const ContactForm = () => {
   message: "",
  });
 
- const [invalid, setInvalid] = useState({
-  email: false,
-  name: false,
-  message: false,
- });
-
  const [touched, setTouched] = useState({
   email: false,
   name: false,
@@ -38,34 +32,19 @@ export const ContactForm = () => {
  const debouncedEmail = useDebounce(formData.email, 500);
  const debouncedMessage = useDebounce(formData.message, 500);
 
- const validateField = (field: string, value: string) => {
-  const result = contactFormSchema.safeParse({ ...formData, [field]: value });
+ const validationResult = contactFormSchema.safeParse({
+  name: debouncedName,
+  email: debouncedEmail,
+  message: debouncedMessage,
+ });
 
-  if (!result.success) {
-   const errors = result.error.flatten().fieldErrors;
-   setInvalid((prev) => ({
-    ...prev,
-    [field]: !!errors[field] && value !== "",
-   }));
-  } else {
-   setInvalid((prev) => ({
-    ...prev,
-    [field]: false,
-   }));
-  }
+ const fieldErrors = validationResult.success ? {} : validationResult.error.flatten().fieldErrors;
+
+ const invalid = {
+  name: touched.name && !!fieldErrors.name && debouncedName !== "",
+  email: touched.email && !!fieldErrors.email && debouncedEmail !== "",
+  message: touched.message && !!fieldErrors.message && debouncedMessage !== "",
  };
-
- useEffect(() => {
-  if (touched.name) validateField("name", debouncedName);
- }, [debouncedName, touched.name]);
-
- useEffect(() => {
-  if (touched.email) validateField("email", debouncedEmail);
- }, [debouncedEmail, touched.email]);
-
- useEffect(() => {
-  if (touched.message) validateField("message", debouncedMessage);
- }, [debouncedMessage, touched.message]);
 
  const [state, formAction, pending] = useActionState(submitContactForm, initialState);
 

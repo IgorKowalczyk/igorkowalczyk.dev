@@ -4,7 +4,6 @@ import { ExternalLinkIcon, LaptopIcon, MoonIcon, RefreshCwIcon, SettingsIcon, Sp
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState } from "react";
-import { useEffect } from "react";
 import { Button } from "@/components/ui/Button";
 import { Dialog, DialogContent, DialogHeader, DialogDescription, DialogTitle, DialogFooter } from "@/components/ui/Dialog";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "@/components/ui/Drawer";
@@ -15,12 +14,15 @@ import { useIsMobile } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 
 export function SettingsContent() {
- const [decorationsEnabled, setDecorationsEnabled] = useState<boolean>(true);
+ const [decorationsEnabled, setDecorationsEnabled] = useState<boolean>(() => {
+  try {
+   if (typeof window === "undefined") return true;
+   return localStorage.getItem("decorations") !== "false";
+  } catch {
+   return true;
+  }
+ });
  const { resolvedTheme, setTheme } = useTheme();
-
- useEffect(() => {
-  setDecorationsEnabled(() => localStorage.getItem("decorations") !== "false");
- }, []);
 
  return (
   <div className="mt-2 divide-y divide-black/10 dark:divide-white/10">

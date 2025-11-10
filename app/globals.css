@@ -5,21 +5,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
- /* --animate-rays: rotate-hue 20s ease-out infinite; */
- --animate-scale-in: scaleIn 200ms ease;
- --animate-scale-out: scaleOut 200ms ease;
- --animate-enter-from-left: enterFromLeft 250ms ease;
- --animate-enter-from-right: enterFromRight 250ms ease;
- --animate-exit-to-left: exitToLeft 250ms ease;
- --animate-exit-to-right: exitToRight 250ms ease;
+  /* --animate-rays: rotate-hue 20s ease-out infinite; */
+  --animate-scale-in: scaleIn 200ms ease;
+  --animate-scale-out: scaleOut 200ms ease;
+  --animate-enter-from-left: enterFromLeft 250ms ease;
+  --animate-enter-from-right: enterFromRight 250ms ease;
+  --animate-exit-to-left: exitToLeft 250ms ease;
+  --animate-exit-to-right: exitToRight 250ms ease;
 
- --font-mono: "GeistMono", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  --font-mono: "GeistMono", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
 
- --color-transparent: transparent;
- --hidden: false;
- --width-body: 768px;
+  --color-transparent: transparent;
+  --hidden: false;
+  --width-body: 768px;
 
- /* @keyframes rotate-hue {
+  /* @keyframes rotate-hue {
   0% {
    filter: hue-rotate(540deg) saturate(5);
   }
@@ -28,165 +28,165 @@
   }
  } */
 
- @keyframes enterFromRight {
-  0% {
-   opacity: 0;
-   transform: translateX(200px);
+  @keyframes enterFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  100% {
-   opacity: 1;
-   transform: translateX(0);
-  }
- }
 
- @keyframes enterFromLeft {
-  0% {
-   opacity: 0;
-   transform: translateX(-200px);
+  @keyframes enterFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  100% {
-   opacity: 1;
-   transform: translateX(0);
-  }
- }
 
- @keyframes exitToRight {
-  0% {
-   opacity: 1;
-   transform: translateX(0);
+  @keyframes exitToRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
   }
-  100% {
-   opacity: 0;
-   transform: translateX(200px);
-  }
- }
 
- @keyframes exitToLeft {
-  0% {
-   opacity: 1;
-   transform: translateX(0);
+  @keyframes exitToLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
   }
-  100% {
-   opacity: 0;
-   transform: translateX(-200px);
-  }
- }
 
- @keyframes scaleIn {
-  0% {
-   opacity: 0;
-   transform: rotateX(-10deg) scale(0.9);
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
   }
-  100% {
-   opacity: 1;
-   transform: rotateX(0deg) scale(1);
-  }
- }
 
- @keyframes scaleOut {
-  0% {
-   opacity: 1;
-   transform: rotateX(0deg) scale(1);
+  @keyframes scaleOut {
+    0% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.95);
+    }
   }
-  100% {
-   opacity: 0;
-   transform: rotateX(-10deg) scale(0.95);
-  }
- }
 }
 
 @layer base {
- :root {
-  --shiki-dark-bg: #161617;
- }
-
- * {
-  @apply box-border outline-offset-2;
-  scrollbar-color: #161617 transparent;
-  scrollbar-width: thin;
- }
-
- html {
-  @apply scroll-smooth pr-0!;
- }
-
- body[data-scroll-locked] {
-  @apply mr-0 px-6!;
- }
-
- ::selection {
-  @apply bg-neutral-800 text-white!;
- }
-
- [data-vaul-handle] {
-  @apply absolute! top-1/2 right-0 -translate-y-1/2 rotate-90;
- }
-
- .prose .anchor {
-  @apply invisible absolute -ml-6 w-4/5 max-w-2xl cursor-pointer pr-2 text-neutral-300 !no-underline opacity-0 duration-200 motion-reduce:transition-none dark:text-neutral-800;
-
-  &:hover,
-  *:hover > & {
-   @apply visible opacity-100;
+  :root {
+    --shiki-dark-bg: #161617;
   }
 
-  &:after {
-   content: "#";
+  * {
+    @apply box-border outline-offset-2;
+    scrollbar-color: #161617 transparent;
+    scrollbar-width: thin;
   }
- }
 
- .prose pre,
- .prose code:not(pre code) {
-  @apply !rounded-lg border border-neutral-200 !bg-neutral-50 dark:border-neutral-800 dark:!bg-[#161617];
- }
+  html {
+    @apply scroll-smooth pr-0!;
+  }
 
- .prose code:not(pre code) {
-  @apply rounded-lg px-2 py-1 text-inherit;
- }
+  body[data-scroll-locked] {
+    @apply mr-0 px-6!;
+  }
 
- blockquote p::after,
- blockquote p::before,
- code::after,
- code::before {
-  @apply content-none!;
- }
+  ::selection {
+    @apply bg-neutral-800 text-white!;
+  }
 
- blockquote {
-  @apply !border-l-neutral-300 !text-neutral-500 !not-italic dark:border-l-neutral-800! dark:!text-neutral-400;
- }
+  [data-vaul-handle] {
+    @apply absolute! top-1/2 right-0 -translate-y-1/2 rotate-90;
+  }
 
- html.dark .shiki,
- html.dark .shiki span {
-  color: var(--shiki-dark) !important;
-  background-color: #161617 !important;
-  font-style: var(--shiki-dark-font-style) !important;
-  font-weight: var(--shiki-dark-font-weight) !important;
-  text-decoration: var(--shiki-dark-text-decoration) !important;
- }
+  .prose .anchor {
+    @apply invisible absolute -ml-6 w-4/5 max-w-2xl cursor-pointer pr-2 text-neutral-300 !no-underline opacity-0 duration-200 motion-reduce:transition-none dark:text-neutral-800;
+
+    &:hover,
+    *:hover > & {
+      @apply visible opacity-100;
+    }
+
+    &:after {
+      content: "#";
+    }
+  }
+
+  .prose pre,
+  .prose code:not(pre code) {
+    @apply !rounded-lg border border-neutral-200 !bg-neutral-50 dark:border-neutral-800 dark:!bg-[#161617];
+  }
+
+  .prose code:not(pre code) {
+    @apply rounded-lg px-2 py-1 text-inherit;
+  }
+
+  blockquote p::after,
+  blockquote p::before,
+  code::after,
+  code::before {
+    @apply content-none!;
+  }
+
+  blockquote {
+    @apply !border-l-neutral-300 !text-neutral-500 !not-italic dark:border-l-neutral-800! dark:!text-neutral-400;
+  }
+
+  html.dark .shiki,
+  html.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: #161617 !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }
 
 @utility text-fill-* {
- -webkit-text-fill-color: --value(--color-*);
+  -webkit-text-fill-color: --value(--color-*);
 }
 
 @utility max-w-body {
- max-width: var(--width-body);
+  max-width: var(--width-body);
 }
 
 @layer components {
- .viewport {
-  left: calc(var(--active-item-left) - var(--radix-navigation-menu-viewport-width) / 2 + var(--active-item-width) / 2);
-  top: var(--active-item-bottom);
-  min-width: var(--active-item-width);
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
- }
+  .viewport {
+    left: calc(var(--active-item-left) - var(--radix-navigation-menu-viewport-width) / 2 + var(--active-item-width) / 2);
+    top: var(--active-item-bottom);
+    min-width: var(--active-item-width);
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
- .color-rays {
-  @apply pointer-events-none absolute inset-0 bg-no-repeat opacity-30;
-  background-size: 1589px 383px;
-  display: var(--hidden);
-  background-position: calc(50% - 35px) top;
-  filter: hue-rotate(540deg) saturate(5);
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAYCAYAAACfpi8JAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUHSURBVHgB7VbLbiNVEK26j2637W6HeYRMCDAgRrBhN2LNH8AmKz4Gz3ewYZ/l/EAkxAqQENIskIIQMMSJnThxd7udvo8qqj0gIZhMRh6xoyQv7L6+fW6dR12EfxTfu9d3VfU2GfMQmD/AnAf8UXIJn9mWP7RbpRqmXy0eXn4x3W+/r9/fCiX0sqO6zH8oyS5aRYy/sPPfxiT89OPXn1TwkqX+9ctk4gVEgzEuFPMKPCCcR8tTYHTsU+XxbnJud5MT1tp5NgppkBjqG2ClEAkGBnU+tEUKY1abAwGgXgiNvKWUjTsghAuweEwKVuwNe76tS7uXTjHXrccEOA60CblmMt2ONCCAoiWXfXx4+GpALqx1mrmUjlQQ0UMt5z4RICUHTRxzuzR7vRO9hWUA5ECZNn6oFVtNgNqqRBWqoX7bzixsCgRFJq+NRq0lqoMAQcSWGtA0ZavOKSKx63Gjd83U3skuojHko5Xneao5EeiIcgYoWKvhjIb22ZabdQTg/v0wD2ElD0sRbKM8MZzJ646l6V50Yjzc0Qv7lpmA1d5haqRNKPRYRkUaGIQeLvor3RuPeXMgjw4PyRqzYqFHTrhSUYlOyNJE1tfgLXsamTLZszOVYx1IvEJ9bWigkTRKQzhTGgo/DNnjx99p2BTIWHSSp2kbicquKzGygwYNnEQDlxRNZNFmrfeSibltyqCs0NOT3uQGOdUkdCYsgsWIA4Djl9LJ9are2nJG6yV3gmVuYSXnPhWdnBEhg+sbp3Z6M7OTzskqaZEVv6x1Ypg1alSqEOHmMc8Tkd2N9FwP5OgoxiRp/qIHnMTEHCz9RkgrDNIE0Ulpd/TvmK1tLGjWOtHc7SoE9ZWI1i2ht79/cKONr13wSOgJzl3RMxvXEDBgHTsbI1TRW0m8kansO4MzHGDlQWIEUm2D6ETMLu5RqWil0Bz6T57AjTq5FshYgBRZ1mpjKgm2Sjj3VIOhCVu4AIJIIVeNvmcmdttekJKki5lWfitRZIU85AQVjsDCALYhgU2BrOv01K+Imk6w67hvZb3YWE1j1IFdgq3elrjfsefiMnIxMSjRoePAyshBBfKN2BfQ7nU6UZsDAYgmhGVHT+xs7EWol3LGCSuSuE8wUqeTN9MToWcZJNYg9pUNQwO01gn0haLcwnm2v//iYLsJCHlr23XcgyQIr+NegDyLe1ERDfXSdnFf6MYLPbGL+zgUUv7UiczBkSPofzP70m4MpIv7JsscW1uvdULinUZsfCJg5kQyd1yuG/WGnZk7dk5Gk+OeUlSkKkqerG3MqkClh6m/9cK4v9FWu921IMYGQ1jI4ka1Ysoz0jzlKHHvUmnSLT3Xr+tZ1DoKaPHJQKmQdQNQCjAzUQ3RDxIYjzcHIn+O62sBwKV85tL8C3XFlToXkppYJhAvRqapt9Oy7mNbik4WIVU1i2jExkuZOXJnkag1Ue8/+fxaIOYmHDge0/Tu3VVxdSVXI/5ZrgXn0LCHKji46vUEWJKhb3NYuoFq0kUiJ1cqdjZi4w0oySClLpSqHcABbAykq7uzWVsWxSxBdI4oYcIoIUEhkJXUQiuZEpTMXNsa6yyCvQIZy4w6ajLBZVV6udhOVwcHn9IrAZEKxYMH1dPT09Xe06dw5IDe292GXu9KHVct6tspLX4d8bzuydA1YIY5+7Mab8nVKYeKDt+deTjYp7Wh/4uSef93zp/D/8vdRf6v59UfVa30WE6TYdgAAAAASUVORK5CYII=");
- }
+  .color-rays {
+    @apply pointer-events-none absolute inset-0 bg-no-repeat opacity-30;
+    background-size: 1589px 383px;
+    display: var(--hidden);
+    background-position: calc(50% - 35px) top;
+    filter: hue-rotate(540deg) saturate(5);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAYCAYAAACfpi8JAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUHSURBVHgB7VbLbiNVEK26j2637W6HeYRMCDAgRrBhN2LNH8AmKz4Gz3ewYZ/l/EAkxAqQENIskIIQMMSJnThxd7udvo8qqj0gIZhMRh6xoyQv7L6+fW6dR12EfxTfu9d3VfU2GfMQmD/AnAf8UXIJn9mWP7RbpRqmXy0eXn4x3W+/r9/fCiX0sqO6zH8oyS5aRYy/sPPfxiT89OPXn1TwkqX+9ctk4gVEgzEuFPMKPCCcR8tTYHTsU+XxbnJud5MT1tp5NgppkBjqG2ClEAkGBnU+tEUKY1abAwGgXgiNvKWUjTsghAuweEwKVuwNe76tS7uXTjHXrccEOA60CblmMt2ONCCAoiWXfXx4+GpALqx1mrmUjlQQ0UMt5z4RICUHTRxzuzR7vRO9hWUA5ECZNn6oFVtNgNqqRBWqoX7bzixsCgRFJq+NRq0lqoMAQcSWGtA0ZavOKSKx63Gjd83U3skuojHko5Xneao5EeiIcgYoWKvhjIb22ZabdQTg/v0wD2ElD0sRbKM8MZzJ646l6V50Yjzc0Qv7lpmA1d5haqRNKPRYRkUaGIQeLvor3RuPeXMgjw4PyRqzYqFHTrhSUYlOyNJE1tfgLXsamTLZszOVYx1IvEJ9bWigkTRKQzhTGgo/DNnjx99p2BTIWHSSp2kbicquKzGygwYNnEQDlxRNZNFmrfeSibltyqCs0NOT3uQGOdUkdCYsgsWIA4Djl9LJ9are2nJG6yV3gmVuYSXnPhWdnBEhg+sbp3Z6M7OTzskqaZEVv6x1Ypg1alSqEOHmMc8Tkd2N9FwP5OgoxiRp/qIHnMTEHCz9RkgrDNIE0Ulpd/TvmK1tLGjWOtHc7SoE9ZWI1i2ht79/cKONr13wSOgJzl3RMxvXEDBgHTsbI1TRW0m8kansO4MzHGDlQWIEUm2D6ETMLu5RqWil0Bz6T57AjTq5FshYgBRZ1mpjKgm2Sjj3VIOhCVu4AIJIIVeNvmcmdttekJKki5lWfitRZIU85AQVjsDCALYhgU2BrOv01K+Imk6w67hvZb3YWE1j1IFdgq3elrjfsefiMnIxMSjRoePAyshBBfKN2BfQ7nU6UZsDAYgmhGVHT+xs7EWol3LGCSuSuE8wUqeTN9MToWcZJNYg9pUNQwO01gn0haLcwnm2v//iYLsJCHlr23XcgyQIr+NegDyLe1ERDfXSdnFf6MYLPbGL+zgUUv7UiczBkSPofzP70m4MpIv7JsscW1uvdULinUZsfCJg5kQyd1yuG/WGnZk7dk5Gk+OeUlSkKkqerG3MqkClh6m/9cK4v9FWu921IMYGQ1jI4ka1Ysoz0jzlKHHvUmnSLT3Xr+tZ1DoKaPHJQKmQdQNQCjAzUQ3RDxIYjzcHIn+O62sBwKV85tL8C3XFlToXkppYJhAvRqapt9Oy7mNbik4WIVU1i2jExkuZOXJnkag1Ue8/+fxaIOYmHDge0/Tu3VVxdSVXI/5ZrgXn0LCHKji46vUEWJKhb3NYuoFq0kUiJ1cqdjZi4w0oySClLpSqHcABbAykq7uzWVsWxSxBdI4oYcIoIUEhkJXUQiuZEpTMXNsa6yyCvQIZy4w6ajLBZVV6udhOVwcHn9IrAZEKxYMH1dPT09Xe06dw5IDe292GXu9KHVct6tspLX4d8bzuydA1YIY5+7Mab8nVKYeKDt+deTjYp7Wh/4uSef93zp/D/8vdRf6v59UfVa30WE6TYdgAAAAASUVORK5CYII=");
+  }
 }

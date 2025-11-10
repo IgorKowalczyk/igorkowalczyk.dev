@@ -6,36 +6,36 @@ import { Description, Header1 } from "@/components/ui/Headers";
 import { contact } from "@/config/contact";
 
 export const metadata: Metadata = {
- title: "Contact",
- description: "If you have a project in mind, or just want to say hi, feel free to send me a message.",
+  title: "Contact",
+  description: "If you have a project in mind, or just want to say hi, feel free to send me a message.",
 };
 
 export default function Page() {
- return (
-  <section className="mt-6 mb-16 md:mt-12 lg:mt-20">
-   <Header1 id="contact">Contact me</Header1>
-   <Description className="mb-16">
-    I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
-   </Description>
+  return (
+    <section className="mt-6 mb-16 md:mt-12 lg:mt-20">
+      <Header1 id="contact">Contact me</Header1>
+      <Description className="mb-16">
+        I’m always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+      </Description>
 
-   <div className="my-6 flex w-full rounded-xl border border-black/15 bg-white p-5 dark:border-neutral-800 dark:bg-[#161617]">
-    <ContactForm />
-   </div>
-   <Description>Or contact me with...</Description>
-   <div className="mt-4 flex flex-wrap gap-4">
-    {contact.links.map((element) => {
-     const Icon = element.icon;
+      <div className="my-6 flex w-full rounded-xl border border-black/15 bg-white p-5 dark:border-neutral-800 dark:bg-[#161617]">
+        <ContactForm />
+      </div>
+      <Description>Or contact me with...</Description>
+      <div className="mt-4 flex flex-wrap gap-4">
+        {contact.links.map((element) => {
+          const Icon = element.icon;
 
-     return (
-      <Button variant="tertiary" key={`contact-link-${element.href}`} className="gap-2" asChild>
-       <Link href={element.href} target="_blank" rel="noopener noreferrer">
-        <Icon className="size-5 shrink-0" />
-        {element.title}
-       </Link>
-      </Button>
-     );
-    })}
-   </div>
-  </section>
- );
+          return (
+            <Button variant="tertiary" key={`contact-link-${element.href}`} className="gap-2" asChild>
+              <Link href={element.href} target="_blank" rel="noopener noreferrer">
+                <Icon className="size-5 shrink-0" />
+                {element.title}
+              </Link>
+            </Button>
+          );
+        })}
+      </div>
+    </section>
+  );
 }

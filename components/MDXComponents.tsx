@@ -17,7 +17,7 @@ function createHeading(level: number) {
 }
 
 const components: MDXComponents = {
- Image: (props: ImageProps) => <Image className="rounded-lg" {...props} />,
+ Image: (props: ImageProps) => <Image className="rounded-lg" {...props} alt={props.alt || ""} />,
  a: (props: LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) => <Link {...props} />,
  h1: createHeading(1),
  h2: createHeading(2),

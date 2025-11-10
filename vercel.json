@@ -1,7 +1,7 @@
 {
- "framework": "nextjs",
- "github": {
-  "silent": true
- },
- "cleanUrls": true
+  "framework": "nextjs",
+  "github": {
+    "silent": true
+  },
+  "cleanUrls": true
 }
