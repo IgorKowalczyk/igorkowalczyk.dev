@@ -50,8 +50,8 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "3.2.0",
-    "@igorkowalczyk/prettier-config": "3.2.0",
+    "@igorkowalczyk/eslint-config": "3.2.1",
+    "@igorkowalczyk/prettier-config": "3.2.1",
     "@next/bundle-analyzer": "16.0.1",
     "@tailwindcss/typography": "0.5.19",
     "@types/mdx": "2.0.13",

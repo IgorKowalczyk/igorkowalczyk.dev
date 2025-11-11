@@ -147,4 +147,3 @@ const nextConfig: NextConfig = {
 };
 
 export default bundleAnalyzer(withAxiom(nextConfig));
-  
