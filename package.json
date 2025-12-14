@@ -58,7 +58,7 @@
     "@types/node": "24.10.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "autoprefixer": "10.4.21",
+    "autoprefixer": "10.4.23",
     "eslint": "9.39.1",
     "jiti": "2.6.1",
     "postcss": "8.5.6",
