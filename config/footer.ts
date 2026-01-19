@@ -26,18 +26,7 @@ export const footer = {
           title: "Github",
           href: `https://github.com/${meta.accounts.github.username}`,
           target: "_blank",
-        },
-        {
-          title: "Instagram",
-          href: `https://instagram.com/${meta.accounts.instagram.username}`,
-          target: "_blank",
-        },
-
-        {
-          title: "Discord",
-          href: meta.accounts.discord.invite,
-          target: "_blank",
-        },
+        }
       ],
     },
     {
