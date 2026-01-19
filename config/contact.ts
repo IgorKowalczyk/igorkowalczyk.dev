@@ -9,21 +9,6 @@ export const contact = {
       href: "mailto:contact@igorkowalczyk.dev",
       title: "Email",
       icon: AtSignIcon,
-    },
-    {
-      href: meta.accounts.discord.invite,
-      title: "Discord",
-      icon: Icons.Discord,
-    },
-    {
-      href: `https://x.com/${meta.accounts.twitter.username}`,
-      title: "Twitter / X",
-      icon: Icons.Twitter,
-    },
-    {
-      href: `https://www.instagram.com/${meta.accounts.instagram.username}/`,
-      title: "Instagram",
-      icon: Icons.Instagram,
-    },
+    }
   ],
 } satisfies Contact;
