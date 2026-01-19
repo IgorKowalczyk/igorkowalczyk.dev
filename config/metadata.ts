@@ -11,18 +11,7 @@ export const meta = {
     github: {
       username: "igorkowalczyk",
       repo: "igorkowalczyk.dev",
-    },
-    twitter: {
-      username: "@majonezexe",
-    },
-    discord: {
-      username: "@majonez.exe",
-      invite: "https://discord.gg/sgt4QEyDxK",
-      id: "544164729354977282",
-    },
-    instagram: {
-      username: "majonezexe",
-    },
+    }
   },
 } satisfies Meta;
 
