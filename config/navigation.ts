@@ -20,11 +20,6 @@ export const nav = {
   ],
   // Only for mobile navigation, will be merged with the main navigation
   mobile: [
-    {
-      href: meta.accounts.discord.invite,
-      title: "Discord",
-      target: "_blank",
-    },
   ],
   popovers: [
     {
