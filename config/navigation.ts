@@ -19,8 +19,7 @@ export const nav = {
     },
   ],
   // Only for mobile navigation, will be merged with the main navigation
-  mobile: [
-  ],
+  mobile: [],
   popovers: [
     {
       title: "More",

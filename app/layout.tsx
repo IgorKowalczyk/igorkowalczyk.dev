@@ -42,9 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: meta.title,
-    description: meta.description,
-    creator: meta.accounts.twitter.username,
-    card: "summary_large_image",
+    description: meta.description,    card: "summary_large_image",
   },
   icons: {
     shortcut: "/favicon.ico",

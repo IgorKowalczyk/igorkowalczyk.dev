@@ -26,7 +26,7 @@ export const footer = {
           title: "Github",
           href: `https://github.com/${meta.accounts.github.username}`,
           target: "_blank",
-        }
+        },
       ],
     },
     {

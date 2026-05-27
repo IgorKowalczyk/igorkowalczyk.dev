@@ -11,7 +11,7 @@ export const meta = {
     github: {
       username: "igorkowalczyk",
       repo: "igorkowalczyk.dev",
-    }
+    },
   },
 } satisfies Meta;
 

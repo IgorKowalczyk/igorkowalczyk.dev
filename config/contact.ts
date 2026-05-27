@@ -9,6 +9,6 @@ export const contact = {
       href: "mailto:contact@igorkowalczyk.dev",
       title: "Email",
       icon: AtSignIcon,
-    }
+    },
   ],
 } satisfies Contact;
