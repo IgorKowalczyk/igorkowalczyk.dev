@@ -1,10 +1,13 @@
+import "server-only";
+
+import { compile, run } from "@mdx-js/mdx";
 import rehypeShiki from "@shikijs/rehype";
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import React from "react";
+import React, { cache } from "react";
+import * as runtime from "react/jsx-runtime";
 import { slugify } from "@/lib/utils";
 
 function createHeading(level: number) {
@@ -16,7 +19,7 @@ function createHeading(level: number) {
   return Heading;
 }
 
-const components: MDXComponents = {
+const defaultComponents: MDXComponents = {
   Image: (props: ImageProps) => <Image className="rounded-lg" {...props} alt={props.alt || ""} />,
   a: (props: LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) => <Link {...props} />,
   h1: createHeading(1),
@@ -27,29 +30,44 @@ const components: MDXComponents = {
   h6: createHeading(6),
 };
 
-export function MDXComponent(props: React.ComponentPropsWithoutRef<typeof MDXRemote>) {
+type MDXComponentProps = {
+  source: string;
+  components?: MDXComponents;
+};
+
+const getMDXContent = cache(async (source: string) => {
+  const code = String(
+    await compile(source, {
+      outputFormat: "function-body",
+      format: "mdx",
+      rehypePlugins: [
+        [
+          rehypeShiki,
+          {
+            themes: {
+              dark: "github-dark",
+              light: "github-light",
+            },
+          },
+        ],
+      ],
+    })
+  );
+
+  const { default: MDXContent } = await run(code, {
+    ...runtime,
+    baseUrl: import.meta.url,
+  });
+
+  return MDXContent as React.ComponentType<{ components?: MDXComponents }>;
+});
+
+export async function MDXComponent({ source, components }: MDXComponentProps) {
+  const MDXContent = await getMDXContent(source);
+
   return (
     <div className="prose prose-neutral prose-a:underline-offset-6 prose-a:hover:underline-offset-auto prose-img:m-0 dark:prose-invert prose-a:font-bold prose-a:hover:decoration-wavy">
-      <MDXRemote
-        {...props}
-        components={{ ...components, ...(props.components || {}) }}
-        options={{
-          mdxOptions: {
-            format: "mdx",
-            rehypePlugins: [
-              [
-                rehypeShiki,
-                {
-                  themes: {
-                    dark: "github-dark",
-                    light: "github-light",
-                  },
-                },
-              ],
-            ],
-          },
-        }}
-      />
+      <MDXContent components={{ ...defaultComponents, ...(components || {}) }} />
     </div>
   );
 }

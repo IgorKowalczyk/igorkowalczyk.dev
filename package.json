@@ -22,6 +22,7 @@
   "dependencies": {
     "@bprogress/next": "^3.2.12",
     "@marsidev/react-turnstile": "^1.5.2",
+    "@mdx-js/mdx": "^3.1.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-select": "^2.2.6",
@@ -36,7 +37,6 @@
     "lucide-react": "^1.16.0",
     "next": "^16.2.6",
     "next-axiom": "^1.10.0",
-    "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.4.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
