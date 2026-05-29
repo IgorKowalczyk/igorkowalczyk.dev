@@ -74,7 +74,7 @@
     "not dead",
     "not op_mini all"
   ],
-  "packageManager": "pnpm@11.4.0",
+  "packageManager": "pnpm@11.5.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/igorkowalczyk/igorkowalczyk.dev.git"
