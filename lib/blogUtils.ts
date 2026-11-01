@@ -9,7 +9,7 @@ export type BlogPostMetadata = {
   publishedAt: string;
   author: string;
   summary: string;
-  image?: string;
+  image: true;
 };
 
 export type OtherPageMetadata = {

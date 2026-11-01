@@ -15,7 +15,7 @@ export const messageSchema = z
   .nonempty({ message: "Please enter a message" })
   .min(10, { message: "Message must be between 10 and 500 characters!" })
   .max(500, { message: "Message must be between 10 and 500 characters!" });
-export const tokenSchema = z.string().max(2048);
+export const tokenSchema = z.string().min(1).max(2048);
 
 export const contactFormSchema = z.object({
   name: nameSchema,

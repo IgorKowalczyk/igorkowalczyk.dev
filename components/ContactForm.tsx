@@ -142,7 +142,7 @@ export const ContactForm = () => {
 
       {process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY && (
         <div className="mt-2 flex w-full">
-          <Turnstile ref={turnstileRef} siteKey={process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY} />
+          <Turnstile ref={turnstileRef} siteKey={process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY} options={{ action: "contact" }} />
         </div>
       )}
 

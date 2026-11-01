@@ -23,25 +23,37 @@ export async function submitContactForm(_prevState: any, data: FormData) {
 
     if (isRateLimited) return { error: "You are sending messages too frequently!" };
 
-    if (process.env.NEXT_PUBLIC_CAPTCHA_SITEKEY && process.env.CAPTCHA_SECRET) {
-      const tokenResult = tokenSchema.safeParse(token);
-      if (!tokenResult.success) return { error: "Invalid captcha! Please try again." };
+    const tokenResult = tokenSchema.safeParse(token);
+    const expectedHostnames = new Set(
+      (process.env.TURNSTILE_HOSTNAMES ?? "")
+        .split(",")
+        .map((hostname) => hostname.trim())
+        .filter(Boolean)
+    );
 
-      const verifyCaptchaRequest = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-        body: JSON.stringify({
-          secret: process.env.CAPTCHA_SECRET,
-          response: tokenResult.data,
-          remoteip: ip,
-        }),
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    if (!tokenResult.success || !process.env.CAPTCHA_SECRET || expectedHostnames.size === 0) {
+      return { error: "Invalid captcha! Please try again." };
+    }
 
-      const outcome = await verifyCaptchaRequest.json();
+    const verifyCaptchaRequest = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      body: new URLSearchParams({
+        secret: process.env.CAPTCHA_SECRET,
+        response: tokenResult.data,
+        remoteip: ip,
+      }),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      signal: AbortSignal.timeout(10_000),
+    });
 
-      if (!outcome.success) return { error: "Invalid captcha! Please try again." };
+    if (!verifyCaptchaRequest.ok) return { error: "Invalid captcha! Please try again." };
+
+    const outcome = await verifyCaptchaRequest.json();
+
+    if (!outcome.success || outcome.action !== "contact" || !expectedHostnames.has(outcome.hostname)) {
+      return { error: "Invalid captcha! Please try again." };
     }
 
     const result = contactFormSchema.safeParse(formData);
