@@ -1,7 +1,8 @@
 "use client";
 import { Turnstile } from "@marsidev/react-turnstile";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { CircleAlertIcon, MailCheckIcon, RefreshCwIcon, SendIcon } from "lucide-react";
-import { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useRef, useEffect } from "react";
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import { Button } from "@/components/ui/Button";
@@ -26,7 +27,7 @@ export const ContactForm = () => {
     message: false,
   });
 
-  const turnstileRef = useRef(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const debouncedName = useDebounce(formData.name, 500);
   const debouncedEmail = useDebounce(formData.email, 500);
@@ -47,6 +48,10 @@ export const ContactForm = () => {
   };
 
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
+
+  useEffect(() => {
+    if (state.message || state.error) turnstileRef.current?.reset();
+  }, [state]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { value } = e.target;
