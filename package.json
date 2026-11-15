@@ -67,7 +67,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.5",
     "tsx": "^4.23.15",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.0"
   },
   "browserslist": [
     ">0.3%",
